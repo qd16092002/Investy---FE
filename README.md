@@ -1,4 +1,4 @@
-# TutorNow - FE
+# INVESTY - FE
 ## Developer
 -   Trần Quang Đạo
 ## Install

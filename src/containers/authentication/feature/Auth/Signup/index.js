@@ -88,13 +88,13 @@ function Signup() {
               <Row gutter={24}>
                 <Col xs={24}>
                   <div className={cx('form-field')}>
-                    <label htmlFor='username'>Username</label>
+                    <label htmlFor='username'>Account name</label>
                     <input
                       className={cx(errors.username ? 'error' : '')}
                       {...register('username', { required: 'Username is required' })}
                       id='username'
                       type='text'
-                      placeholder='Enter your username'
+                      placeholder='Enter your Account name'
                     />
                     {errors.username && (
                       <p className={cx('error-text')} role='alert'>
@@ -105,7 +105,7 @@ function Signup() {
                 </Col>
                 <Col xs={24}>
                   <div className={cx('form-field')}>
-                    <label htmlFor='email-login'>Email</label>
+                    <label htmlFor='email-login'>Gmail</label>
                     <input
                       // onChange={(e) => {
                       //   setFormData({ ...formData, email: e.target.value })
@@ -114,7 +114,7 @@ function Signup() {
                       {...register('email', { required: 'Email address is required' })}
                       id='email-login'
                       type='email'
-                      placeholder='Enter your email'
+                      placeholder='Enter your Gmail'
                     />
                     {errors.email && (
                       <p className={cx('error-text')} role='alert'>
@@ -152,10 +152,10 @@ function Signup() {
                     <label htmlFor='role'>Role</label>
                     <select {...register('role')} className={cx('role')} id='role'>
                       <option className={cx('option')} value='TUTOR'>
-                        TUTOR
+                        Start Up
                       </option>
                       <option className={cx('option')} value='STUDENT'>
-                        STUDENT
+                        Investor
                       </option>
                     </select>
                   </div>

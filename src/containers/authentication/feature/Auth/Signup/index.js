@@ -3,24 +3,23 @@
 import classNames from 'classnames/bind'
 import styles from './Signup.module.sass'
 import { Row, Col } from 'antd'
-import login_bg from '@src/assets/images/login_bg.png'
-import logologin from '@src/assets/images/logologin.png'
-import { Link, useNavigate } from 'react-router-dom'
+
+import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { CheckIcon } from '@heroicons/react/20/solid'
+// import { CheckIcon } from '@heroicons/react/20/solid'
 import { useForm } from 'react-hook-form'
 // import { FacebookLogo, GoogleLogo } from '@src/assets/svgs'
 import { useSignupMutation } from '../authService'
 import ReactLoading from 'react-loading'
 import { useSelector } from 'react-redux'
-import { EyeClose, EyeShow } from '@src/assets/svgs'
+import { BackgroundImage, EyeClose, EyeShow, LogoInvesty, Background2 } from '@src/assets/svgs'
 
 const cx = classNames.bind(styles)
 
 function Signup() {
   const [signup, { isLoading }] = useSignupMutation()
-  const [notAgree, setNotAgree] = useState(false)
-  const [formData, setFormData] = useState({
+  const [setNotAgree] = useState(false)
+  const [formData] = useState({
     email: null,
     password: null,
     isAgree: false
@@ -70,138 +69,141 @@ function Signup() {
 
   return (
     <div className={cx('login-wrapper')}>
-      <div>
-        <div className={cx('background-wrapper')}>
-          <div className={cx('background')}>
-            <div className={cx('img2')}>
-              <img src={logologin} alt='logo' />
-            </div>
-            <div className={cx('img')} style={{ backgroundImage: `url(${login_bg})` }}></div>
-          </div>
-        </div>
-      </div>
+      <BackgroundImage />
       <div>
         <div className={cx('form-wrapper')}>
           <div className={cx('form')}>
-            <h3>SIGN UP</h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <Row gutter={24}>
-                <Col xs={24}>
-                  <div className={cx('form-field')}>
-                    <label htmlFor='username'>Account name</label>
-                    <input
-                      className={cx(errors.username ? 'error' : '')}
-                      {...register('username', { required: 'Username is required' })}
-                      id='username'
-                      type='text'
-                      placeholder='Enter your Account name'
-                    />
-                    {errors.username && (
-                      <p className={cx('error-text')} role='alert'>
-                        {errors.username?.message}
-                      </p>
-                    )}
-                  </div>
-                </Col>
-                <Col xs={24}>
-                  <div className={cx('form-field')}>
-                    <label htmlFor='email-login'>Gmail</label>
-                    <input
-                      // onChange={(e) => {
-                      //   setFormData({ ...formData, email: e.target.value })
-                      // }}
-                      className={cx(errors.email ? 'error' : '')}
-                      {...register('email', { required: 'Email address is required' })}
-                      id='email-login'
-                      type='email'
-                      placeholder='Enter your Gmail'
-                    />
-                    {errors.email && (
-                      <p className={cx('error-text')} role='alert'>
-                        {errors.email?.message}
-                      </p>
-                    )}
-                  </div>
-                </Col>
-                <Col xs={24}>
-                  <div className={cx('form-field')}>
-                    <label htmlFor='password-login'>Password</label>
-                    <input
-                      className={cx(errors.password ? 'error' : '')}
-                      // onChange={(e) => {
-                      //   setFormData({ ...formData, password: e.target.value })
-                      // }}
-                      {...register('password', { required: 'Password is required' })}
-                      id='password-login'
-                      type={eyeShow ? 'text' : 'password'}
-                      placeholder='Enter your password (+8 characters)'
-                    />
-                    <div className={cx('eye-icon')} onClick={() => setEyeShow(!eyeShow)}>
-                      {eyeShow ? <EyeShow /> : <EyeClose />}
-                    </div>
-                    {errors.password && (
-                      <p className={cx('error-text')} role='alert'>
-                        {errors.password?.message}
-                      </p>
-                    )}
-                    {/* <div className={cx('error-text')}>*Wrong password</div> */}
-                  </div>
-                </Col>
-                <Col xs={24}>
-                  <div className={cx('form-field')}>
-                    <label htmlFor='role'>Role</label>
-                    <select {...register('role')} className={cx('role')} id='role'>
-                      <option className={cx('option')} value='TUTOR'>
-                        Start Up
-                      </option>
-                      <option className={cx('option')} value='STUDENT'>
-                        Investor
-                      </option>
-                    </select>
-                  </div>
-                </Col>
-              </Row>
-
-              <div className={cx('password-check')}>
-                <div className={cx('checkbox')}>
-                  <label htmlFor='remember-login'>
-                    <div
-                      style={
-                        formData.isAgree
-                          ? { background: 'rgba(255, 255, 255, 0.3)', border: 'none' }
-                          : { background: 'none', border: '1px solid rgba(255, 243, 243, 1)' }
-                      }
-                      className={cx('check-icon')}
-                    >
-                      {formData.isAgree && <CheckIcon />}
-                    </div>
-                    <div className={cx('text')}>I agree to TutorNow Terms and Privacy policy</div>
-                  </label>
-                  <input
-                    id='remember-login'
-                    onChange={(e) => {
-                      setNotAgree(false)
-                      setFormData({ ...formData, isAgree: e.target.checked })
-                    }}
-                    type='checkbox'
-                  />
-                </div>
+            <div className={cx('img-wrapper')}>
+              <Background2 />
+            </div>
+            <div className={cx('text-wrapper')}>
+              <div
+                style={{
+                  marginTop: '30px'
+                }}
+              >
+                <LogoInvesty />
               </div>
-              {notAgree && <div className={cx('error-message-input')}>You must agree to sign up!</div>}
-              <button className={cx('button')} type='submit' disabled={isLoading}>
-                {isLoading ? <ReactLoading type='bubbles' height={32} width={32} /> : 'Sign up'}
-              </button>
-            </form>
-            <div
-              style={{
-                marginTop: 'auto'
-              }}
-              className={cx('navigate-guide')}
-            >
-              Already have an account?{' '}
-              <Link className={cx('signup')} to='/login'>
-                Sign in
-              </Link>
+              <h3>Lets Get Started</h3>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <Row gutter={24}>
+                  <Col xs={24}>
+                    <div className={cx('form-field')}>
+                      <label htmlFor='username'>Account name</label>
+                      <input
+                        className={cx(errors.username ? 'error' : '')}
+                        {...register('username', { required: 'Username is required' })}
+                        id='username'
+                        type='text'
+                        placeholder='Enter your Account name'
+                      />
+                      {errors.username && (
+                        <p className={cx('error-text')} role='alert'>
+                          {errors.username?.message}
+                        </p>
+                      )}
+                    </div>
+                  </Col>
+                  <Col xs={24}>
+                    <div className={cx('form-field')}>
+                      <label htmlFor='email-login'>Gmail</label>
+                      <input
+                        // onChange={(e) => {
+                        //   setFormData({ ...formData, email: e.target.value })
+                        // }}
+                        className={cx(errors.email ? 'error' : '')}
+                        {...register('email', { required: 'Email address is required' })}
+                        id='email-login'
+                        type='email'
+                        placeholder='Enter your Gmail'
+                      />
+                      {errors.email && (
+                        <p className={cx('error-text')} role='alert'>
+                          {errors.email?.message}
+                        </p>
+                      )}
+                    </div>
+                  </Col>
+                  <Col xs={24}>
+                    <div className={cx('form-field')}>
+                      <label htmlFor='password-login'>Password</label>
+                      <input
+                        className={cx(errors.password ? 'error' : '')}
+                        // onChange={(e) => {
+                        //   setFormData({ ...formData, password: e.target.value })
+                        // }}
+                        {...register('password', { required: 'Password is required' })}
+                        id='password-login'
+                        type={eyeShow ? 'text' : 'password'}
+                        placeholder='Enter your password (+8 characters)'
+                      />
+                      <div className={cx('eye-icon')} onClick={() => setEyeShow(!eyeShow)}>
+                        {eyeShow ? <EyeShow /> : <EyeClose />}
+                      </div>
+                      {errors.password && (
+                        <p className={cx('error-text')} role='alert'>
+                          {errors.password?.message}
+                        </p>
+                      )}
+                      {/* <div className={cx('error-text')}>*Wrong password</div> */}
+                    </div>
+                  </Col>
+                  <Col xs={24}>
+                    <div className={cx('form-field')}>
+                      <label htmlFor='role'>Role</label>
+                      <select {...register('role')} className={cx('role')} id='role'>
+                        <option className={cx('option')} value='TUTOR'>
+                          Start Up
+                        </option>
+                        <option className={cx('option')} value='STUDENT'>
+                          Investor
+                        </option>
+                      </select>
+                    </div>
+                  </Col>
+                </Row>
+
+                {/* <div className={cx('password-check')}>
+                  <div className={cx('checkbox')}>
+                    <label htmlFor='remember-login'>
+                      <div
+                        style={
+                          formData.isAgree
+                            ? { background: 'rgba(255, 255, 255, 0.3)', border: 'none' }
+                            : { background: 'none', border: '1px solid rgba(255, 243, 243, 1)' }
+                        }
+                        className={cx('check-icon')}
+                      >
+                        {formData.isAgree && <CheckIcon />}
+                      </div>
+                      <div className={cx('text')}>I agree to Investy Terms and Privacy policy</div>
+                    </label>
+                    <input
+                      id='remember-login'
+                      onChange={(e) => {
+                        setNotAgree(false)
+                        setFormData({ ...formData, isAgree: e.target.checked })
+                      }}
+                      type='checkbox'
+                    />
+                  </div>
+                </div>
+                {notAgree && <div className={cx('error-message-input')}>You must agree to sign up!</div>} */}
+                <button className={cx('button')} type='submit' disabled={isLoading}>
+                  {isLoading ? <ReactLoading type='bubbles' height={32} width={32} /> : 'Sign up'}
+                </button>
+              </form>
+              {/* <div
+                style={{
+                  marginTop: 'auto'
+                }}
+                className={cx('navigate-guide')}
+              >
+                Already have an account?{' '}
+                <Link className={cx('signup')} to='/login'>
+                  Sign in
+                </Link>
+              </div> */}
             </div>
           </div>
         </div>

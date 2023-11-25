@@ -1,8 +1,15 @@
 import classNames from 'classnames/bind'
 import styles from './Header.module.sass'
 import { useDispatch, useSelector } from 'react-redux'
-import { BellNotification, IconButtonSignIn, IconButtonSignUp, IconProfile, SignOutIcon } from '@src/assets/svgs'
-import TutorNowLogo from '@src/assets/images/TutorNowLogo.png'
+import {
+  BellNotification,
+  IconButtonSignIn,
+  IconButtonSignUp,
+  IconProfile,
+  SignOutIcon,
+  LogoInvesty
+} from '@src/assets/svgs'
+// import TutorNowLogo from '@src/assets/images/TutorNowLogo.png'
 import { Link, useNavigate } from 'react-router-dom'
 import AppButton from '@src/components/AppButton'
 import { Divider, Dropdown, Menu } from 'antd'
@@ -27,7 +34,7 @@ function Header() {
     <header className={cx('header-wrapper')}>
       <div>
         <Link to='/'>
-          <img className={cx('logo')} src={TutorNowLogo} alt='logo' />
+          <LogoInvesty />
         </Link>
       </div>
       <div className={cx('iconheader')}>

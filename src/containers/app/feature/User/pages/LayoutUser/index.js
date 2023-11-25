@@ -44,7 +44,7 @@ function LayoutUser() {
               <Link key={uuidv4(item.link)} to={item.link}>
                 <li className={cx(location.pathname === item.link ? 'active' : '')} key={uuidv4(index)}>
                   <div className={cx('icon')}>{item.icon}</div>
-                  <p>{item.title}</p>
+                  {/* <p>{item.title}</p> */}
                 </li>
               </Link>
             )

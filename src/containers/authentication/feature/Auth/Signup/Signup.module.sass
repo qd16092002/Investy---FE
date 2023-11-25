@@ -1,90 +1,54 @@
 .login-wrapper
   width: 100vw
   display: flex
-
-  .background-wrapper
-    width: 50vw
-    height: 100%
-    display: flex
-    justify-content: center
-    align-items: center
-    background: #E4D9C8
-    .background
-      position: relative
-      // max-width: 771px
-      width: 771px
-      height: 100vh
-      // display: flex
-      justify-content: center
-      align-items: center
-      .img2
-        position: relative
-        display: flex
-        justify-content: center
-        margin-top: 65px
-
-      .img
-        margin-top: 10vh
-        position: relative
-        width: 559px
-        height: 40vh
-        background-repeat: no-repeat
-        background-position: center
-        background-size: contain
-        display: flex
-        justify-content: center
-        margin-left: 80px
-        .gradient
-          position: absolute
-          width: 441.25px
-          height: 522.92px
-          background: #B1A4FF
-          opacity: 0.3
-          filter: blur(130.113px)
-          transform: rotate(29.12deg)
+  z-index: 100
   .form-wrapper
-    background: #587056
     display: flex
     justify-content: center
-    height: 100%
-    width: 50vw
-
     .form
       margin-top: 10vh
-      margin-right: 22vw
-      width: 35vw
+      margin-right: 100vw
+      width: 80vw
       height: 80vh
-      padding: 2% 5% 2%
-      display: flex
+      padding: 5px
+      display: -webkit-inline-box
       animation: slide-in 1s ease forwards
       flex-direction: column
-      background-color: rgba(255, 255, 255, 0.4)
+      box-shadow: -14px -7px 24px 0px #00000040
+      background-color: #FFFF
+      border-radius: 50px
       z-index: 999
       position: absolute
-
-      h3
-        font-weight: 700
-        font-size: 3.2rem
-        line-height: 150%
-        color: #FFFFFF
-        text-align: center
-
-      .navigate-guide
-        width: 100%
-        font-weight: 400
-        font-size: 16px
-        line-height: 24px
-        text-align: center
-        color: #ffffff
-        .signup
-          color: rgba(242, 223, 201, 1)
-          &:hover
-            text-decoration: underline
+      .img-wrapper
+        border-top-left-radius: 50px
+        border-bottom-left-radius: 50px
+        // background-color: #9b3333
+        width: 50%
+      .text-wrapper
+        width: 40%
+        margin-left: 5%
+        
+        h3
+          font-weight: 700
+          font-size: 3.2rem
+          line-height: 150%
+          color: #000000
+          text-align: start
+          margin-top: 5px
+        .navigate-guide
+          width: 100%
+          font-weight: 400
+          font-size: 16px
+          line-height: 24px
+          text-align: center
+          color: #7A7A7A
+          margin-top: 40px
+  
       form
         margin-top: 0px
 
         .form-field
-          margin-bottom: 15px
+          margin-bottom: 3px
           position: relative
 
           label
@@ -93,7 +57,7 @@
             line-height: 150%
             display: flex
             align-items: center
-            color: #FFFFFF
+            color: #7A7A7A
 
           input
             display: flex
@@ -102,16 +66,16 @@
             padding: 10px 62px 10px 12px
             gap: 12px
             width: 100%
-            height: 40px
-            border: 1px solid rgba(255, 243, 243, 1)
-            border-radius: 4px
+            height: 35px
+            border: 1px solid #7A7A7A
+            border-radius: 7px
             font-weight: 500
             font-size: 1.6rem
             line-height: 24px
             display: flex
             align-items: center
             background: none
-            color: rgba(255, 243, 243, 1)
+            color: #7A7A7A
             margin-top: 8px
           #username-login::placeholder
             color: #FFFF !important
@@ -131,7 +95,7 @@
           display: flex
           justify-content: space-between
           align-items: center
-          margin-top: -15px
+          margin-top: -35px
 
           .checkbox
             display: flex
@@ -157,14 +121,14 @@
                 line-height: 150%
                 display: flex
                 align-items: center
-                color: #ffffff
+                color: #000000
           .forgot-pwd
             display: block
-            color: #FFFF
+            color: #000000
         .button
           width: 100%
           height: 40px
-          background: rgba(66, 79, 65, 1)
+          background: #08A5EA
           border-radius: 4px
           display: flex
           justify-content: center
@@ -176,9 +140,8 @@
           line-height: 2.4rem
           color: #FFFFFF
           transition: all 0.2s ease
-          margin-top: 40px
-          cursor: pointer
           margin-top: 30px
+          cursor: pointer
 
           &:hover
             opacity: 0.95
@@ -190,7 +153,7 @@
   margin-top: 8px
 .eye-icon
   position: absolute
-  top: 37px
+  top: 34px
   right: 15px
 @keyframes slide-in
   from
@@ -210,19 +173,19 @@
   gap: 12px
   width: 100%
   height: 40px
-  border: 1px solid rgba(255, 243, 243, 1)
-  border-radius: 0px 0px 4px 4px
+  border: 1px solid #7A7A7A
+  border-radius: 7px
   font-weight: 500
   font-size: 1.6rem
   line-height: 24px
   display: flex
   align-items: center
   background: none
-  color: rgba(255, 243, 243, 1)
+  color: #7A7A7A
   margin-top: 8px
   .option
-    background-color: #9BA99A
-    color: #FFFF
+    background-color: #ffffff
+    color: #7A7A7A
     border-radius: 1px
     &:hover
       background-color: #888383

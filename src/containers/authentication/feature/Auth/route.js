@@ -1,3 +1,4 @@
+import AuthLayout from '@src/components/Layouts/AuthLayout'
 import ForgotPassword from './ForgotPassword'
 import Login from './Login'
 import Signup from './Signup'
@@ -7,6 +8,7 @@ export const authRouteList = [
   {
     path: '/login',
     element: <Login />,
+
     children: []
   },
   {
@@ -23,5 +25,9 @@ export const authRouteList = [
     path: '/authorize',
     element: <ForgotPassword />,
     children: []
+  },
+  {
+    path: '/layout',
+    element: <AuthLayout></AuthLayout>
   }
 ]

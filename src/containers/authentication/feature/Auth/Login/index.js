@@ -187,7 +187,7 @@ function Login() {
                   </div>
                 </Link>
                 <div className={cx('navigate-guide')}>
-                  Already have account?{' '}
+                  Don&apos;t have account?{' '}
                   <Link to='/signup' className={cx('signup')}>
                     Sign Up
                   </Link>

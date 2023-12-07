@@ -1,7 +1,7 @@
 import ProfileLayout from '@src/components/Layouts/ProfileLayout'
-import Infomation from './pages/Infomation'
-import Calendar from './pages/Calendar'
-import Documents from './pages/Documents'
+import Infomation from './pages/ProfileAdmin'
+import ProfileUser from './pages/ProfileUser'
+import News from './pages/News'
 
 export const userRouteList = [
   {
@@ -12,21 +12,36 @@ export const userRouteList = [
       </ProfileLayout>
     )
   },
-
   {
-    path: '/calendar',
+    path: '/infomationuser',
     element: (
       <ProfileLayout>
-        <Calendar />
+        <ProfileUser />
       </ProfileLayout>
     )
   },
   {
-    path: '/document',
+    path: '/member',
+    element: <ProfileLayout></ProfileLayout>
+  },
+  {
+    path: '/news',
     element: (
       <ProfileLayout>
-        <Documents />
+        <News />
       </ProfileLayout>
     )
+  },
+  {
+    path: '/messeger',
+    element: <ProfileLayout></ProfileLayout>
+  },
+  {
+    path: '/settings',
+    element: <ProfileLayout></ProfileLayout>
+  },
+  {
+    path: '/statistics',
+    element: <ProfileLayout></ProfileLayout>
   }
 ]

@@ -113,13 +113,7 @@ export const userApi = createApi({
         params: params
       })
     }),
-    deleteSubmission: build.mutation({
-      query: ({ path, body }) => ({
-        url: `/competition/${path.competitionId}/performance/${path.submission}/${path.submission_time}`,
-        method: 'DELETE',
-        params: body
-      })
-    }),
+
     getstudent: build.query({
       query: () => ({
         url: `/getalluser?role=STUDENT`
@@ -130,69 +124,11 @@ export const userApi = createApi({
         url: `/getalluser?role=TUTOR`
       })
     }),
-    getDocuments: build.query({
-      query: () => ({
-        url: `/documents`
-      })
-    }),
-    getCalendar: build.query({
-      query: () => ({
-        url: `/calendar`
-      })
-    }),
-    creatCalendar: build.mutation({
-      query: (body) => {
-        return {
-          url: '/calendar',
-          method: 'POST',
-          body: body,
-          responseHandler: async (response) => {
-            const responseBody = await response.json()
-            return responseBody
-          }
-        }
-      }
-    }),
-    creatDocuments: build.mutation({
-      query: (body) => {
-        return {
-          url: '/documents',
-          method: 'POST',
-          body: body,
-          responseHandler: async (response) => {
-            const responseBody = await response.json()
-            return responseBody
-          }
-        }
-      }
-    }),
+
     getProfileById: build.mutation({
       query: (id) => {
         return {
           url: `/users/${id}`
-        }
-      }
-    }),
-    getCalendarbyID: build.mutation({
-      query: (id) => {
-        return {
-          url: `/calendar/${id}`
-        }
-      }
-    }),
-    deleteDocumentsbyId: build.mutation({
-      query: (id) => {
-        return {
-          url: `/documents/${id}`,
-          method: 'DELETE'
-        }
-      }
-    }),
-    deleteCalendarsbyId: build.mutation({
-      query: (id) => {
-        return {
-          url: `/calendar/${id}`,
-          method: 'DELETE'
         }
       }
     })
@@ -214,12 +150,5 @@ export const {
   useLazyGetallprofileQuery,
   useLazyGetstudentQuery,
   useLazyGettutorQuery,
-  useLazyGetDocumentsQuery,
-  useLazyGetCalendarQuery,
-  useCreatCalendarMutation,
-  useCreatDocumentsMutation,
-  useGetProfileByIdMutation,
-  useGetCalendarbyIDMutation,
-  useDeleteDocumentsbyIdMutation,
-  useDeleteCalendarsbyIdMutation
+  useGetProfileByIdMutation
 } = userApi

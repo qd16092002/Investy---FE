@@ -32,7 +32,7 @@ function ProfileStudent() {
             </label>
             <input
               className={cx('search')}
-              placeholder='Tìm kiếm thông tin học sinh...  '
+              placeholder='Tìm kiếm thông tin Start-up...  '
               // eslint-disable-next-line react/no-unknown-property
               onSearch={(value) => {
                 setSearchedText(value)
@@ -47,7 +47,7 @@ function ProfileStudent() {
           className={cx('table')}
           columns={[
             {
-              title: 'Học sinh',
+              title: 'Start-up',
               dataIndex: 'fullName',
               key: 'fullName',
               filteredValue: [searchedText],

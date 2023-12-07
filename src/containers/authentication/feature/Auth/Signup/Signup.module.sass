@@ -27,14 +27,13 @@
       .text-wrapper
         width: 40%
         margin-left: 5%
-        
+
         h3
           font-weight: 700
           font-size: 3.2rem
           line-height: 150%
           color: #000000
           text-align: start
-          margin-top: 5px
         .navigate-guide
           width: 100%
           font-weight: 400
@@ -43,10 +42,21 @@
           text-align: center
           color: #7A7A7A
           margin-top: 40px
-  
+        .signup
+          color: #08A5EA
+          &:hover
+            text-decoration: underline
+
       form
         margin-top: 0px
-
+        .form-field-2
+          label
+            font-weight: 600
+            font-size: 14px
+            line-height: 150%
+            display: flex
+            align-items: center
+            color: #7A7A7A
         .form-field
           margin-bottom: 3px
           position: relative
@@ -63,10 +73,10 @@
             display: flex
             align-items: center
             outline: none
-            padding: 10px 62px 10px 12px
+            padding: 13px 62px 10px 12px
             gap: 12px
             width: 100%
-            height: 35px
+            height: 30px
             border: 1px solid #7A7A7A
             border-radius: 7px
             font-weight: 500
@@ -140,7 +150,7 @@
           line-height: 2.4rem
           color: #FFFFFF
           transition: all 0.2s ease
-          margin-top: 30px
+          margin-top: 10px
           cursor: pointer
 
           &:hover
@@ -169,14 +179,14 @@
   display: flex
   align-items: center
   outline: none
-  padding: 10px 62px 10px 12px
+  padding: 3px 62px 3px 7px
   gap: 12px
   width: 100%
-  height: 40px
+  height: 30px
   border: 1px solid #7A7A7A
   border-radius: 7px
   font-weight: 500
-  font-size: 1.6rem
+  font-size: 17px
   line-height: 24px
   display: flex
   align-items: center
@@ -189,3 +199,87 @@
     border-radius: 1px
     &:hover
       background-color: #888383
+.button-tiep
+  width: 100%
+  height: 40px
+  background: #08A5EA
+  border-radius: 4px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  outline: none
+  font-weight: 600
+  font-size: 1.6rem
+  line-height: 2.4rem
+  color: #FFFFFF
+  transition: all 0.2s ease
+  margin-top: 30px
+  cursor: pointer
+.button
+  width: 100%
+  height: 40px
+  background: #08A5EA
+  border-radius: 4px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  outline: none
+  font-weight: 600
+  font-size: 1.6rem
+  line-height: 2.4rem
+  color: #FFFFFF
+  transition: all 0.2s ease
+
+  cursor: pointer
+.header
+  justify-content: space-between
+  align-items: center
+  margin-top: 40px
+  margin-bottom: 40px
+  &__process
+    display: flex
+    align-items: center
+
+  &__title
+    display: flex
+    align-items: center
+    justify-content: center
+    font-weight: 700
+    font-size: 16px
+    line-height: 26px
+    padding: 5px
+    border-radius: 1px, 0px, 0px, 1px
+    gap: 10px
+    &:hover
+      cursor: pointer
+
+    &.active
+      border-radius: 1px, 0px, 0px, 1px
+      background-color: #65C1EA
+      color: #FFFFFF
+      box-shadow: 5px 4px 6px 0px #00000029
+
+    &.inactive
+      color: #FFFFFF
+      background-color: #08A5EA
+      &:hover
+
+.input
+  display: flex
+  align-items: center
+  outline: none
+  padding: 5px
+  width: 100%
+  height: 35px
+  border: 1px solid #7A7A7A
+  border-radius: 7px
+  font-weight: 500
+  font-size: 1.6rem
+  line-height: 24px
+  display: flex
+  align-items: center
+  background: none
+  color: #7A7A7A
+  // margin-top: 8px

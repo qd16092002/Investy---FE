@@ -18,7 +18,7 @@ function FilterFuntion(props) {
             id='search'
             type={props.type || 'text'}
             className={cx('input')}
-            placeholder={props.placeholder || 'Tìm kiếm thông tin giảng viên, học sinh...  '}
+            placeholder={props.placeholder || 'Tìm kiếm thông tin giảng viên, Start-up...  '}
             autoComplete='off'
           />
         </Col>

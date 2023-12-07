@@ -1,1 +1,1 @@
-export { default } from './AppLongText';
+export { default } from './AppLongText'

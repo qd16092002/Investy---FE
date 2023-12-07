@@ -1,0 +1,42 @@
+
+.header
+    justify-content: space-between
+    align-items: center
+    margin-top: 30px
+    margin-bottom: 30px
+    border-radius: 12px
+    background-color: #ffff
+    width: 75%
+    &__process
+        display: flex
+        align-items: center
+    &__title
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 5px 0px
+        color: #1B1E25
+        font-weight: 700
+        font-size: 16px
+        line-height: 26px
+        border-radius: 100px !important
+        margin-left: 65px
+        
+        &:hover
+            cursor: pointer
+
+        &.active
+            color: #0E92CC
+            text-decoration: underline
+
+        &.inactive
+            color:#383838
+            &:hover
+                color: #0E92CC
+.form-wallpaper
+    overflow-y: auto
+    max-height: calc( 100vh - 0px )
+    margin-left: 5%
+.form-header
+    width: 95%
+    

@@ -4,47 +4,72 @@ import classNames from 'classnames/bind'
 import styles from './LayoutUser.module.sass'
 import { v4 as uuidv4 } from 'uuid'
 import { Link, useLocation } from 'react-router-dom'
-import { UserIconNavbar, CalendarIconNavbar, DocumentIconNavbar } from '@src/assets/svgs'
-// import { useDispatch } from 'react-redux'
-// import { logout } from '@src/containers/authentication/feature/Auth/authSlice'
-// import Cookies from 'universal-cookie'
-// import Avatar from '@src/components/Avatar'
-
-// const cookies = new Cookies()
+import {
+  IconInformation,
+  IconNews,
+  IconMember,
+  IconMesseger,
+  IconSettings,
+  IconStatistics,
+  LogoInvestyWhite
+} from '@src/assets/svgs'
+import { useSelector } from 'react-redux'
 
 const cx = classNames.bind(styles)
 
 const menu = [
   {
-    icon: <UserIconNavbar />,
-    title: 'Quản lý thông tin',
+    icon: <IconInformation />,
+    title: 'Information',
     link: '/infomation'
   },
   {
-    icon: <CalendarIconNavbar />,
-    title: 'Quản lý lịch học',
-    link: '/calendar'
+    icon: <IconNews />,
+    title: 'News',
+    link: '/news'
   },
   {
-    icon: <DocumentIconNavbar />,
-    title: 'Quản lý tài liệu',
-    link: '/document'
+    icon: <IconMember />,
+    title: 'Member',
+    link: '/member'
+  },
+  {
+    icon: <IconMesseger />,
+    title: 'Messeger',
+    link: '/messeger'
+  },
+  {
+    icon: <IconSettings />,
+    title: 'Settings',
+    link: '/settings'
+  },
+  {
+    icon: <IconStatistics />,
+    title: 'Statistics',
+    link: '/statistics'
   }
 ]
 
 function LayoutUser() {
   const location = useLocation()
+  const userInfo = useSelector((state) => state.auth.user)
+  console.log('userInfo:: ', userInfo)
 
   return (
     <div className={cx('LayoutUser-wrapper')}>
       <div className={cx('user-card')}>
+        <div>
+          <Link to='/'>
+            <LogoInvestyWhite />
+          </Link>
+        </div>
         <ul className={cx('menu')}>
           {menu.map((item, index) => {
             return (
               <Link key={uuidv4(item.link)} to={item.link}>
-                <li className={cx(location.pathname === item.link ? 'active' : '')} key={uuidv4(index)}>
+                <li className={cx(location.pathname === item.link ? 'active' : 'inactive')} key={uuidv4(index)}>
                   <div className={cx('icon')}>{item.icon}</div>
-                  {/* <p>{item.title}</p> */}
+                  <p>{item.title}</p>
                 </li>
               </Link>
             )

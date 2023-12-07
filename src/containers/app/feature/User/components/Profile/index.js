@@ -2,7 +2,6 @@
 import classNames from 'classnames/bind'
 import styles from './Profile.module.sass'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
 import AppModal from '@src/components/AppModal/AppModal'
 import ChangePassword from '../ChangePassword'
 
@@ -57,27 +56,6 @@ function Profile() {
               }}
             >
               {userInfo?.address}
-            </p>
-          </div>
-          <div
-            className={cx('item')}
-            style={{
-              border: 'none'
-            }}
-          >
-            <p>CV</p>
-            <p
-              style={{
-                color: '#7E7E7E',
-                paddingBottom: '2px',
-                display: 'flex'
-              }}
-            >
-              <Link to={userInfo?.cv_link} target='_blank'>
-                <div className={cx('linkcv')}>LinkCV</div>
-              </Link>
-
-              <div className={cx('update')}>Cập nhật</div>
             </p>
           </div>
         </div>

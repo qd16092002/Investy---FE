@@ -25,7 +25,7 @@ const TABS = {
   }
 }
 
-function Infomation() {
+function ProfileAdmin() {
   const userInfo = useSelector((state) => state.auth.user)
   const [activeTab, setActiveTab] = useState(TABS.PROFILE)
 
@@ -82,4 +82,4 @@ function Infomation() {
   )
 }
 
-export default Infomation
+export default ProfileAdmin

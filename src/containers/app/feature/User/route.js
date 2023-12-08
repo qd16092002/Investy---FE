@@ -1,25 +1,24 @@
 import ProfileLayout from '@src/components/Layouts/ProfileLayout'
-import Infomation from './pages/ProfileAdmin'
-import ProfileUser from './pages/ProfileUser'
 import News from './pages/News'
+import Information from './pages/Information'
 
 export const userRouteList = [
   {
     path: '/infomation',
     element: (
       <ProfileLayout>
-        <Infomation />
+        <Information />
       </ProfileLayout>
     )
   },
-  {
-    path: '/infomationuser',
-    element: (
-      <ProfileLayout>
-        <ProfileUser />
-      </ProfileLayout>
-    )
-  },
+  // {
+  //   path: '/infomationuser',
+  //   element: (
+  //     <ProfileLayout>
+  //       <ProfileUser />
+  //     </ProfileLayout>
+  //   )
+  // },
   {
     path: '/member',
     element: <ProfileLayout></ProfileLayout>

@@ -2,23 +2,258 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 
 .details
-    width: 100%
-    margin-top: 20px
-    margin-bottom: 40px
+    width: 70%
     display: flex
-    margin: auto
-    margin-right: 40%
-    margin-bottom: 10px
-    height: 70vh
-    padding:24px
-    border: none
+    justify-content: center
+    max-height: calc( 100vh - 100px )
+    overflow: auto
+    box-shadow: 4px 4px 10px 0px #00000040
     background-color: #FFFFFF
     border-radius: 7px
     .__info
+        width: 100%
+        padding: 16px 24px 0 24px
+        border: none
+        border-radius: 7px
+        .title
+            margin-top: 10px
+            font-family: Kanit
+            font-size: 14px
+            font-weight: 500
+            line-height: 21px
+            letter-spacing: 0.04em
+            text-align: left
+            color: #7E7E7E
+
+        .item
+            width: 100%
+            height: 56px
+            align-items: center
+            justify-content: space-between
+            border-bottom: 1px solid #383838
+            margin-top: 10px
+
+        p
+            font-family: Play
+            font-size: 12px
+            font-weight: 600
+            line-height: 26px
+            letter-spacing: -0.18000000715255737px
+            text-align: left
+            color: #383838
+
+.update
+    color: #7E7E7E
+    &:hover
+        text-decoration: underline
+        cursor: pointer
+        color: #587056
+
+.inputsettings
+    background-color: #FFFFFF
+    color: #666666
+    border: none
+    font-family: 'Play'
+    font-style: normal
+    font-weight: 300
+    font-size: 12px
+    margin-bottom: 2px
+    &:focus-visible
+        outline: none
+.footer
+    display: flex
+    justify-content: flex-end
+    margin-bottom: 10px
+    margin-top: 40px
+    button
+        width: 134px
+        padding: 10px 15px 10px 15px
+        justify: space-between
+        background: #08A5EA
+        color: #FFFFFF
+        border: none
+        border-radius: 7px
+        &:hover
+            cursor: pointer
+            box-shadow: 10px
+.detail
+    display: flex
+    justify-content: space-between
+    .item_2
+        height: 56px
+        align-items: center
+        margin-top: 10px
+        gap: 5px
+.inputsettings_2
+    background-color: #FFFFFF
+    color: #666666
+    border: none
+    font-family: 'Play'
+    font-style: normal
+    font-weight: 300
+    font-size: 12px
+    margin-bottom: 2px
+    margin-left: 10px
+    width: 80%
+    &:focus-visible
+        outline: none
+.previousfinancing
+    width: 53%
+    height: 150px
+    background-color: #C5EDFF
+    padding-top: 5px
+    padding-left: 10px
+    .title
         font-family: Kanit
-        font-size: 14px
+        font-size: 12px
         font-weight: 300
         line-height: 24px
-        letter-spacing: 0.11em
+        letter-spacing: 0.04em
         text-align: left
-        color: #494949
+    .content
+        font-family: Kanit
+        font-size: 14px
+        font-weight: 500
+        line-height: 27px
+        letter-spacing: 0.04em
+        text-align: left
+    button
+        margin-top: 20px
+        width: Hug (138px)
+        height: 30px
+        border-radius: 3px
+        gap: 10px
+        background-color: #1D3461
+        color: #FFFFFF
+        font-family: Kanit
+        font-size: 12px
+        font-weight: 400
+        line-height: 21px
+        letter-spacing: 0.04em
+        text-align: center
+        &:hover
+            cursor: pointer
+            gap: 10px
+.curentlyraising
+    width: 42%
+    height: 150px
+    background-color: #C2F6F2
+    padding-top: 5px
+    padding-left: 10px
+    .title
+        font-family: Kanit
+        font-size: 12px
+        font-weight: 300
+        line-height: 24px
+        letter-spacing: 0.04em
+        text-align: left
+    .content
+        font-family: Kanit
+        font-size: 14px
+        font-weight: 500
+        line-height: 27px
+        letter-spacing: 0.04em
+        text-align: left
+    button
+        margin-top: 20px
+        width: Hug (138px)
+        height: 30px
+        border-radius: 3px
+        gap: 10px
+        background-color: #0C452A
+        color: #FFFFFF
+        font-family: Kanit
+        font-size: 12px
+        font-weight: 400
+        line-height: 21px
+        letter-spacing: 0.04em
+        text-align: center
+        &:hover
+            cursor: pointer
+            gap: 10px
+.main
+    width: 103%
+    display: flex
+    justify-content: space-between
+.details_2
+    width: 28%
+    max-height: calc( 100vh - 100px )
+    overflow: auto
+    border-radius: 7px
+    box-shadow: 4px 4px 10px 0px #00000040
+    background-color: #FFFFFF
+    padding: 20px
+    .__info
+        font-family: Kanit
+        font-size: 20px
+        font-weight: 700
+        line-height: 30px
+        letter-spacing: 0.04em
+        text-align: left
+        color: #112E67
+
+    .items
+        margin-top: 20px
+
+        .uploadimg
+            margin-top: 50px
+            .title
+                font-family: Kanit
+                font-size: 12px
+                font-weight: 500
+                line-height: 21px
+                letter-spacing: 0.04em
+                text-align: left
+                color: #383838
+            .note
+                font-family: Kanit
+                font-size: 9px
+                font-weight: 300
+                line-height: 18px
+                letter-spacing: 0.04em
+                text-align: left
+                color: #666666
+        .title
+            font-family: Kanit
+            font-size: 13px
+            font-weight: 400
+            line-height: 21px
+            letter-spacing: 0.04em
+            text-align: left
+            color: #494949
+        .content
+            justify-content: flex-end
+            font-family: Kanit
+            font-size: 13px
+            font-weight: 500
+            line-height: 21px
+            letter-spacing: 0.04em
+            text-align: right
+            color: #383838
+            width: 40%
+        .input
+            background-color: #F3F3F3
+            border: none
+            padding: 5px 10px
+            &:focus-visible
+                outline: none
+        p
+            font-family: Kanit
+            font-size: 14px
+            font-weight: 500
+            line-height: 18px
+            letter-spacing: 0.04em
+            text-align: left
+            color: #383838
+.button
+    margin-top: 10px
+    height: 30px
+    width: 150px
+    border: none
+    box-shadow: 1px 3px 9.800000190734863px 0px #00000029
+    background-color: #FFFFFF
+    display: flex
+    &:hover
+        cursor: pointer
+    div
+        margin: auto

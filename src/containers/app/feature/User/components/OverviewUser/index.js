@@ -352,7 +352,7 @@ function OverviewUser() {
         </div>
       </form>
       <div className={cx('details_2')}>
-        <div>
+        <div className={cx('avatar_main')}>
           <div className={cx('avatar')}>{userInfo?.username && userInfo?.username[0]?.toUpperCase()}</div>
         </div>
         <div className={cx('items')}>
@@ -361,7 +361,12 @@ function OverviewUser() {
         </div>
         <div className={cx('items')}>
           <div className={cx('title')}>Describe</div>
-          <div className={cx('content')}>
+          <div
+            className={cx('content')}
+            style={{
+              width: '70%'
+            }}
+          >
             This default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it
             consistent throughout all the PDFs, instead of using the default settings, you can choose a specific font
             for both Add Text and the fallback option in edit text features using the Font Options under the Content

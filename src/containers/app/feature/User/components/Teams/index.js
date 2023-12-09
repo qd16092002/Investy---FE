@@ -5,6 +5,8 @@ import { useState } from 'react'
 import { Upload, message } from 'antd'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 import { UrlLinkedin, UrlTwitter, UrlFacebook, IconAddMember } from '@src/assets/svgs'
+import { MemberUser } from '@src/app-configs'
+import { Link } from 'react-router-dom'
 
 const getBase64 = (img, callback) => {
   // eslint-disable-next-line no-undef
@@ -27,6 +29,7 @@ const beforeUpload = (file) => {
 const cx = classNames.bind(styles)
 
 function Teams() {
+  console.log('member: ', MemberUser)
   const [loading, setLoading] = useState(false)
   const [imageUrl, setImageUrl] = useState()
   const handleChange = (info) => {
@@ -57,7 +60,30 @@ function Teams() {
   return (
     <div className={cx('main')}>
       <div className={cx('details')}>
-        <div className={cx('__info')}>Chưa có thành viên nào. Hãy thêm thành viên</div>
+        {MemberUser.length === 0 && <div className={cx('__info')}>Chưa có thành viên nào, Hãy thêm thành viên</div>}
+        {MemberUser.map((member, index) => (
+          <div key={index} className={cx('member')}>
+            <div className={cx('box')}>
+              <div className={cx('avatar_main')}>
+                <div className={cx('avatar')}>{member?.username && member?.username[0]?.toUpperCase()}</div>
+              </div>
+              <div className={cx('fullname')}>{member?.fullName}</div>
+              <div className={cx('position')}>{member?.position}</div>
+              <div className={cx('content')}>{member?.content}</div>
+              <div className={cx('url')}>
+                <Link target='_blank' to={member?.urlFacebook}>
+                  <UrlFacebook />
+                </Link>
+                <Link target='_blank' to={member?.urlLinkedin}>
+                  <UrlLinkedin />
+                </Link>
+                <Link target='_blank' to={member?.urlTwitter}>
+                  <UrlTwitter />
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
       <form className={cx('details_2')}>
         <div className={cx('__info')}>Thêm thành viên</div>
@@ -238,7 +264,13 @@ function Teams() {
           </div>
         </div>
         <button className={cx('button')}>
-          <IconAddMember />
+          <div
+            style={{
+              marginTop: '2px'
+            }}
+          >
+            <IconAddMember />
+          </div>
           <div>Add member</div>
         </button>
       </form>

@@ -16,15 +16,12 @@ function EditProfile() {
   const { register, handleSubmit } = useForm()
   const formInput = useRef()
   const [updateUser, { isLoading: isUpdating }] = useChangeUserInformationMutation()
-
-  // const [updateUser, { isLoading: isUpdating }] = useChangeUserInformationMutation()
   const dispatch = useDispatch()
   const [getProfile] = authApi.endpoints.getLayoutUser.useLazyQuery()
 
   const onSubmit = async (data, e) => {
     const updateResponse = await updateUser(data)
     e.preventDefault()
-
     if (!updateResponse?.error) {
       toast.success('Update information successfully!')
       const response = await getProfile({}, false)

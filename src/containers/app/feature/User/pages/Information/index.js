@@ -9,10 +9,10 @@ function Information() {
   const isAdmin = useMemo(() => userInfo?.role === 'ADMIN', [userInfo])
   return (
     <Fragment>
-      {/* {isAdmin && <ProfileAdmin />}
-      {!isAdmin && <ProfileUser />} */}
-      {isAdmin && <ProfileUser />}
-      {!isAdmin && <ProfileAdmin />}
+      {isAdmin && <ProfileAdmin />}
+      {!isAdmin && <ProfileUser />}
+      {/* {isAdmin && <ProfileUser />}
+      {!isAdmin && <ProfileAdmin />} */}
     </Fragment>
   )
 }

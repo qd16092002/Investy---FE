@@ -357,7 +357,7 @@ function OverviewUser() {
         </div>
         <div className={cx('items')}>
           <div className={cx('title')}>Name</div>
-          <div className={cx('content')}>{userInfo?.fullName}</div>
+          <div className={cx('content_name')}>{userInfo?.fullName}</div>
         </div>
         <div className={cx('items')}>
           <div className={cx('title')}>Describe</div>
@@ -379,7 +379,7 @@ function OverviewUser() {
         </div>
         <div className={cx('items')}>
           <div className={cx('title')}>Specific address</div>
-          <div className={cx('content')}>{userInfo?.address}</div>
+          <div className={cx('content_name')}>{userInfo?.address}</div>
         </div>
       </div>
     </div>

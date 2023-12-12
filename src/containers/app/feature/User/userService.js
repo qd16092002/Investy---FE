@@ -100,20 +100,17 @@ export const userApi = createApi({
         }
       }
     }),
-
     getallprofile: build.query({
       query: () => ({
         url: `/getalluser`
       })
     }),
-
     getAllUserPerformance: build.query({
       query: ({ path, params }) => ({
         url: `/competition/${path.competitionId}/performance/all`,
         params: params
       })
     }),
-
     getstudent: build.query({
       query: () => ({
         url: `/getalluser?role=STUDENT`
@@ -124,11 +121,24 @@ export const userApi = createApi({
         url: `/getalluser?role=TUTOR`
       })
     }),
-
     getProfileById: build.mutation({
       query: (id) => {
         return {
           url: `/users/${id}`
+        }
+      }
+    }),
+    addMember: build.mutation({
+      query: (body) => ({
+        url: '/addTeamMemberByUsername',
+        method: 'POST',
+        body: body
+      })
+    }),
+    getTeamMemberbyID: build.mutation({
+      query: (id) => {
+        return {
+          url: `/teamMembers/${id}`
         }
       }
     })
@@ -150,5 +160,7 @@ export const {
   useLazyGetallprofileQuery,
   useLazyGetstudentQuery,
   useLazyGettutorQuery,
-  useGetProfileByIdMutation
+  useGetProfileByIdMutation,
+  useAddMemberMutation,
+  useGetTeamMemberbyIDMutation
 } = userApi

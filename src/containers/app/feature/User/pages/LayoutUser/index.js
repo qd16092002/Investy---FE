@@ -8,7 +8,7 @@ import {
   IconInformation,
   IconNews,
   IconMember,
-  IconMesseger,
+  // IconMesseger,
   IconSettings,
   IconStatistics,
   LogoInvestyWhite
@@ -33,11 +33,11 @@ const menu = [
     title: 'Member',
     link: '/member'
   },
-  {
-    icon: <IconMesseger />,
-    title: 'Messeger',
-    link: '/messeger'
-  },
+  // {
+  //   icon: <IconMesseger />,
+  //   title: 'Messeger',
+  //   link: '/messeger'
+  // },
   {
     icon: <IconSettings />,
     title: 'Settings',

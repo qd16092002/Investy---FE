@@ -82,7 +82,7 @@ function Header() {
                               fontSize: '14px'
                             }}
                           >
-                            {userInfo?.first_name} {userInfo?.last_name}
+                            {userInfo?.fullName}
                           </div>
                           <div
                             style={{
@@ -155,7 +155,7 @@ function Header() {
                     marginTop: '5px'
                   }}
                 >
-                  <div className={cx('name')}>{userInfo?.username}</div>
+                  <div className={cx('name')}>{userInfo?.fullName}</div>
                   <AppLongText
                     styles={{
                       color: '#7A7A7A',

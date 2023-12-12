@@ -21,10 +21,13 @@ export const userSlice = createSlice({
     },
     setDocuments: (state, action) => {
       state.documents = action.payload
+    },
+    setTeamMember: (state, action) => {
+      state.teamMembers = action.payload
     }
   }
 })
 
-export const { increment, decrement, setCalendar, setDocuments } = userSlice.actions
+export const { increment, decrement, setCalendar, setDocuments, setTeamMember } = userSlice.actions
 
 export default userSlice.reducer

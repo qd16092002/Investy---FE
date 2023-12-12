@@ -1,12 +1,17 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
 import styles from './Teams.module.sass'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Upload, message } from 'antd'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons'
 import { UrlLinkedin, UrlTwitter, UrlFacebook, IconAddMember } from '@src/assets/svgs'
-import { MemberUser } from '@src/app-configs'
 import { Link } from 'react-router-dom'
+import { useAddMemberMutation, useGetTeamMemberbyIDMutation, userApi } from '../../userService'
+import toast from 'react-hot-toast'
+import { setTeamMember } from '@src/containers/app/feature/User/userSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { useForm } from 'react-hook-form'
+// import { MemberUser } from '@src/app-configs'
 
 const getBase64 = (img, callback) => {
   // eslint-disable-next-line no-undef
@@ -29,9 +34,10 @@ const beforeUpload = (file) => {
 const cx = classNames.bind(styles)
 
 function Teams() {
-  console.log('member: ', MemberUser)
+  // console.log('member: ', MemberUser)
   const [loading, setLoading] = useState(false)
   const [imageUrl, setImageUrl] = useState()
+  const formInput = useRef()
   const handleChange = (info) => {
     if (info.file.status === 'uploading') {
       setLoading(true)
@@ -57,27 +63,66 @@ function Teams() {
       </div>
     </div>
   )
+  const userInfo = useSelector((state) => state.auth.user)
+  const dispatch = useDispatch()
+  const [getteammemberbyid, { data: MemberUserbyId }] = useGetTeamMemberbyIDMutation(
+    userApi.endpoints.getteammemberbyid
+  )
+  useEffect(() => {
+    getteammemberbyid(userInfo?._id)
+  }, [getteammemberbyid, userInfo?._id])
+
+  const [addMember, { isLoading: isUpdating }] = useAddMemberMutation()
+  const onSubmit = async (data, e) => {
+    const updateResponse = await addMember({
+      data,
+      username: userInfo?.username,
+      fullNameUserTeam: data.fullNameUserTeam,
+      position: data.position,
+      bio: data.bio,
+      linkedinUrl: data.linkedinUrl,
+      facebookUrl: data.facebookUrl,
+      twitterUrl: data.twitterUrl
+    })
+    e.preventDefault()
+    if (!updateResponse?.error) {
+      toast.success('Update information successfully!')
+      const response = await getteammemberbyid(userInfo?._id, false)
+      if (!response?.error) {
+        console.log('response::  ', response)
+        dispatch(setTeamMember(response.data[0]))
+      }
+    } else {
+      toast.error('Something went wrong, please try again')
+    }
+  }
+  const { register, handleSubmit } = useForm()
+
   return (
     <div className={cx('main')}>
       <div className={cx('details')}>
-        {MemberUser.length === 0 && <div className={cx('__info')}>Chưa có thành viên nào, Hãy thêm thành viên</div>}
-        {MemberUser.map((member, index) => (
+        {MemberUserbyId?.teamMembers.length === 0 && (
+          <div className={cx('__info')}>Chưa có thành viên nào, Hãy thêm thành viên</div>
+        )}
+        {MemberUserbyId?.teamMembers.map((member, index) => (
           <div key={index} className={cx('member')}>
             <div className={cx('box')}>
               <div className={cx('avatar_main')}>
-                <div className={cx('avatar')}>{member?.username && member?.username[0]?.toUpperCase()}</div>
+                <div className={cx('avatar')}>
+                  {member?.fullNameUserTeam && member?.fullNameUserTeam[0]?.toUpperCase()}
+                </div>
               </div>
-              <div className={cx('fullname')}>{member?.fullName}</div>
+              <div className={cx('fullname')}>{member?.fullNameUserTeam}</div>
               <div className={cx('position')}>{member?.position}</div>
-              <div className={cx('content')}>{member?.content}</div>
+              <div className={cx('content')}>{member?.bio}</div>
               <div className={cx('url')}>
-                <Link target='_blank' to={member?.urlFacebook}>
+                <Link target='_blank' to={member?.facebookUrl}>
                   <UrlFacebook />
                 </Link>
-                <Link target='_blank' to={member?.urlLinkedin}>
+                <Link target='_blank' to={member?.linkedinUrl}>
                   <UrlLinkedin />
                 </Link>
-                <Link target='_blank' to={member?.urlTwitter}>
+                <Link target='_blank' to={member?.twitterUrl}>
                   <UrlTwitter />
                 </Link>
               </div>
@@ -85,7 +130,7 @@ function Teams() {
           </div>
         ))}
       </div>
-      <form className={cx('details_2')}>
+      <form onSubmit={handleSubmit(onSubmit)} className={cx('details_2')}>
         <div className={cx('__info')}>Thêm thành viên</div>
         <div
           className={cx('items')}
@@ -131,11 +176,11 @@ function Teams() {
             }}
             placeholder='Import'
             type='text'
-            // {...register('fullName')}
+            {...register('fullNameUserTeam')}
           ></input>
         </div>
         <div className={cx('items')}>
-          <div className={cx('title')}>Title</div>
+          <div className={cx('title')}>Position</div>
           <input
             className={cx('input')}
             style={{
@@ -143,7 +188,7 @@ function Teams() {
             }}
             placeholder='Import'
             type='text'
-            // {...register('fullName')}
+            {...register('position')}
           ></input>
         </div>
         <div className={cx('items')}>
@@ -155,7 +200,7 @@ function Teams() {
             }}
             placeholder='Biography'
             type='text'
-            // {...register('fullName')}
+            {...register('bio')}
           ></textarea>
         </div>
         <div className={cx('items')}>
@@ -190,8 +235,7 @@ function Teams() {
               }}
               placeholder='LinkedIn URL'
               type='text'
-              // {...register('phoneNumber')}
-              // defaultValue={userInfo?.phoneNumber}
+              {...register('linkedinUrl')}
             ></input>
           </div>
         </div>
@@ -222,10 +266,9 @@ function Teams() {
               style={{
                 marginTop: '5px'
               }}
-              placeholder='LinkedIn URL'
+              placeholder='Facebook URL'
               type='text'
-              // {...register('phoneNumber')}
-              // defaultValue={userInfo?.phoneNumber}
+              {...register('facebookUrl')}
             ></input>
           </div>
         </div>
@@ -256,14 +299,20 @@ function Teams() {
               style={{
                 marginTop: '5px'
               }}
-              placeholder='LinkedIn URL'
+              placeholder='Twitter URL'
               type='text'
-              // {...register('phoneNumber')}
-              // defaultValue={userInfo?.phoneNumber}
+              {...register('twitterUrl')}
             ></input>
           </div>
         </div>
-        <button className={cx('button')}>
+        <button
+          onClick={() => {
+            formInput.current.click()
+          }}
+          type='submit'
+          disabled={isUpdating}
+          className={cx('button')}
+        >
           <div
             style={{
               marginTop: '2px'

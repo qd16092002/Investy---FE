@@ -11,23 +11,26 @@ import { useRef } from 'react'
 import { Select } from 'antd'
 import { IconMoney, UrlFacebook, UrlLinkedin, UrlTwitter } from '@src/assets/svgs'
 import { BusinessType, Producttype } from '@src/app-configs'
+import AppModal from '@src/components/AppModal'
+import SetCurrentRound from '../SetCurrentRound'
+import AddPreviousRound from '../AddPreviousRound'
 
 const cx = classNames.bind(styles)
 
 function OverviewUser() {
+  const onClose = () => {
+    closeRef.current.click()
+  }
+  const closeRef = useRef()
   const userInfo = useSelector((state) => state.auth.user)
   const { register, handleSubmit } = useForm()
   const formInput = useRef()
   const [updateUser, { isLoading: isUpdating }] = useChangeUserInformationMutation()
-
-  // const [updateUser, { isLoading: isUpdating }] = useChangeUserInformationMutation()
   const dispatch = useDispatch()
   const [getProfile] = authApi.endpoints.getLayoutUser.useLazyQuery()
-
   const onSubmit = async (data, e) => {
     const updateResponse = await updateUser(data)
     e.preventDefault()
-
     if (!updateResponse?.error) {
       toast.success('Update information successfully!')
       const response = await getProfile({}, false)
@@ -42,7 +45,6 @@ function OverviewUser() {
   const handleChange = (value) => {
     console.log(`selected ${value}`)
   }
-
   return (
     <div className={cx('main')}>
       <Toaster position='top-center' />
@@ -76,8 +78,7 @@ function OverviewUser() {
               className={cx('inputsettings')}
               placeholder='Copy & Import...'
               type='text'
-              {...register('phoneNumber')}
-              defaultValue={userInfo?.phoneNumber}
+              {...register('urlWeb')}
             ></input>
           </div>
           <div
@@ -92,7 +93,7 @@ function OverviewUser() {
             <div className={cx('item_2')}>
               <p>Business type</p>
               <Select
-                {...register('interestedField', { required: 'Interested field is required' })}
+                {...register('BusinessType', { required: 'Interested field is required' })}
                 mode='multiple'
                 id='interestedField'
                 style={{
@@ -113,7 +114,7 @@ function OverviewUser() {
             <div className={cx('item_2')}>
               <p>Product type</p>
               <Select
-                {...register('interestedField', { required: 'Interested field is required' })}
+                {...register('Producttype', { required: 'Interested field is required' })}
                 mode='multiple'
                 id='interestedField'
                 style={{
@@ -134,7 +135,7 @@ function OverviewUser() {
             <div className={cx('item_2')}>
               <p>Company stage</p>
               <select
-                {...register('subject')}
+                {...register('companystage')}
                 style={{
                   width: '230px',
                   height: '33.5px',
@@ -177,8 +178,7 @@ function OverviewUser() {
                   className={cx('inputsettings_2')}
                   placeholder='Annual revenue'
                   type='text'
-                  {...register('phoneNumber')}
-                  defaultValue={userInfo?.phoneNumber}
+                  {...register('annualrevenue')}
                 ></input>
               </div>
             </div>
@@ -199,13 +199,7 @@ function OverviewUser() {
                 }}
               >
                 <IconMoney />
-                <input
-                  className={cx('inputsettings_2')}
-                  placeholder='MRR'
-                  type='text'
-                  {...register('phoneNumber')}
-                  defaultValue={userInfo?.phoneNumber}
-                ></input>
+                <input className={cx('inputsettings_2')} placeholder='MRR' type='text' {...register('MRR')}></input>
               </div>
             </div>
 
@@ -220,12 +214,11 @@ function OverviewUser() {
                   color: '#7A7A7A',
                   alignItems: 'center',
                   marginTop: '3px',
-                  paddingLeft: '5px'
+                  paddingLeft: '10px'
                 }}
                 placeholder='Import...'
                 type='text'
-                {...register('phoneNumber')}
-                defaultValue={userInfo?.phoneNumber}
+                {...register('mployeescount')}
               ></input>
             </div>
           </div>
@@ -259,8 +252,7 @@ function OverviewUser() {
                   className={cx('inputsettings_2')}
                   placeholder='LinkedIn URL'
                   type='text'
-                  {...register('phoneNumber')}
-                  defaultValue={userInfo?.phoneNumber}
+                  {...register('urlLinkedin')}
                 ></input>
               </div>
             </div>
@@ -285,8 +277,7 @@ function OverviewUser() {
                   className={cx('inputsettings_2')}
                   placeholder='Facebook URL'
                   type='text'
-                  {...register('phoneNumber')}
-                  defaultValue={userInfo?.phoneNumber}
+                  {...register('urlFacebook')}
                 ></input>
               </div>
             </div>
@@ -311,8 +302,7 @@ function OverviewUser() {
                   className={cx('inputsettings_2')}
                   placeholder='Twitter URL'
                   type='text'
-                  {...register('phoneNumber')}
-                  defaultValue={userInfo?.phoneNumber}
+                  {...register('urlTwitter')}
                 ></input>
               </div>
             </div>
@@ -329,12 +319,42 @@ function OverviewUser() {
             <div className={cx('curentlyraising')}>
               <div className={cx('title')}>CURRENTLY RAISING</div>
               <div className={cx('content')}>The external funding the project needs now.</div>
-              <button>Set current round</button>
+              <AppModal
+                triggerBtn={<button>Set current round</button>}
+                contentStyle={{
+                  width: '50vw',
+                  // height: '72vh',
+                  left: '54vw',
+                  top: '49vh',
+                  backgroundColor: 'white',
+                  boxShadow: '4px 4px 10px 0px #00000040',
+                  borderRadius: '7px',
+                  padding: '20px'
+                }}
+                ref={closeRef}
+              >
+                <SetCurrentRound onClose={onClose} />
+              </AppModal>
             </div>
             <div className={cx('previousfinancing')}>
               <div className={cx('title')}>PREVIOUS FINANCING</div>
               <div className={cx('content')}>Preverious external or internal financing of the project.</div>
-              <button>Add previous round</button>
+              <AppModal
+                triggerBtn={<button>Add previous round</button>}
+                contentStyle={{
+                  width: '50vw',
+                  // height: '75vh',
+                  left: '54vw',
+                  top: '49vh',
+                  backgroundColor: 'white',
+                  boxShadow: '4px 4px 10px 0px #00000040',
+                  borderRadius: '7px',
+                  padding: '20px'
+                }}
+                ref={closeRef}
+              >
+                <AddPreviousRound onClose={onClose} />
+              </AppModal>
             </div>
           </div>
           <div className={cx('footer')}>
@@ -375,6 +395,7 @@ function OverviewUser() {
         </div>
         <div className={cx('items')}>
           <div className={cx('title')}>Web url</div>
+
           <div className={cx('contenturl')}>Avvtar Neytiri</div>
         </div>
         <div className={cx('items')}>

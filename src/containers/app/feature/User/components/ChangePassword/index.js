@@ -20,7 +20,7 @@ function ChangePassword() {
 
   return (
     <div style={{ overflow: 'clip' }}>
-      <div className={cx('title')}>Đổi mật khẩu</div>
+      <div className={cx('title')}>Change Password</div>
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit((data) => handleSubmit(data))}>
           <Row>
@@ -29,7 +29,7 @@ function ChangePassword() {
                 id='currentPassword'
                 {...methods.register('currentPassword', { required: true })}
                 type={eyeShow1 === true ? 'text' : 'password'}
-                placeholder='Mật khẩu cũ'
+                placeholder='Enter your old password'
               />
 
               <div className={cx('eye-icon')} onClick={() => setEyeShow1(!eyeShow1)}>
@@ -43,7 +43,7 @@ function ChangePassword() {
                 id='newPassword'
                 {...methods.register('newPassword', { required: true })}
                 type={eyeShow2 === true ? 'text' : 'password'}
-                placeholder='Nhập mật khẩu mới'
+                placeholder='Enter your new password'
               />
 
               <div className={cx('eye-icon')} onClick={() => setEyeShow2(!eyeShow2)}>
@@ -57,7 +57,7 @@ function ChangePassword() {
                 id='confirmPassword'
                 {...methods.register('confirmPassword', { required: true })}
                 type={eyeShow3 === true ? 'text' : 'password'}
-                placeholder='Nhập lại mật khẩu mới'
+                placeholder='Re-enter your new password'
               />
 
               <div className={cx('eye-icon')} onClick={() => setEyeShow3(!eyeShow3)}>

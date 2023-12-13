@@ -1,6 +1,8 @@
 import ProfileLayout from '@src/components/Layouts/ProfileLayout'
 import News from './pages/News'
 import Information from './pages/Information'
+import Settings from './pages/Settings'
+import Predict from './pages/Predict'
 
 export const userRouteList = [
   {
@@ -37,10 +39,19 @@ export const userRouteList = [
   },
   {
     path: '/settings',
-    element: <ProfileLayout></ProfileLayout>
+    element: (
+      <ProfileLayout>
+        <Settings />
+      </ProfileLayout>
+    )
   },
   {
     path: '/statistics',
     element: <ProfileLayout></ProfileLayout>
+  },
+
+  {
+    path: '/predict',
+    element: <Predict />
   }
 ]

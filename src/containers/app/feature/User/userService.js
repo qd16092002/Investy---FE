@@ -141,6 +141,18 @@ export const userApi = createApi({
           url: `/teamMembers/${id}`
         }
       }
+    }),
+    addPredict: build.mutation({
+      query: (body) => ({
+        url: '/predict',
+        method: 'POST',
+        body: body
+      })
+    }),
+    getPredict: build.query({
+      query: () => ({
+        url: `/predict`
+      })
     })
   })
 })
@@ -162,5 +174,7 @@ export const {
   useLazyGettutorQuery,
   useGetProfileByIdMutation,
   useAddMemberMutation,
-  useGetTeamMemberbyIDMutation
+  useGetTeamMemberbyIDMutation,
+  useAddPredictMutation,
+  useGetPredictQuery
 } = userApi

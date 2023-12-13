@@ -322,6 +322,7 @@ function Teams() {
           </div>
           <div>Add member</div>
         </button>
+        <div> message</div>
       </form>
     </div>
   )

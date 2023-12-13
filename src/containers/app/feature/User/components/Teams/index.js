@@ -71,7 +71,6 @@ function Teams() {
   useEffect(() => {
     getteammemberbyid(userInfo?._id)
   }, [getteammemberbyid, userInfo?._id])
-
   const [addMember, { isLoading: isUpdating }] = useAddMemberMutation()
   const onSubmit = async (data, e) => {
     const updateResponse = await addMember({
@@ -322,7 +321,6 @@ function Teams() {
           </div>
           <div>Add member</div>
         </button>
-        <div> message</div>
       </form>
     </div>
   )

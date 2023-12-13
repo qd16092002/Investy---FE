@@ -2,7 +2,7 @@
 import classNames from 'classnames/bind'
 import styles from './Predict.module.sass'
 import { useForm } from 'react-hook-form'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useAddPredictMutation } from '../../userService'
 import toast from 'react-hot-toast'
 import { ArrowRightOutlined } from '@ant-design/icons'
@@ -10,6 +10,7 @@ import { ArrowRightOutlined } from '@ant-design/icons'
 const cx = classNames.bind(styles)
 
 function Predict() {
+  const [updateData, setUpdateData] = useState(null)
   const { register, handleSubmit } = useForm()
   const [addPredict, { isLoading: isUpdating }] = useAddPredictMutation()
   const formInput = useRef()
@@ -27,6 +28,7 @@ function Predict() {
     e.preventDefault()
     if (!updateResponse?.error) {
       toast.success('Successfully!')
+      setUpdateData(updateResponse?.data?.price)
     } else {
       toast.error('Something went wrong, please try again')
     }
@@ -116,10 +118,8 @@ function Predict() {
             <ArrowRightOutlined />
             <ArrowRightOutlined />
           </div>
-          <div className={cx('input')}>
-            {/* {predict.price} */}
-            12904992347.0
-          </div>
+
+          {updateData && <div className={cx('input')}> {JSON.stringify(updateData)}</div>}
         </div>
       </div>
       <button

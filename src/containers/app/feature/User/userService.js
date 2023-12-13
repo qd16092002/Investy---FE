@@ -148,11 +148,6 @@ export const userApi = createApi({
         method: 'POST',
         body: body
       })
-    }),
-    getPredict: build.query({
-      query: () => ({
-        url: `/predict`
-      })
     })
   })
 })

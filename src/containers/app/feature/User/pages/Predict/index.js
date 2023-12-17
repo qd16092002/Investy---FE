@@ -12,12 +12,8 @@ const cx = classNames.bind(styles)
 function Predict() {
   const [updateData, setUpdateData] = useState(null)
   const { register, handleSubmit } = useForm()
-  const [addPredict, { isLoading: isUpdating }] = useAddPredictMutation()
+  const [addPredict] = useAddPredictMutation()
   const formInput = useRef()
-  // const [getPredict, { data: predict }] = useGetPredictQuery()
-  // useEffect(() => {
-  //   getPredict({}, false)
-  // }, [getPredict])
   const onSubmit = async (data, e) => {
     const updateResponse = await addPredict({
       data
@@ -28,7 +24,8 @@ function Predict() {
     e.preventDefault()
     if (!updateResponse?.error) {
       toast.success('Successfully!')
-      setUpdateData(updateResponse?.data?.price)
+      setUpdateData(updateResponse)
+      console.log('Message:  ', updateResponse)
     } else {
       toast.error('Something went wrong, please try again')
     }
@@ -127,7 +124,6 @@ function Predict() {
           formInput.current.click()
         }}
         type='submit'
-        disabled={isUpdating}
         className={cx('button')}
       >
         Submit

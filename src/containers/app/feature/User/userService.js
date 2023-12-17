@@ -170,6 +170,5 @@ export const {
   useGetProfileByIdMutation,
   useAddMemberMutation,
   useGetTeamMemberbyIDMutation,
-  useAddPredictMutation,
-  useGetPredictQuery
+  useAddPredictMutation
 } = userApi

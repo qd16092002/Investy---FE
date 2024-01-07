@@ -11,7 +11,6 @@ import toast from 'react-hot-toast'
 import { setTeamMember } from '@src/containers/app/feature/User/userSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
-// import { MemberUser } from '@src/app-configs'
 
 const getBase64 = (img, callback) => {
   // eslint-disable-next-line no-undef
@@ -76,6 +75,7 @@ function Teams() {
     const updateResponse = await addMember({
       data,
       username: userInfo?.username,
+      avt: data.avt,
       fullNameUserTeam: data.fullNameUserTeam,
       position: data.position,
       bio: data.bio,
@@ -159,6 +159,7 @@ function Teams() {
                   style={{
                     width: '100%'
                   }}
+                  {...register('avt')}
                 />
               ) : (
                 uploadButton

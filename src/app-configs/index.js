@@ -56,102 +56,75 @@ export const Producttype = [
     value: 'Other'
   }
 ]
-export const MemberUser = [
+export const MemberInvestor = [
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'Alice',
+    position: 'CEO tại Investy',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'
   },
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'John',
+    position: 'CTO tại Sunhouse',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'
   },
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'Jane',
+    position: 'CMO tại BKC',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'
   },
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'Doe',
+    position: 'TechLead tại Vin',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'
   },
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'Bob',
+    position: 'AI Leader',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'
   },
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'Charlie',
+    position: 'Leader',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'
   },
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'Emma',
+    position: 'HR',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'
   },
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'David',
+    position: 'AI Engineer',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'
   },
   {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
-    urlFacebook: 'https://www.facebook.com/quangdao1609/',
-    urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
-    urlTwitter: 'https://twitter.com/qd1609'
-  },
-  {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
-    urlFacebook: 'https://www.facebook.com/quangdao1609/',
-    urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
-    urlTwitter: 'https://twitter.com/qd1609'
-  },
-  {
-    username: 'quangdao',
-    fullNameUserTeam: 'Trần Quang Đạo',
-    position: 'Admin',
-    bio: ' this default behavior can lead to fonts with an inconsistent appearance in a PDF document. To make it consistent throughout all the PDFs, instead of using the default settings',
+    fullNameUserTeam: 'Eva',
+    position: 'King',
+    bio: ' Training Supervisor at Lazada Logistic',
     urlFacebook: 'https://www.facebook.com/quangdao1609/',
     urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
     urlTwitter: 'https://twitter.com/qd1609'

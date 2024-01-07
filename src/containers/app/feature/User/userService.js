@@ -121,6 +121,21 @@ export const userApi = createApi({
         url: `/getalluser?role=TUTOR`
       })
     }),
+    getStartUp: build.query({
+      query: () => ({
+        url: `/getalluser?role=STARTUP`
+      })
+    }),
+    getInvestor: build.query({
+      query: () => ({
+        url: `/getalluser?role=INVESTOR`
+      })
+    }),
+    getPercentage: build.query({
+      query: () => ({
+        url: `/user/roles`
+      })
+    }),
     getProfileById: build.mutation({
       query: (id) => {
         return {
@@ -170,5 +185,8 @@ export const {
   useGetProfileByIdMutation,
   useAddMemberMutation,
   useGetTeamMemberbyIDMutation,
-  useAddPredictMutation
+  useAddPredictMutation,
+  useLazyGetInvestorQuery,
+  useLazyGetStartUpQuery,
+  useLazyGetPercentageQuery
 } = userApi

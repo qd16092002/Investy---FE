@@ -17,7 +17,7 @@ import { useSelector } from 'react-redux'
 
 const cx = classNames.bind(styles)
 
-const menu = [
+const menuUser = [
   {
     icon: <IconInformation />,
     title: 'Information',
@@ -33,11 +33,28 @@ const menu = [
     title: 'Member',
     link: '/member'
   },
-  // {
-  //   icon: <IconMesseger />,
-  //   title: 'Messeger',
-  //   link: '/messeger'
-  // },
+  {
+    icon: <IconSettings />,
+    title: 'Settings',
+    link: '/settings'
+  }
+]
+const menuAdmin = [
+  {
+    icon: <IconInformation />,
+    title: 'Information',
+    link: '/infomation'
+  },
+  {
+    icon: <IconNews />,
+    title: 'News',
+    link: '/news'
+  },
+  {
+    icon: <IconMember />,
+    title: 'Member',
+    link: '/member'
+  },
   {
     icon: <IconSettings />,
     title: 'Settings',
@@ -63,18 +80,34 @@ function LayoutUser() {
             <LogoInvestyWhite />
           </Link>
         </div>
-        <ul className={cx('menu')}>
-          {menu.map((item, index) => {
-            return (
-              <Link key={uuidv4(item.link)} to={item.link}>
-                <li className={cx(location.pathname === item.link ? 'active' : 'inactive')} key={uuidv4(index)}>
-                  <div className={cx('icon')}>{item.icon}</div>
-                  <p>{item.title}</p>
-                </li>
-              </Link>
-            )
-          })}
-        </ul>
+        {userInfo?.role !== 'ADMIN' && (
+          <ul className={cx('menu')}>
+            {menuUser.map((item, index) => {
+              return (
+                <Link key={uuidv4(item.link)} to={item.link}>
+                  <li className={cx(location.pathname === item.link ? 'active' : 'inactive')} key={uuidv4(index)}>
+                    <div className={cx('icon')}>{item.icon}</div>
+                    <p>{item.title}</p>
+                  </li>
+                </Link>
+              )
+            })}
+          </ul>
+        )}
+        {userInfo?.role === 'ADMIN' && (
+          <ul className={cx('menu')}>
+            {menuAdmin.map((item, index) => {
+              return (
+                <Link key={uuidv4(item.link)} to={item.link}>
+                  <li className={cx(location.pathname === item.link ? 'active' : 'inactive')} key={uuidv4(index)}>
+                    <div className={cx('icon')}>{item.icon}</div>
+                    <p>{item.title}</p>
+                  </li>
+                </Link>
+              )
+            })}
+          </ul>
+        )}
       </div>
     </div>
   )

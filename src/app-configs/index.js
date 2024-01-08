@@ -58,6 +58,48 @@ export const Producttype = [
 ]
 export const MemberInvestor = [
   {
+    fullNameUserTeam: 'Quang Đạo',
+    position: 'CTO',
+    bio: 'Student of Hust',
+    urlFacebook: 'https://www.facebook.com/quangdao1609/',
+    urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
+    urlTwitter: 'https://twitter.com/qd1609'
+  },
+  {
+    fullNameUserTeam: 'Hải Văn',
+    position: 'CEO',
+    bio: 'Student of Hust',
+    urlFacebook: 'https://www.facebook.com/quangdao1609/',
+    urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
+    urlTwitter: 'https://twitter.com/qd1609'
+  },
+  {
+    fullNameUserTeam: 'Ngọc Thành',
+    position: 'CTO',
+    bio: 'Student of Hust',
+    urlFacebook: 'https://www.facebook.com/quangdao1609/',
+    urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
+    urlTwitter: 'https://twitter.com/qd1609'
+  },
+  {
+    fullNameUserTeam: 'Mai Vũ Duy',
+    position: 'CMO',
+    bio: 'Student of Hust',
+    urlFacebook: 'https://www.facebook.com/quangdao1609/',
+    urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
+    urlTwitter: 'https://twitter.com/qd1609'
+  },
+  {
+    fullNameUserTeam: 'Lê Đức Quân',
+    position: 'CEO',
+    bio: 'Student of Hust',
+    urlFacebook: 'https://www.facebook.com/quangdao1609/',
+    urlLinkedin: 'https://www.linkedin.com/in/%C4%91%E1%BA%A1o-tr%E1%BA%A7n-431860171/',
+    urlTwitter: 'https://twitter.com/qd1609'
+  }
+]
+export const MemberMentor = [
+  {
     fullNameUserTeam: 'Alice',
     position: 'CEO tại Investy',
     bio: ' Training Supervisor at Lazada Logistic',

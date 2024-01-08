@@ -33,7 +33,7 @@ function Profile() {
                 paddingBottom: '2px'
               }}
             >
-              {userInfo?.date_of_birth}
+              {userInfo?.dateOfBirth}
             </p>
           </div>
           <div className={cx('item')}>

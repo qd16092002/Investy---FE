@@ -8,6 +8,7 @@ import Teams from '../../components/Teams'
 import Documents from '../../components/Documents'
 import VideoPitch from '../../components/VideoPitch'
 import QA from '../../components/QA'
+import { useSelector } from 'react-redux'
 
 const cx = classNames.bind(styles)
 const TABS = {
@@ -29,8 +30,8 @@ const TABS = {
 }
 
 function ProfileUser() {
+  const userInfo = useSelector((state) => state.auth.user)
   const [activeTab, setActiveTab] = useState(TABS.OVERVIEW)
-
   return (
     <div className={cx('form-wallpaper')}>
       <div className={cx('form-header')}>
@@ -43,12 +44,14 @@ function ProfileUser() {
               >
                 Overview
               </div>
-              <div
-                className={cx('header__title', activeTab.code === TABS.TEAMS.code ? 'active' : 'inactive')}
-                onClick={() => setActiveTab(TABS.TEAMS)}
-              >
-                Team
-              </div>
+              {userInfo?.role === 'STARTUP' && (
+                <div
+                  className={cx('header__title', activeTab.code === TABS.TEAMS.code ? 'active' : 'inactive')}
+                  onClick={() => setActiveTab(TABS.TEAMS)}
+                >
+                  Team
+                </div>
+              )}
               <div
                 className={cx('header__title', activeTab.code === TABS.DOCUMENTS.code ? 'active' : 'inactive')}
                 onClick={() => setActiveTab(TABS.DOCUMENTS)}

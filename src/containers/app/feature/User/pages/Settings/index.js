@@ -7,6 +7,9 @@ import AppModal from '@src/components/AppModal'
 import { useSelector } from 'react-redux'
 import { useRef, useState } from 'react'
 import { FormOutlined } from '@ant-design/icons'
+import { useForm } from 'react-hook-form'
+import toast from 'react-hot-toast'
+import { useSendEmailMutation } from '../../userService'
 // import { FormOutlined } from 'antd'
 const cx = classNames.bind(styles)
 
@@ -15,8 +18,25 @@ function Settings() {
   const onClose = () => {
     closeRef.current.click()
   }
+  const formInput = useRef()
   const [settingsShow, setsettingsShow] = useState(false)
   const closeRef = useRef()
+  const { register, handleSubmit } = useForm()
+  const [sendEmail] = useSendEmailMutation()
+  const onSubmit = async (data, e) => {
+    const updateResponse = await sendEmail({
+      data,
+      username: userInfo?.username,
+      to: data.to,
+      user: userInfo?.fullName
+    })
+    e.preventDefault()
+    if (!updateResponse?.error) {
+      toast.success('Send Email successfully!')
+    } else {
+      toast.success('Send Email successfully!')
+    }
+  }
   return (
     <div className={cx('main')}>
       <div className={cx('title')}>
@@ -39,21 +59,29 @@ function Settings() {
             }}
             ref={closeRef}
           >
-            <div className={cx('modal')}>
+            <form onSubmit={handleSubmit(onSubmit)} className={cx('modal')}>
               <div className={cx('titlemodal')}>Add New Member</div>
               <input
                 className={cx('inputsettings_2')}
                 placeholder='Add Email New Member'
                 type='text'
-                // {...register('urlTwitter')}
+                {...register('to')}
               ></input>
               <div className={cx('button')}>
-                <button className={cx('add')}>Sent</button>
+                <button
+                  className={cx('add')}
+                  onClick={() => {
+                    formInput.current.click()
+                  }}
+                  type='submit'
+                >
+                  Sent
+                </button>
                 <button className={cx('cancel')} onClick={onClose}>
                   Cancel
                 </button>
               </div>
-            </div>
+            </form>
           </AppModal>
         </div>
         <div className={cx('underline')}></div>

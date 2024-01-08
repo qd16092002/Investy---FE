@@ -5,13 +5,13 @@ import { Table } from 'antd'
 import { useEffect, useState } from 'react'
 import { IconUserSearch } from '@src/assets/svgs'
 import ProfileDetails from '../ProfileDetails'
-import { useLazyGetstudentQuery } from '../../userService'
+import { useLazyGetStartUpQuery } from '../../userService'
 
 const cx = classNames.bind(styles)
 
 function ProfileStudent() {
   const [searchedText, setSearchedText] = useState('')
-  const [getstudent, { data: studentif }] = useLazyGetstudentQuery({})
+  const [getstudent, { data: studentif }] = useLazyGetStartUpQuery({})
   useEffect(() => {
     getstudent({}, false)
   }, [getstudent])

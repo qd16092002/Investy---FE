@@ -8,18 +8,21 @@ import { useState } from 'react'
 const cx = classNames.bind(styles)
 
 function Statistics() {
-  // const [{ data: percentage }] = useLazyGetPercentageQuery({})
+  // const [getPercentage, { data: Percentageif }] = useLazyGetPercentageQuery({})
+  // useEffect(() => {
+  //   getPercentage({}, false)
+  // }, [getPercentage])
   const COLORS = ['#1751D0', '#AFECEF', '#0A090B', '#E6E6E6', '#194B7D']
   const [datauser] = useState([
-    { role: 'Investor', percentage: 30, count: 300 },
-    { role: 'Start-Up', percentage: 70, count: 700 }
+    { role: 'Investor', percentage: 45, count: 5 },
+    { role: 'Start-Up', percentage: 55, count: 6 }
   ])
   const [datafield] = useState([
-    { role: 'Medicial', percentage: 10, count: 100 },
-    { role: 'Transportation', percentage: 20, count: 200 },
-    { role: 'F&B', percentage: 30, count: 300 },
-    { role: 'Logistic', percentage: 25, count: 250 },
-    { role: 'NFT,Crypto', percentage: 15, count: 150 }
+    { role: 'Medicial', percentage: 10, count: 1 },
+    { role: 'Transportation', percentage: 20, count: 2 },
+    { role: 'F&B', percentage: 30, count: 3 },
+    { role: 'Logistic', percentage: 30, count: 3 },
+    { role: 'NFT,Crypto', percentage: 10, count: 1 }
   ])
   const downloadDataAsJSON = () => {
     // Thêm trường thời gian với giá trị thời gian hiện tại
@@ -130,6 +133,8 @@ function Statistics() {
             Dowload Data Json
           </button>
         </div>
+      </div>
+      <div className={cx('content')}>
         <div className={cx('hinh1')}>
           <div className={cx('pie')}>
             <div className={cx('tieude')}>Total Interested Field</div>

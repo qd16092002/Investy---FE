@@ -54,8 +54,8 @@ function EditProfile() {
               className={cx('inputsettings')}
               placeholder='Thêm ngày sinh'
               type='text'
-              {...register('date_of_birth')}
-              defaultValue={userInfo?.date_of_birth}
+              {...register('dateOfBirth')}
+              defaultValue={userInfo?.dateOfBirth}
             ></input>
           </div>
           <div className={cx('item')}>

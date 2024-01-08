@@ -5,13 +5,13 @@ import { Table } from 'antd'
 import { useEffect, useState } from 'react'
 import { IconUserSearch } from '@src/assets/svgs'
 import ProfileDetails from '../ProfileDetails'
-import { useLazyGettutorQuery } from '../../userService'
+import { useLazyGetInvestorQuery } from '../../userService'
 
 const cx = classNames.bind(styles)
 
 function ProfileTutor() {
   const [searchedText, setSearchedText] = useState('')
-  const [gettutor, { data: tutorif }] = useLazyGettutorQuery({})
+  const [gettutor, { data: tutorif }] = useLazyGetInvestorQuery({})
   useEffect(() => {
     gettutor({}, false)
   }, [gettutor])

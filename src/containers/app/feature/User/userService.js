@@ -45,6 +45,13 @@ export const userApi = createApi({
         body: body
       })
     }),
+    sendEmail: build.mutation({
+      query: (body) => ({
+        url: '/send-email',
+        method: 'POST',
+        body: body
+      })
+    }),
     getUserPersonalInformation: build.query({
       query: () => ({
         url: `/user`
@@ -188,5 +195,6 @@ export const {
   useAddPredictMutation,
   useLazyGetInvestorQuery,
   useLazyGetStartUpQuery,
-  useLazyGetPercentageQuery
+  useLazyGetPercentageQuery,
+  useSendEmailMutation
 } = userApi

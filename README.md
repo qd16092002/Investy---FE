@@ -1,4 +1,4 @@
-# INVESTY - FE
+# INVESTY LTD - FE
 ## Developer
 -   Trần Quang Đạo
 ## Install

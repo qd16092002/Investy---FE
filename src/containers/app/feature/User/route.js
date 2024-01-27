@@ -15,14 +15,6 @@ export const userRouteList = [
       </ProfileLayout>
     )
   },
-  // {
-  //   path: '/infomationuser',
-  //   element: (
-  //     <ProfileLayout>
-  //       <ProfileUser />
-  //     </ProfileLayout>
-  //   )
-  // },
   {
     path: '/member',
     element: (

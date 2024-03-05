@@ -1,39 +1,45 @@
 .login-wrapper
   width: 100vw
   display: flex
-  z-index: 100
+  justify-content: center
   .form-wrapper
     display: flex
     justify-content: center
     .form
-      margin-top: 10vh
-      margin-right: 100vw
-      width: 80vw
-      height: 80vh
-      padding: 5px
+      margin-top: 5vh
+      width: 60vw
+      height: 90vh
+      padding: 2%
       display: -webkit-inline-box
       animation: slide-in 1s ease forwards
       flex-direction: column
       box-shadow: -14px -7px 24px 0px #00000040
       background-color: #FFFF
-      border-radius: 50px
-      z-index: 999
-      position: absolute
-      .img-wrapper
-        border-top-left-radius: 50px
-        border-bottom-left-radius: 50px
-        // background-color: #9b3333
-        width: 50%
+      border-radius: 20px
+
+      .img2
+        background-color: #963d3d
+        z-index: 100
       .text-wrapper
-        width: 40%
-        margin-left: 5%
+        width: 100%
 
         h3
+          font-style: Montserrat
           font-weight: 700
           font-size: 3.2rem
           line-height: 150%
-          color: #000000
-          text-align: start
+          color: #FFA800
+          text-align: center
+          margin-top: 20px
+        h4
+          font-family: Montserrat
+          font-size: 2rem
+          font-style: itaic
+          font-weight: 400
+          line-height: 30px
+          letter-spacing: 0em
+          text-align: center
+
         .navigate-guide
           width: 100%
           font-weight: 400
@@ -58,6 +64,7 @@
             align-items: center
             color: #7A7A7A
         .form-field
+          margin-top: 5px
           margin-bottom: 3px
           position: relative
 
@@ -75,8 +82,8 @@
             outline: none
             padding: 13px 62px 10px 12px
             gap: 12px
-            width: 100%
-            height: 30px
+            width: 95%
+            height: 40px
             border: 1px solid #7A7A7A
             border-radius: 7px
             font-weight: 500
@@ -136,10 +143,10 @@
             display: block
             color: #000000
         .button
-          width: 100%
+          width: 150px
           height: 40px
-          background: #08A5EA
-          border-radius: 4px
+          background: #FFA800
+          border-radius: 30px
           display: flex
           justify-content: center
           align-items: center
@@ -152,7 +159,6 @@
           transition: all 0.2s ease
           margin-top: 10px
           cursor: pointer
-
           &:hover
             opacity: 0.95
 .error-message-input
@@ -164,7 +170,7 @@
 .eye-icon
   position: absolute
   top: 34px
-  right: 15px
+  right: 60px
 @keyframes slide-in
   from
     transform: scale(0.5, 0.5)
@@ -181,7 +187,7 @@
   outline: none
   padding: 3px 62px 3px 7px
   gap: 12px
-  width: 100%
+  width: 267px
   height: 30px
   border: 1px solid #7A7A7A
   border-radius: 7px
@@ -200,7 +206,7 @@
     &:hover
       background-color: #888383
 .button-tiep
-  width: 100%
+  width: 200px
   height: 40px
   background: #08A5EA
   border-radius: 4px
@@ -217,22 +223,21 @@
   margin-top: 30px
   cursor: pointer
 .button
-  width: 100%
   height: 40px
-  background: #08A5EA
-  border-radius: 4px
+  border-radius: 30px
+  background-color: #FFA800
+  font-family: Montserrat
+  font-size: 25px
+  font-weight: 700
+  line-height: 43px
+  letter-spacing: 0em
+  text-align: center
+  color: #FFFFFF
   display: flex
   justify-content: center
-  align-items: center
-  border: none
-  outline: none
-  font-weight: 600
-  font-size: 1.6rem
-  line-height: 2.4rem
-  color: #FFFFFF
-  transition: all 0.2s ease
-
-  cursor: pointer
+  margin-left: 15%
+  margin-top: 10px
+  width: 200px
 .header
   justify-content: space-between
   align-items: center
@@ -267,12 +272,30 @@
       &:hover
 
 .input
+  margin-top: 5px
   display: flex
   align-items: center
   outline: none
   padding: 5px
-  width: 100%
+  width: 130%
   height: 35px
+  border: 1px solid #D7D7D7
+  border-radius: 7px
+  font-weight: 500
+  font-size: 1.6rem
+  line-height: 24px
+  display: flex
+  align-items: center
+  background: none
+  color: #7A7A7A
+.input_appli
+  display: flex
+  align-items: center
+  outline: none
+  padding: 13px 62px 10px 12px
+  gap: 12px
+  width: 100%
+  height: 40px
   border: 1px solid #7A7A7A
   border-radius: 7px
   font-weight: 500
@@ -282,4 +305,79 @@
   align-items: center
   background: none
   color: #7A7A7A
-  // margin-top: 8px
+  margin-top: 8px
+.acc
+  width: 10px
+  background-color: #FEDE07
+.acc_text
+  margin-left: 10px
+  font-family: Montserrat
+  font-size: 30px
+  font-weight: 700
+  line-height: 37px
+  letter-spacing: 0em
+  text-align: left
+  color: #595959
+.rolechoice
+  display: flex
+  justify-content: space-around
+  margin-top: 10px
+  div
+    &:hover
+      cursor: pointer
+.buttonrole
+  height: 40px
+  border-radius: 30px
+  background-color: #FFA800
+  font-family: Montserrat
+  font-size: 25px
+  font-weight: 700
+  line-height: 43px
+  letter-spacing: 0em
+  text-align: center
+  color: #FFFFFF
+  display: flex
+  justify-content: center
+  margin-left: 15%
+  margin-top: 10px
+  width: 70%
+.title_register
+  font-style: Montserrat
+  font-weight: 700
+  font-size: 3.2rem
+  line-height: 150%
+  color: #FFA800
+  text-align: start
+  margin-top: 20px
+.label
+  font-family: Montserrat
+  font-size: 16px
+  font-weight: 500
+  line-height: 24px
+  letter-spacing: 0em
+  text-align: left
+  color: #000
+.label_appli
+  font-weight: 600
+  font-size: 14px
+  line-height: 150%
+  display: flex
+  align-items: center
+  color: #7A7A7A
+.haveaccount
+  margin-top: 30px
+  margin-left: 10%
+  width: 80%
+  padding: auto
+  border: 4px solid #FFA800
+  font-family: Montserrat
+  font-size: 25px
+  font-weight: 600
+  line-height: 43px
+  letter-spacing: 0em
+  text-align: center
+  color: #FFA800
+  border-radius: 15px
+  &:hover
+    cursor: pointer
+    box-shadow: 0px 4px 4px 0px #00000040

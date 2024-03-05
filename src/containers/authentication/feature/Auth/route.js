@@ -3,6 +3,7 @@ import ForgotPassword from './ForgotPassword'
 import Login from './Login'
 import Signup from './Signup'
 import VerifyEmail from './VerifyEmail'
+import Test from './Test'
 
 export const authRouteList = [
   {
@@ -14,6 +15,11 @@ export const authRouteList = [
   {
     path: '/signup',
     element: <Signup />,
+    children: []
+  },
+  {
+    path: '/test',
+    element: <Test />,
     children: []
   },
   {

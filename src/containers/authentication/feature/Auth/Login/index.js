@@ -3,17 +3,8 @@
 
 import classNames from 'classnames/bind'
 import styles from './Login.module.sass'
-// import { Vector1, Vector2, Vector3, Vector4, Vector5, Vector6, Vector7, Vector8 } from '@src/assets/svgs'
 import { CheckIcon } from '@heroicons/react/20/solid'
-import {
-  EyeClose,
-  EyeShow,
-  FacebookLogin,
-  BackgroundImage,
-  LogoInvesty,
-  Background2,
-  LinkedLogin
-} from '@src/assets/svgs'
+import { EyeClose, EyeShow } from '@src/assets/svgs'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import ReactLoading from 'react-loading'
@@ -74,27 +65,23 @@ function Login() {
 
   return (
     <div className={cx('login-wrapper')}>
-      <BackgroundImage />
       <div>
         <div className={cx('form-wrapper')}>
           <div className={cx('form')}>
-            <div className={cx('img-wrapper')}>
-              <div className={cx('img')}>
-                <Background2 />
-              </div>
-            </div>
             <div className={cx('text-wrapper')}>
+              <h3>Lets Get Started</h3>
               <div
                 style={{
-                  marginTop: '30px'
+                  display: 'flex',
+                  marginTop: '10px'
                 }}
               >
-                <LogoInvesty />
+                <div className={cx('acc')}></div>
+                <div className={cx('acc_text')}>Account</div>
               </div>
-              <h3>Lets Get Started</h3>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={cx('form-field')}>
-                  <label htmlFor='username-login'>Username</label>
+                  <label htmlFor='username-login'>Email</label>
                   <input
                     // onChange={(e) => {
                     //   setFormData({ ...formData, email: e.target.value })
@@ -170,12 +157,12 @@ function Login() {
                 </div>
               </form>
               <div style={{ marginTop: 'auto' }}>
-                <div className={cx('or')}>
+                {/* <div className={cx('or')}>
                   <div className={cx('vecto')}></div>
                   <div>or</div>
                   <div className={cx('vecto')}></div>
-                </div>
-                <Link to='https://www.facebook.com' target='_blank'>
+                </div> */}
+                {/* <Link to='https://www.facebook.com' target='_blank'>
                   <div className={cx('loginwithfacebook')}>
                     <div>
                       <FacebookLogin />
@@ -185,7 +172,7 @@ function Login() {
                       <LinkedLogin />
                     </div>
                   </div>
-                </Link>
+                </Link> */}
                 <div className={cx('navigate-guide')}>
                   Don&apos;t have account?{' '}
                   <Link to='/signup' className={cx('signup')}>

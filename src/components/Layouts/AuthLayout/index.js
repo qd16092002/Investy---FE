@@ -3,15 +3,11 @@
 
 import classNames from 'classnames/bind'
 import styles from './AuthLayout.module.sass'
-import { BackgroundImage } from '@src/assets/svgs'
+
 const cx = classNames.bind(styles)
 
 function AuthLayout() {
-  return (
-    <div className={cx('auth-layout')}>
-      <BackgroundImage />
-    </div>
-  )
+  return <div className={cx('auth-layout')}></div>
 }
 
 export default AuthLayout

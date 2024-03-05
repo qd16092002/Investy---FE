@@ -5,7 +5,7 @@ import classNames from 'classnames/bind'
 import { Link } from 'react-router-dom'
 // import logo from '@src/assets/images/logo.png'
 import styles from './Footer.module.sass'
-import { LogoDiscord, LogoFacebook, LogoTwitter, NestQuantFooter } from '@src/assets/svgs'
+import { LogoFacebook, LogoTwitter } from '@src/assets/svgs'
 import AppButton from '@src/components/AppButton'
 import { useTranslation } from 'react-i18next'
 import { Row, Col } from 'antd'
@@ -27,10 +27,7 @@ function Footer() {
             <Col lg={8} md={24} sm={24}>
               <div className={cx('nestquan-content')}>
                 <div className={cx('logo')}>
-                  <Link to='#'>
-                    {/* <img className='logo' src={logo} alt='logo' /> */}
-                    <NestQuantFooter />
-                  </Link>
+                  <Link to='#'>{/* <img className='logo' src={logo} alt='logo' /> */}</Link>
                 </div>
                 <div
                   className={cx('footer-content')}
@@ -68,9 +65,7 @@ function Footer() {
                     target='_blank'
                     rel='noopener noreferrer'
                     className={cx('logo-item')}
-                  >
-                    <LogoDiscord />
-                  </Link>
+                  ></Link>
                 </div>
               </div>
             </Col>

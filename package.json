@@ -95,10 +95,12 @@
     "react-select": "^5.7.4",
     "react-spinners": "^0.13.8",
     "react-toastify": "^9.1.3",
+    "react-youtube": "^10.1.0",
     "recharts": "^2.10.3",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "universal-cookie": "^4.0.4",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "video-react": "^0.16.0"
   }
 }

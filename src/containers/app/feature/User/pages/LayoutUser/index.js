@@ -10,8 +10,7 @@ import {
   IconMember,
   // IconMesseger,
   IconSettings,
-  IconStatistics,
-  LogoInvestyWhite
+  IconStatistics
 } from '@src/assets/svgs'
 import { useSelector } from 'react-redux'
 
@@ -75,11 +74,6 @@ function LayoutUser() {
   return (
     <div className={cx('LayoutUser-wrapper')}>
       <div className={cx('user-card')}>
-        <div>
-          <Link to='/'>
-            <LogoInvestyWhite />
-          </Link>
-        </div>
         {userInfo?.role !== 'ADMIN' && (
           <ul className={cx('menu')}>
             {menuUser.map((item, index) => {

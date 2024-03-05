@@ -1,34 +1,35 @@
 import ProfileLayout from '@src/components/Layouts/ProfileLayout'
-import News from './pages/News'
-import Information from './pages/Information'
+import RoleProfile from './pages/RoleProfile'
 import Settings from './pages/Settings'
-import Predict from './pages/Predict'
-import Member from './pages/Member'
-import Statistics from './pages/Statistics'
+import HeaderOnlyLayout from '@src/components/Layouts/HeaderOnlyLayout'
+import FreeLancer from './pages/FreeLancer'
+import Recruitment from './pages/Recruitment'
+import RecruitmentTab from './pages/RecruitmentTab'
+import Company from './pages/Company'
+import OnlineCourse from './pages/OnlineCourse'
+import InviteFriend from './pages/InviteFriend'
+import ItemsOnlineCource from './pages/OnlineCourse/ItemsOnlineCource'
+import VideoOnlineCource from './pages/OnlineCourse/VideoOnlineCource'
 
 export const userRouteList = [
   {
     path: '/infomation',
+    element: <HeaderOnlyLayout></HeaderOnlyLayout>
+  },
+  {
+    path: '/profile',
     element: (
-      <ProfileLayout>
-        <Information />
-      </ProfileLayout>
+      <HeaderOnlyLayout>
+        <RoleProfile />
+      </HeaderOnlyLayout>
     )
   },
   {
-    path: '/member',
+    path: '/invite',
     element: (
-      <ProfileLayout>
-        <Member />
-      </ProfileLayout>
-    )
-  },
-  {
-    path: '/news',
-    element: (
-      <ProfileLayout>
-        <News />
-      </ProfileLayout>
+      <HeaderOnlyLayout>
+        <InviteFriend />
+      </HeaderOnlyLayout>
     )
   },
   {
@@ -38,22 +39,73 @@ export const userRouteList = [
   {
     path: '/settings',
     element: (
-      <ProfileLayout>
+      <HeaderOnlyLayout>
         <Settings />
-      </ProfileLayout>
+      </HeaderOnlyLayout>
     )
   },
   {
-    path: '/statistics',
+    path: '/freelance',
     element: (
-      <ProfileLayout>
-        <Statistics />
-      </ProfileLayout>
+      <HeaderOnlyLayout>
+        <FreeLancer />
+      </HeaderOnlyLayout>
     )
   },
-
   {
-    path: '/predict',
-    element: <Predict />
+    path: '/about',
+    element: <HeaderOnlyLayout></HeaderOnlyLayout>
+  },
+  {
+    path: '/recruiment',
+    element: (
+      <HeaderOnlyLayout>
+        <Recruitment />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/cvbuild',
+    element: <HeaderOnlyLayout></HeaderOnlyLayout>
+  },
+  {
+    path: '/company',
+    element: (
+      <HeaderOnlyLayout>
+        <Company />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/online-cource',
+    element: (
+      <HeaderOnlyLayout>
+        <OnlineCourse />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/recruittab',
+    element: (
+      <HeaderOnlyLayout>
+        <RecruitmentTab />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/online-cource/firststepkorea',
+    element: (
+      <HeaderOnlyLayout>
+        <ItemsOnlineCource />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/online-cource/firststepkorea/lesson1',
+    element: (
+      <HeaderOnlyLayout>
+        <VideoOnlineCource />
+      </HeaderOnlyLayout>
+    )
   }
 ]

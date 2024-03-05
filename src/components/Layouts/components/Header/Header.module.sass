@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
 .header-wrapper
-  height: 80px
-  width: 20%
-  background: #F2F2F2
-  backdrop-filter: blur(10px)
+  height: 134px
+  width: 100%
   z-index: 999
-  position: absolute
+  position: relative
   right: 0px
   top: 0px
-  display: flex
-  justify-content: center
+  justify-content: space-between
   align-items: center
-
+  margin-bottom: 10px
+  padding-right: 30px
+  background-color: rgba(255, 255, 255, 1)
+  border-bottom: 1px solid #666666C9
+  z-index: 1000
+  padding-top: 10px
 .notification
   background-color: rgba(255, 255, 255, 1)
   border-radius: 100px
@@ -23,7 +27,7 @@
   width: 40px
   height: 40px
   border-radius: 100%
-  background: #1D3461
+  background: rgb(153,153,153)
   color: #ffffff
   display: flex
   justify-content: center
@@ -63,41 +67,101 @@
 .auth
   display: flex
   margin-right: 20px
-  margin-top: 30px
+  margin-top: 0px
+
 .button1
   margin-right: 5px
 .header__icon
   display: flex
 .signin
-  font-family: Play
-  font-size: 14px
-  font-weight: 700
-  line-height: 26px
-  letter-spacing: -0.18000000715255737px
-  text-align: left
-  border: 2.4px solid #FFFFFF
-  background-color: #1D3461
-  color: #FFFF
-  height: 38px
-  gap: 10px
-  display: flex
-  padding-top: 3px
+  font-family: Montserrat
+  font-size: 22px
+  font-weight: 600
+  line-height: 39px
+  letter-spacing: 0em
+  text-align: center
+  color: #000000
+  margin-top: 5px
   &:hover
     cursor: pointer
+    text-decoration: underline
 .signup
-  height: 38px
-  gap: 10px
-  font-family: Play
-  font-size: 14px
-  font-weight: 700
-  line-height: 26px
-  letter-spacing: -0.18000000715255737px
-  text-align: left
-  color: #1D3461
-  display: flex
-  padding-top: 4px
+  margin-left: 10px
+  font-family: Montserrat
+  font-size: 22px
+  font-weight: 600
+  line-height: 39px
+  letter-spacing: 0em
+  text-align: center
+  background-color: #FEDE07
+  border-radius: 8px
+  border: none
+  padding: 5px 10px
   &:hover
     cursor: pointer
     opacity: 1
+    background-color: #f8d700
 .dropdown
   width: 100%
+.input_search
+  width: 450px
+  height: 40px
+  top: 34px
+  left: 234px
+  border-radius: 40px
+  border: 1px
+  background-color: #FFFFFF
+  border: 1px solid #000000
+  padding: 5px 50px 5px 20px
+  &:focus-visible
+    outline: none
+.icon
+.content
+  display: flex
+  justify-content: space-between
+.navbar
+  width: 100%
+  margin-top: 19px
+  padding: 0px 20px 0px 40px
+  .icon
+    display: flex
+    justify-content: space-between
+    text-align: center
+.active
+  font-family: Montserrat
+  font-size: 18px
+  font-weight: 600
+  line-height: 30px
+  letter-spacing: 0em
+  text-align: center
+  color: #000000
+  border-bottom: 5px solid #FEDE07
+.inactive
+  font-family: Montserrat
+  font-size: 18px
+  font-weight: 600
+  line-height: 30px
+  letter-spacing: 0em
+  text-align: center
+  color: #000000
+.boxsearch
+  display: flex
+  justify-content: flex-end
+  margin-left: 20vw
+  .input_search
+    margin-top: 10px
+    width: 30vw
+    height: 60px
+    top: 34px
+    left: 234px
+    border-radius: 40px
+    border: 1px
+    background-color: #FFFFFF
+    border: 1px solid #000000
+    padding: 5px 50px 5px 20px
+    &:focus-visible
+      outline: none
+  .icon
+    position: absolute
+    margin-right: 10px
+    margin-top: 20px

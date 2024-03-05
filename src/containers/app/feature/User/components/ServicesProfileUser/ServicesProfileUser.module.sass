@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Play:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+.main
+    overflow-y: scroll
+    margin-bottom: 30px
+    width: 90%
+    &::-webkit-scrollbar
+        width: 0px
+    .product
+        max-height: 1000px
+        .boxmember
+            width: 100%
+            display: grid
+            grid-template-columns: repeat(auto-fill, minmax(20%, 1fr))
+            .image
+                margin-right: 10px
+                margin-left: 10px
+                margin-top: 30px
+                padding: 20px
+                height: 180px
+                width: 180px
+                background-color: #D9D9D9
+                border-radius: 15px
+                overflow: auto
+                &::-webkit-scrollbar
+                    width: 0px
+            .title
+                width: 180px
+                font-family: Montserrat
+                font-size: 11px
+                font-weight: 400
+                line-height: 18px
+                letter-spacing: 0em
+                text-align: center
+                padding-left: 10px
+            .price
+                width: 180px
+                font-family: Montserrat
+                font-size: 18px
+                font-weight: 800
+                line-height: 30px
+                letter-spacing: 0em
+                text-align: right
+            .rate
+                width: 180px
+                font-family: Montserrat
+                font-size: 14px
+                font-weight: 600
+                line-height: 22px
+                letter-spacing: 0em
+                text-align: right
+                display: flex
+                justify-content: flex-end
+        .pagination
+            display: flex
+            justify-content: flex-end
+            margin-right: 80px
+            margin-top: 10px

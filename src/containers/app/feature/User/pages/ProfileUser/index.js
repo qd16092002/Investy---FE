@@ -1,85 +1,86 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
 import styles from './ProfileUser.module.sass'
-import { Col, Row } from 'antd'
+import { Rate } from 'antd'
 import { useState } from 'react'
-import OverviewUser from '../../components/OverviewUser'
-import Teams from '../../components/Teams'
-import Documents from '../../components/Documents'
-import VideoPitch from '../../components/VideoPitch'
-import QA from '../../components/QA'
+import IntroductionProfileUser from '../../components/IntroductionProfileUser'
+import ServicesProfileUser from '../../components/ServicesProfileUser'
+import PortfolioProfileUser from '../../components/PortfolioProfileUser'
 import { useSelector } from 'react-redux'
+import ReviewAndFeedbacksProfileUser from '../../components/ReviewAndFeedbacksProfileUser'
 
 const cx = classNames.bind(styles)
 const TABS = {
-  OVERVIEW: {
-    code: 'OVERVIEW'
+  INTRODUCTION: {
+    code: 'INTRODUCTION'
   },
-  TEAMS: {
-    code: 'TEAMS'
+  SERVICES: {
+    code: 'SERVICES'
   },
-  DOCUMENTS: {
-    code: 'DOCUMENTS'
+  PORTFOLIO: {
+    code: 'PORTFOLIO'
   },
-  VIDEOPITCH: {
-    code: 'VIDEOPITCH'
-  },
-  QA: {
-    code: 'QA'
+  REVIEWANDFEEDBACKS: {
+    code: 'REVIEWANDFEEDBACKS'
   }
 }
-
 function ProfileUser() {
   const userInfo = useSelector((state) => state.auth.user)
-  const [activeTab, setActiveTab] = useState(TABS.OVERVIEW)
+  const [activeTab, setActiveTab] = useState(TABS.INTRODUCTION)
   return (
     <div className={cx('form-wallpaper')}>
-      <div className={cx('form-header')}>
-        <Row className={cx('header')}>
-          <Col>
-            <div className={cx('header__process')}>
-              <div
-                className={cx('header__title', activeTab.code === TABS.OVERVIEW.code ? 'active' : 'inactive')}
-                onClick={() => setActiveTab(TABS.OVERVIEW)}
-              >
-                Overview
-              </div>
-              {userInfo?.role === 'STARTUP' && (
-                <div
-                  className={cx('header__title', activeTab.code === TABS.TEAMS.code ? 'active' : 'inactive')}
-                  onClick={() => setActiveTab(TABS.TEAMS)}
-                >
-                  Team
-                </div>
-              )}
-              <div
-                className={cx('header__title', activeTab.code === TABS.DOCUMENTS.code ? 'active' : 'inactive')}
-                onClick={() => setActiveTab(TABS.DOCUMENTS)}
-              >
-                Documents
-              </div>
+      <div className={cx('header')}>
+        <div className={cx('avatar')}>
+          <div className={cx('avatar')}>{userInfo?.fullName && userInfo?.fullName[0]?.toUpperCase()}</div>
+        </div>
+        <div className={cx('infor')}>
+          <div className={cx('name')}>{userInfo?.fullName}</div>
+          <div className={cx('rate')}>
+            <Rate
+              allowHalf
+              defaultValue={2.5}
+              style={{
+                marginRight: '20px'
+              }}
+            />
+            2.5 (120)
+          </div>
+        </div>
+      </div>
+      <div className={cx('content')}>
+        <div className={cx('header__process')}>
+          <div
+            className={cx('header__title', activeTab.code === TABS.INTRODUCTION.code ? 'active' : 'inactive')}
+            onClick={() => setActiveTab(TABS.INTRODUCTION)}
+          >
+            Introduction
+          </div>
+          <div
+            className={cx('header__title', activeTab.code === TABS.SERVICES.code ? 'active' : 'inactive')}
+            onClick={() => setActiveTab(TABS.SERVICES)}
+          >
+            Services
+          </div>
 
-              <div
-                className={cx('header__title', activeTab.code === TABS.VIDEOPITCH.code ? 'active' : 'inactive')}
-                onClick={() => setActiveTab(TABS.VIDEOPITCH)}
-              >
-                Video Pitch
-              </div>
+          <div
+            className={cx('header__title', activeTab.code === TABS.PORTFOLIO.code ? 'active' : 'inactive')}
+            onClick={() => setActiveTab(TABS.PORTFOLIO)}
+          >
+            Portfolio
+          </div>
 
-              <div
-                className={cx('header__title', activeTab.code === TABS.QA.code ? 'active' : 'inactive')}
-                onClick={() => setActiveTab(TABS.QA)}
-              >
-                Questions & Answers
-              </div>
-            </div>
-          </Col>
-        </Row>
-        {activeTab.code === TABS.DOCUMENTS.code && <Documents />}
-        {activeTab.code === TABS.TEAMS.code && <Teams />}
-        {activeTab.code === TABS.OVERVIEW.code && <OverviewUser />}
-        {activeTab.code === TABS.VIDEOPITCH.code && <VideoPitch />}
-        {activeTab.code === TABS.QA.code && <QA />}
+          <div
+            className={cx('header__title', activeTab.code === TABS.REVIEWANDFEEDBACKS.code ? 'active' : 'inactive')}
+            onClick={() => setActiveTab(TABS.REVIEWANDFEEDBACKS)}
+          >
+            Reviews & Feedbacks
+          </div>
+        </div>
+        <div className={cx('line')}></div>
+        {activeTab.code === TABS.SERVICES.code && <ServicesProfileUser />}
+        {activeTab.code === TABS.INTRODUCTION.code && <IntroductionProfileUser />}
+        {activeTab.code === TABS.PORTFOLIO.code && <PortfolioProfileUser />}
+        {activeTab.code === TABS.REVIEWANDFEEDBACKS.code && <ReviewAndFeedbacksProfileUser />}
       </div>
     </div>
   )

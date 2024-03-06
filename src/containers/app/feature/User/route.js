@@ -11,11 +11,16 @@ import InviteFriend from './pages/InviteFriend'
 import ItemsOnlineCource from './pages/OnlineCourse/ItemsOnlineCource'
 import VideoOnlineCource from './pages/OnlineCourse/VideoOnlineCource'
 import AddMoreServives from './components/ServicesProfileUser/componets/AddMoreServives'
+import Information from './pages/Information'
 
 export const userRouteList = [
   {
-    path: '/infomation',
-    element: <HeaderOnlyLayout></HeaderOnlyLayout>
+    path: '/information',
+    element: (
+      <HeaderOnlyLayout>
+        <Information />
+      </HeaderOnlyLayout>
+    )
   },
   {
     path: '/profile',

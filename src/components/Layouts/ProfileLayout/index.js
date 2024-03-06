@@ -25,7 +25,7 @@ function ProfileLayout({ children }) {
   const handleLogout = () => {
     dispatch(logout())
     cookies.remove('access_token')
-    navigate('/')
+    navigate('/recruiment')
   }
   return (
     <>

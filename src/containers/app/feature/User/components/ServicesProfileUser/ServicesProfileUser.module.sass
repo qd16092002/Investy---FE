@@ -6,19 +6,22 @@
     overflow-y: scroll
     margin-bottom: 30px
     width: 90%
+    display: flex
+    justify-content: space-between
     &::-webkit-scrollbar
         width: 0px
+
     .product
         max-height: 1000px
+        width: 89%
         .boxmember
             width: 100%
             display: grid
-            grid-template-columns: repeat(auto-fill, minmax(20%, 1fr))
+            grid-template-columns: repeat(auto-fill, minmax(25%, 1fr))
             .image
                 margin-right: 10px
                 margin-left: 10px
                 margin-top: 30px
-                padding: 20px
                 height: 180px
                 width: 180px
                 background-color: #D9D9D9
@@ -58,3 +61,23 @@
             justify-content: flex-end
             margin-right: 80px
             margin-top: 10px
+    .add_services
+        width: 20%
+        .button
+            margin-top: 30px
+            display: flex
+            justify-content: space-between
+            font-family: Montserrat
+            font-size: 20px
+            font-weight: 600
+            line-height: 20px
+            letter-spacing: 0em
+            text-align: center
+            border-radius: 10px
+            padding: 5px 5px
+            background-color: #FEDE07
+            border: none
+            &:hover
+                cursor: pointer
+            div
+                margin-top: 5px

@@ -3,6 +3,7 @@ import classNames from 'classnames/bind'
 import styles from './TopServicesMarket.module.sass'
 import { MemberMentor } from '@src/app-configs'
 import { StartRate } from '@src/assets/svgs'
+import avt2 from '@src/assets/images/User/Freelance/Items/2.png'
 
 const cx = classNames.bind(styles)
 
@@ -52,7 +53,7 @@ function TopServicesMarket() {
         <div className={cx('boxmember')}>
           {MemberMentor.map((member, index) => (
             <div key={index} className={cx('member')}>
-              <div className={cx('image')}></div>
+              <img src={avt2} alt='items' className={cx('image')}></img>
               <div className={cx('title')}> Golden Prize of “Investy Awards 2023” </div>
               <div className={cx('price')}> 500,000 VND~</div>
               <div className={cx('rate')}>

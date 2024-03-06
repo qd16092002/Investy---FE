@@ -3,4 +3,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 
 .main
-    .title
+    .header
+        display: flex
+        justify-content: space-between
+        .title_1
+            font-family: Montserrat
+            font-size: 28px
+            font-weight: 600
+            line-height: 30px
+            letter-spacing: 0em
+            text-align: left
+            margin-top: 5px
+        .icon
+            &:hover
+                cursor: pointer
+    textarea
+        margin-top: 30px
+        border: 2px solid #FEDE07
+        border-radius: 10px
+        font-family: Montserrat
+        font-size: 18px
+        font-weight: 700
+        line-height: 22px
+        letter-spacing: 0em
+        text-align: left
+        height: 40vh
+        width: 100%
+        padding: 20px
+        &:focus-visible
+            outline: none
+    .save
+        margin-top: 20px
+        text-align: center
+        width: 20%
+        margin-left: 40%
+        padding: 5px 10px
+        border: 1px solid #FEDE07
+        background-color: #FFA800
+        border-radius: 10px
+        font-family: Montserrat
+        font-size: 25px
+        font-weight: 700
+        line-height: 27px
+        letter-spacing: 0em
+        text-align: center
+        color: white
+
+        &:hover
+            cursor: pointer

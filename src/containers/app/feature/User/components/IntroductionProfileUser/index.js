@@ -33,7 +33,6 @@ function IntroductionProfileUser() {
           triggerBtn={<button>ADD MORE +</button>}
           contentStyle={{
             width: '60vw',
-            height: '70vh',
             backgroundColor: 'white',
             boxShadow: '4px 4px 10px 0px #00000040',
             borderRadius: '7px',
@@ -53,7 +52,6 @@ function IntroductionProfileUser() {
           triggerBtn={<button>ADD MORE +</button>}
           contentStyle={{
             width: '60vw',
-            height: '80vh',
             backgroundColor: 'white',
             boxShadow: '4px 4px 10px 0px #00000040',
             borderRadius: '7px',
@@ -73,7 +71,6 @@ function IntroductionProfileUser() {
           triggerBtn={<button>ADD MORE +</button>}
           contentStyle={{
             width: '60vw',
-            height: '80vh',
             backgroundColor: 'white',
             boxShadow: '4px 4px 10px 0px #00000040',
             borderRadius: '7px',
@@ -93,7 +90,6 @@ function IntroductionProfileUser() {
           triggerBtn={<button>ADD MORE +</button>}
           contentStyle={{
             width: '60vw',
-            height: '80vh',
             backgroundColor: 'white',
             boxShadow: '4px 4px 10px 0px #00000040',
             borderRadius: '7px',
@@ -113,7 +109,6 @@ function IntroductionProfileUser() {
           triggerBtn={<button>ADD MORE +</button>}
           contentStyle={{
             width: '60vw',
-            height: '80vh',
             backgroundColor: 'white',
             boxShadow: '4px 4px 10px 0px #00000040',
             borderRadius: '7px',
@@ -133,7 +128,6 @@ function IntroductionProfileUser() {
           triggerBtn={<button>ADD MORE +</button>}
           contentStyle={{
             width: '60vw',
-            height: '80vh',
             backgroundColor: 'white',
             boxShadow: '4px 4px 10px 0px #00000040',
             borderRadius: '7px',

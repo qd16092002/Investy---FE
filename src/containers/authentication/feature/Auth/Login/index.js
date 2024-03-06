@@ -37,7 +37,7 @@ function Login() {
   const [getLayoutUser] = useLazyGetLayoutUserQuery()
 
   useEffect(() => {
-    if (isLoggedIn) navigate('/')
+    if (isLoggedIn) navigate('/recruiment')
   }, [isLoggedIn])
 
   const onSubmit = async (data) => {

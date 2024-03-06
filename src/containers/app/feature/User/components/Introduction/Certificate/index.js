@@ -3,6 +3,7 @@ import classNames from 'classnames/bind'
 import styles from './Certificate.module.sass'
 import { CertificateIconLink, CertificateIconUpload, CloseIcon } from '@src/assets/svgs'
 import { Button, Upload, message } from 'antd'
+import toast, { Toaster } from 'react-hot-toast'
 
 const cx = classNames.bind(styles)
 const props = {
@@ -23,8 +24,17 @@ const props = {
   }
 }
 function Certificate({ onClose }) {
+  const onSubmit = async () => {
+    toast.success('Update successfully!')
+  }
+  const handleClick = () => {
+    onSubmit()
+    onClose()
+  }
   return (
     <div className={cx('main')}>
+      <Toaster position='top-center' />
+
       <div className={cx('header')}>
         <div className={cx('title_1')}>Certificate</div>
         <div className={cx('icon')} onClick={onClose}>
@@ -105,7 +115,7 @@ function Certificate({ onClose }) {
           <div>Insert the link</div>
         </div>
       </div>
-      <button className={cx('save')} onClick={onClose}>
+      <button className={cx('save')} onClick={handleClick}>
         Save
       </button>
     </div>

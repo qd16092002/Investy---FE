@@ -44,7 +44,7 @@ function Header() {
   const handleLogout = () => {
     dispatch(logout())
     cookies.remove('access_token')
-    navigate('/')
+    navigate('/recruiment')
   }
   const location = useLocation()
   return (

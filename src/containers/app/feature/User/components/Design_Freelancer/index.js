@@ -8,6 +8,7 @@ import TopServicesMarket from '../TopServicesMarket'
 import image1 from '@src/assets/images/User/Freelance/1.png'
 import image2 from '@src/assets/images/User/Freelance/2.png'
 import image3 from '@src/assets/images/User/Freelance/3.png'
+import avt from '@src/assets/images/User/Freelance/Items/1.png'
 const cx = classNames.bind(styles)
 
 function Design_Freelancer() {
@@ -71,7 +72,7 @@ function Design_Freelancer() {
             <div className={cx('boxmember')}>
               {MemberMentor.map((member, index) => (
                 <div key={index} className={cx('member')}>
-                  <div className={cx('image')}></div>
+                  <img src={avt} alt='items' className={cx('image')}></img>
                   <div className={cx('title')}> Golden Prize of “Investy Awards 2023” </div>
                   <div className={cx('price')}> 500,000 VND~</div>
                   <div className={cx('rate')}>

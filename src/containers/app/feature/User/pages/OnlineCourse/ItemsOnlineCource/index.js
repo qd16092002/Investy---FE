@@ -63,7 +63,7 @@ function ItemsOnlineCource() {
           <div className={cx('title')}>First Step Korea</div>
           <div className={cx('product')}>
             <div className={cx('items')}>
-              <Link to='/online-cource/firststepkorea/lesson1'>
+              <Link to='https://www.youtube.com/watch?v=spiU0J3Tusw' target='_blank'>
                 <img src={lesson1} alt='lesson1'></img>
                 <div className={cx('lesson_title')}>Lesson 1: Alphabet</div>
                 <div className={cx('univer')}>
@@ -73,7 +73,7 @@ function ItemsOnlineCource() {
               </Link>
             </div>
             <div className={cx('items')}>
-              <Link to='/abc'>
+              <Link to='/online-cource/firststepkorea'>
                 <img src={lesson2} alt='lesson2'></img>
                 <div className={cx('lesson_title')}>Lesson 2: Greetings</div>
                 <div className={cx('univer')}>
@@ -83,7 +83,7 @@ function ItemsOnlineCource() {
               </Link>
             </div>
             <div className={cx('items')}>
-              <Link to='/abc'>
+              <Link to='/online-cource/firststepkorea'>
                 <img src={lesson3} alt='lesson3'></img>
                 <div className={cx('lesson_title')}>Lesson 3: Nationality</div>
                 <div className={cx('univer')}>
@@ -93,7 +93,7 @@ function ItemsOnlineCource() {
               </Link>
             </div>
             <div className={cx('items')}>
-              <Link to='/abc'>
+              <Link to='/online-cource/firststepkorea'>
                 <img src={lesson4} alt='lesson4'></img>
                 <div className={cx('lesson_title')}>Lesson 4: Place</div>
                 <div className={cx('univer')}>
@@ -103,7 +103,7 @@ function ItemsOnlineCource() {
               </Link>
             </div>
             <div className={cx('items')}>
-              <Link to='/abc'>
+              <Link to='/online-cource/firststepkorea'>
                 <img src={lesson5} alt='lesson5'></img>
                 <div className={cx('lesson_title')}>Lesson 5: Subject</div>
                 <div className={cx('univer')}>

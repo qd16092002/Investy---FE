@@ -10,6 +10,7 @@ import OnlineCourse from './pages/OnlineCourse'
 import InviteFriend from './pages/InviteFriend'
 import ItemsOnlineCource from './pages/OnlineCourse/ItemsOnlineCource'
 import VideoOnlineCource from './pages/OnlineCourse/VideoOnlineCource'
+import AddMoreServives from './components/ServicesProfileUser/componets/AddMoreServives'
 
 export const userRouteList = [
   {
@@ -21,6 +22,14 @@ export const userRouteList = [
     element: (
       <HeaderOnlyLayout>
         <RoleProfile />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/profile/addmoreservices',
+    element: (
+      <HeaderOnlyLayout>
+        <AddMoreServives />
       </HeaderOnlyLayout>
     )
   },

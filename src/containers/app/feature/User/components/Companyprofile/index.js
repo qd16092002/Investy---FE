@@ -3,7 +3,8 @@ import classNames from 'classnames/bind'
 import styles from './Companyprofile.module.sass'
 import { IconHeart, LocationIcon, MoneyIconrate } from '@src/assets/svgs'
 import { Link } from 'react-router-dom'
-
+import logoAri from '@src/assets/images/User/Company/avtari.png'
+import logoInvesty from '@src/assets/images/User/Company/avtinvesty.png'
 const cx = classNames.bind(styles)
 
 function Companyprofile() {
@@ -95,68 +96,78 @@ function Companyprofile() {
             <div className={cx('button_checkbox')}>Emergency</div>
           </div>
           <div className={cx('product')}>
-            <div className={cx('box')}>
-              <div className={cx('avt')}></div>
-              <div className={cx('content')}>
-                <div className={cx('title')}>
-                  <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
-                  <div className={cx('price')}>10 - 12 million</div>
-                </div>
-                <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
-                <div className={cx('icon')}>
-                  <div className={cx('location')}>Ha Noi</div>
-                  <div className={cx('date')}>30/2/2024</div>
-                  <div className={cx('location')}>Post 1 hour ago</div>
-                  <Link to='/recruittab' className={cx('apply')}>
-                    Apply
-                  </Link>
-                  <div className={cx('heart')}>
-                    {' '}
-                    <IconHeart />
+            <Link to='/recruittab'>
+              <div className={cx('box')}>
+                <img src={logoAri} alt='logoari' className={cx('avt')}></img>
+                <div className={cx('content')}>
+                  <div className={cx('title')}>
+                    <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
+                    <div className={cx('price')}>10 - 12 million</div>
+                  </div>
+                  <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
+                  <div className={cx('icon')}>
+                    <div className={cx('location')}>Ha Noi</div>
+                    <div className={cx('date')}>30/2/2024</div>
+                    <div className={cx('location')}>Post 1 hour ago</div>
+                    <Link to='/recruittab' className={cx('apply')}>
+                      Apply
+                    </Link>
+                    <div className={cx('heart')}>
+                      {' '}
+                      <IconHeart />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className={cx('box')}>
-              <div className={cx('avt')}></div>
-              <div className={cx('content')}>
-                <div className={cx('title')}>
-                  <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
-                  <div className={cx('price')}>10 - 12 million</div>
-                </div>
-                <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
-                <div className={cx('icon')}>
-                  <div className={cx('location')}>Ha Noi</div>
-                  <div className={cx('date')}>30/2/2024</div>
-                  <div className={cx('location')}>Post 1 hour ago</div>
-                  <div className={cx('apply')}>Apply</div>
-                  <div className={cx('heart')}>
-                    {' '}
-                    <IconHeart />
+            </Link>
+            <Link to='/recruittab'>
+              <div className={cx('box')}>
+                <img src={logoAri} alt='logoari' className={cx('avt')}></img>
+                <div className={cx('content')}>
+                  <div className={cx('title')}>
+                    <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
+                    <div className={cx('price')}>10 - 12 million</div>
+                  </div>
+                  <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
+                  <div className={cx('icon')}>
+                    <div className={cx('location')}>Ha Noi</div>
+                    <div className={cx('date')}>30/2/2024</div>
+                    <div className={cx('location')}>Post 1 hour ago</div>
+                    <Link to='/recruittab' className={cx('apply')}>
+                      Apply
+                    </Link>
+                    <div className={cx('heart')}>
+                      {' '}
+                      <IconHeart />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className={cx('box')}>
-              <div className={cx('avt')}></div>
-              <div className={cx('content')}>
-                <div className={cx('title')}>
-                  <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
-                  <div className={cx('price')}>10 - 12 million</div>
-                </div>
-                <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
-                <div className={cx('icon')}>
-                  <div className={cx('location')}>Ha Noi</div>
-                  <div className={cx('date')}>30/2/2024</div>
-                  <div className={cx('location')}>Post 1 hour ago</div>
-                  <div className={cx('apply')}>Apply</div>
-                  <div className={cx('heart')}>
-                    {' '}
-                    <IconHeart />
+            </Link>
+            <Link to='/recruittab'>
+              <div className={cx('box')}>
+                <img src={logoInvesty} alt='logoinvesty' className={cx('avt')}></img>
+                <div className={cx('content')}>
+                  <div className={cx('title')}>
+                    <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
+                    <div className={cx('price')}>10 - 12 million</div>
+                  </div>
+                  <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
+                  <div className={cx('icon')}>
+                    <div className={cx('location')}>Ha Noi</div>
+                    <div className={cx('date')}>30/2/2024</div>
+                    <div className={cx('location')}>Post 1 hour ago</div>
+                    <Link to='/recruittab' className={cx('apply')}>
+                      Apply
+                    </Link>
+                    <div className={cx('heart')}>
+                      {' '}
+                      <IconHeart />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

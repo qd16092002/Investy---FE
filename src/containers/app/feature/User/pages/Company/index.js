@@ -11,6 +11,7 @@ import avt2 from '@src/assets/images/User/Company/avtvmo.png'
 import back1 from '@src/assets/images/User/Company/backari.png'
 import back3 from '@src/assets/images/User/Company/backinvesty.png'
 import back2 from '@src/assets/images/User/Company/backvmo.png'
+import avtitems from '@src/assets/images/User/Freelance/Items/4.png'
 const cx = classNames.bind(styles)
 
 function Company() {
@@ -74,7 +75,7 @@ function Company() {
             <div className={cx('boxmember')}>
               {MemberMentor.map((member, index) => (
                 <div key={index} className={cx('member')}>
-                  <div className={cx('image')}></div>
+                  <img src={avtitems} alt='avtitems' className={cx('image')}></img>
                   <div className={cx('title')}> Golden Prize of “Investy Awards 2023” </div>
                   <div className={cx('price')}> 500,000 VND~</div>
                   <div className={cx('rate')}>

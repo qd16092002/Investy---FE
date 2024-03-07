@@ -16,7 +16,7 @@ const cx = classNames.bind(styles)
 const menuUser = [
   {
     title: 'Recruitment',
-    link: '/recruiment'
+    link: '/recruitment'
   },
   {
     title: 'Freelancer',
@@ -33,6 +33,38 @@ const menuUser = [
   {
     title: 'Online course',
     link: '/online-cource'
+  }
+]
+const menuRecrui = [
+  {
+    title: 'Profile',
+    link: '/profile'
+  },
+  {
+    title: 'Information',
+    link: '/information'
+  },
+  {
+    title: 'Invite friends',
+    link: '/infomation'
+  },
+  {
+    title: 'Recruitment',
+    link: '/recruitmentuser'
+  }
+]
+const menuApply = [
+  {
+    title: 'Profile',
+    link: '/profile'
+  },
+  {
+    title: 'Information',
+    link: '/information'
+  },
+  {
+    title: 'Invite friends',
+    link: '/infomation'
   }
 ]
 function Header() {
@@ -69,63 +101,65 @@ function Header() {
               <Dropdown
                 overlay={
                   <Menu style={{ borderRadius: '20px', padding: '10px', maxWidth: '450px' }}>
-                    <Menu.Item>
-                      <Link to='/profile'>
-                        <div className={cx('header__icon')}>
-                          <IconProfile />
-                          <div
-                            style={{
-                              marginLeft: '3px'
-                            }}
-                          >
-                            Profile
-                          </div>
-                        </div>
-                      </Link>
-                    </Menu.Item>
-                    <Divider
-                      style={{
-                        margin: '5px 0px 0px 0px'
-                      }}
-                    />
-                    <Menu.Item>
-                      <Link to='/information'>
-                        <div className={cx('header__icon')}>
-                          <IconProfile />
-                          <div
-                            style={{
-                              marginLeft: '3px'
-                            }}
-                          >
-                            Information
-                          </div>
-                        </div>
-                      </Link>
-                    </Menu.Item>
-                    <Divider
-                      style={{
-                        margin: '5px 0px 0px 0px'
-                      }}
-                    />
-                    <Menu.Item>
-                      <Link to='/infomation'>
-                        <div className={cx('header__icon')}>
-                          <IconProfile />
-                          <div
-                            style={{
-                              marginLeft: '3px'
-                            }}
-                          >
-                            Invite friends
-                          </div>
-                        </div>
-                      </Link>
-                    </Menu.Item>
-                    <Divider
-                      style={{
-                        margin: '5px 0px 0px 0px'
-                      }}
-                    />
+                    {userInfo?.role !== 'APPLICANT' && (
+                      <ul className={cx('menu')}>
+                        {menuRecrui.map((item, index) => {
+                          return (
+                            <div key={uuidv4(item.link)}>
+                              <Menu.Item>
+                                <Link to={item.link}>
+                                  <div className={cx('header__icon')} key={uuidv4(index)}>
+                                    <IconProfile />
+                                    <div
+                                      style={{
+                                        marginLeft: '3px'
+                                      }}
+                                    >
+                                      {item.title}
+                                    </div>
+                                  </div>
+                                </Link>
+                              </Menu.Item>
+                              <Divider
+                                style={{
+                                  margin: '5px 0px 0px 0px'
+                                }}
+                              />
+                            </div>
+                          )
+                        })}
+                      </ul>
+                    )}
+                    {userInfo?.role === 'APPLICANT' && (
+                      <ul className={cx('menu')}>
+                        {menuApply.map((item, index) => {
+                          return (
+                            <div key={uuidv4(item.link)}>
+                              <Menu.Item>
+                                <Link to={item.link}>
+                                  <div className={cx('header__icon')} key={uuidv4(index)}>
+                                    <IconProfile />
+                                    <div
+                                      style={{
+                                        marginLeft: '3px'
+                                      }}
+                                    >
+                                      {item.title}
+                                    </div>
+                                  </div>
+                                </Link>
+                              </Menu.Item>
+                              <Divider
+                                style={{
+                                  margin: '5px 0px 0px 0px'
+                                }}
+                              />
+                            </div>
+                          )
+                        })}
+                      </ul>
+                    )}
+
                     <Menu.Item onClick={() => handleLogout(true)}>
                       <div className={cx('header__icon')}>
                         <SignOutIcon />
@@ -158,7 +192,7 @@ function Header() {
                     marginRight: '20px'
                   }}
                 >
-                  <div className={cx('avatar')}>{userInfo?.username && userInfo?.username[0]?.toUpperCase()}</div>
+                  <div className={cx('avatar')}>{userInfo?.fullName && userInfo?.fullName[0]?.toUpperCase()}</div>
                   <div
                     style={{
                       marginLeft: '10px',

@@ -1,63 +1,5 @@
 import { IconYosenUniversity } from '@src/assets/svgs'
 
-export const options = [
-  {
-    label: 'Medical',
-    value: 'Medical'
-  },
-  {
-    label: 'Transportation',
-    value: 'Transportation'
-  },
-  {
-    label: 'F&B',
-    value: 'F&B'
-  },
-  {
-    label: 'Logistic',
-    value: 'Logistic'
-  },
-  {
-    label: 'Crypto, NFT',
-    value: 'Crypto, NFT'
-  }
-]
-export const BusinessType = [
-  {
-    label: 'B2B',
-    value: 'B2B'
-  },
-  {
-    label: 'B2C',
-    value: 'B2C'
-  },
-  {
-    label: 'B2B2C',
-    value: 'B2B2C'
-  },
-  {
-    label: 'B2G',
-    value: 'B2G'
-  },
-  {
-    label: 'C2C',
-    value: 'C2C'
-  }
-]
-export const Producttype = [
-  {
-    label: 'Hardware',
-    value: 'Hardware'
-  },
-  {
-    label: 'Software',
-    value: 'Software'
-  },
-  {
-    label: 'Other',
-    value: 'Other'
-  }
-]
 export const MemberInvestor = [
   {
     fullNameUserTeam: 'Quang Đạo',
@@ -557,5 +499,139 @@ export const items_online = [
     title: 'Social contexts in Korea',
     univer: 'Yonsei University',
     link: '/firststepkorean'
+  }
+]
+export const CompanyType = [
+  {
+    label: 'Foreign company',
+    value: 'Foreign company'
+  },
+  {
+    label: 'Vietnamese company',
+    value: 'Vietnamese company'
+  },
+  {
+    label: 'GO/ NGO/ Voluntary clubs',
+    value: 'GO/ NGO/ Voluntary clubs'
+  },
+  {
+    label: 'Startup',
+    value: 'Startup'
+  },
+  {
+    label: 'Others',
+    value: 'Others'
+  }
+]
+export const CompanyScale = [
+  {
+    label: 'Small (<49 employees)',
+    value: 'Small'
+  },
+  {
+    label: 'Medium (50 - 249 employees)',
+    value: 'Medium'
+  },
+  {
+    label: 'Big (>=250 employees)',
+    value: 'Big '
+  }
+]
+export const BusinessArea = [
+  {
+    label: 'IT/ AI/ Blockchain',
+    value: 'IT/ AI/ Blockchain'
+  },
+  {
+    label: 'E-commerce',
+    value: 'E-commerce'
+  },
+  {
+    label: 'Education, Training',
+    value: 'Education, Training'
+  },
+  {
+    label: 'Media, Communications',
+    value: 'Media, Communications'
+  },
+  {
+    label: 'Retailers. FMCG',
+    value: 'Retailers. FMCG'
+  },
+  {
+    label: 'Logistics, Importing & Exporting',
+    value: 'Logistics, Importing & Exporting'
+  },
+  {
+    label: 'Travelling, Hotel',
+    value: 'Travelling, Hotel'
+  },
+  {
+    label: 'Human Resources',
+    value: 'Human Resources'
+  },
+  {
+    label: 'Business Administration',
+    value: 'Business Administration'
+  },
+  {
+    label: 'Stock, Finance, Investment, Insurance',
+    value: 'Stock, Finance, Investment, Insurance'
+  },
+  {
+    label: 'Marketing & Sales',
+    value: 'Marketing & Sales'
+  },
+  {
+    label: 'Account & Audit',
+    value: 'Account & Audit'
+  },
+  {
+    label: 'Law consulting',
+    value: 'Law consulting'
+  },
+  {
+    label: 'Medical, Healthcare',
+    value: 'Medical, Healthcare'
+  },
+  {
+    label: 'Real Estate',
+    value: 'Real Estate'
+  },
+  {
+    label: 'Fashion, Beauty',
+    value: 'Fashion, Beauty'
+  },
+  {
+    label: 'Entertainment, Art',
+    value: 'Entertainment, Art'
+  },
+  {
+    label: 'Printing, Publisher',
+    value: 'Printing, Publisher'
+  },
+  {
+    label: 'Mechanical, Electronic, Automation, Industrial',
+    value: 'Mechanical, Electronic, Automation, Industrial'
+  },
+  {
+    label: 'Construction, Architectural Design, Interior',
+    value: 'Construction, Architectural Design, Interior'
+  },
+  {
+    label: 'Environment, energy, biotechnology',
+    value: 'Environment, energy, biotechnology'
+  },
+  {
+    label: 'Agriculture, Forestry, Fisheries, Minerals',
+    value: 'Agriculture, Forestry, Fisheries, Minerals'
+  },
+  {
+    label: 'Telecommunications, Postal',
+    value: 'Telecommunications, Postal'
+  },
+  {
+    label: 'Others',
+    value: 'Others'
   }
 ]

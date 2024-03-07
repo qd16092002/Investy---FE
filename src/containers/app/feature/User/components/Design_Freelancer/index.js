@@ -349,7 +349,6 @@ function Design_Freelancer() {
           </div>
         </div>
       </div>
-      <div className={cx('ranking')}></div>
     </div>
   )
 }

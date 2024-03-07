@@ -12,6 +12,7 @@ import ItemsOnlineCource from './pages/OnlineCourse/ItemsOnlineCource'
 import VideoOnlineCource from './pages/OnlineCourse/VideoOnlineCource'
 import AddMoreServives from './components/ServicesProfileUser/componets/AddMoreServives'
 import Information from './pages/Information'
+import RecruitmentUser from './pages/RecruimentUser'
 
 export const userRouteList = [
   {
@@ -71,10 +72,18 @@ export const userRouteList = [
     element: <HeaderOnlyLayout></HeaderOnlyLayout>
   },
   {
-    path: '/recruiment',
+    path: '/recruitment',
     element: (
       <HeaderOnlyLayout>
         <Recruitment />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/recruitmentuser',
+    element: (
+      <HeaderOnlyLayout>
+        <RecruitmentUser />
       </HeaderOnlyLayout>
     )
   },

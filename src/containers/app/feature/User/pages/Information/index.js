@@ -98,6 +98,29 @@ function Information() {
       {activeTab.code === TABS.CHANGEPASSWORD.code && (
         <div className={cx('content')}>
           <div className={cx('title')}>Change password</div>
+          <form onSubmit={handleSubmit(onSubmit)} className={cx('box')}>
+            <div className={cx('div1')}>
+              <div className={cx('avatar')}>{userInfo?.fullName && userInfo?.fullName[0]?.toUpperCase()}</div>
+            </div>
+            <div className={cx('div2')}>
+              <div className={cx('label')}>Enter your password</div>
+              <input type='text' placeholder='Enter your password here' {...register('password')}></input>
+
+              <div className={cx('label')}>New password</div>
+              <input type='text' placeholder='Enter your new password here'></input>
+              <div className={cx('label')}>Re-enter new password</div>
+              <input type='text' placeholder='Re-enter your new password here'></input>
+              <button
+                onClick={() => {
+                  formInput.current.click()
+                }}
+                type='submit'
+                disabled={isUpdating}
+              >
+                Save
+              </button>
+            </div>
+          </form>
         </div>
       )}
     </div>

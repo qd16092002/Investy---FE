@@ -2,7 +2,7 @@
 import classNames from 'classnames/bind'
 import styles from './Search_FreeLancer.module.sass'
 import { IconBoxSearch } from '@src/assets/svgs'
-import { TreeSelect } from 'antd'
+import { Slider, TreeSelect } from 'antd'
 import { useState } from 'react'
 import { treeData } from '@src/app-configs'
 
@@ -16,7 +16,7 @@ function Search_FreeLancer() {
   }
   return (
     <div className={cx('form-wallpaper')}>
-      <div className={cx('box-search')}>
+      <form className={cx('box-search')}>
         <div className={cx('title')}> Find the right freelance service, right away</div>
         <div className={cx('boxsearch')}>
           <input className={cx('input_search')} placeholder='Type the company name'></input>
@@ -30,7 +30,7 @@ function Search_FreeLancer() {
               showSearch
               value={value}
               style={{
-                height: '50px',
+                height: '60px',
                 border: '1px solid #7A7A7A',
                 width: '100%',
                 borderRadius: '100px',
@@ -53,35 +53,49 @@ function Search_FreeLancer() {
             <option value='' disabled selected hidden>
               Service options
             </option>
-            <option value='Idea'>Idea</option>
-            <option value='Early Growth'>Early Growth</option>
-            <option value='Growth'>Growth</option>
+            <option value='Weekend work available'>Weekend work available</option>
+            <option value='Weekend work not possible'>Weekend work not possible</option>
+            <option value='Weekend work service'>Weekend work service</option>
+          </select>
+          <div className={cx('slider')}>
+            <div>Budget (.000 đ)</div>
+            <Slider
+              range={{
+                draggableTrack: true
+              }}
+              min={0}
+              max={50000}
+              step={500}
+            />
+          </div>
+        </div>
+        <div className={cx('choice_search')}>
+          <input placeholder='Delivery time'></input>
+          <select>
+            <option value='' disabled selected hidden>
+              Tax invoice
+            </option>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
           </select>
           <select>
             <option value='' disabled selected hidden>
-              Budget
+              Quick response
             </option>
-            <option value='Idea'>Idea</option>
-            <option value='Early Growth'>Early Growth</option>
-            <option value='Growth'>Growth</option>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
           </select>
         </div>
         <div className={cx('choice_search')}>
           <select>
             <option value='' disabled selected hidden>
-              Delivery time
+              Portfolio
             </option>
-            <option value='Idea'>Idea</option>
-            <option value='Early Growth'>Early Growth</option>
-            <option value='Growth'>Growth</option>
+            <option value='Yes'>Yes</option>
+            <option value='No'>No</option>
           </select>
-          <input placeholder='Tax invoice'></input>
-          <input placeholder='Quick response'></input>
         </div>
-        <div className={cx('choice_search')}>
-          <input placeholder='Portfolio'></input>
-        </div>
-      </div>
+      </form>
     </div>
   )
 }

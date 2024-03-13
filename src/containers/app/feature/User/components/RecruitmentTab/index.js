@@ -4,7 +4,6 @@ import styles from './RecruitmentTab.module.sass'
 import {
   DeadlineIconBig,
   EmployIcon,
-  IconUploadCV,
   JobIcon,
   LocationIcon,
   LocationIconBig,
@@ -17,6 +16,7 @@ import { useGetRecruitmentbyIDMutation } from '../../userService'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import moment from 'moment'
+import CopyButton from '@src/components/CoppyButton'
 
 const cx = classNames.bind(styles)
 const getRecruitId = (path) => {
@@ -124,8 +124,7 @@ function RecruitmentTab() {
                     marginTop: '-10px'
                   }}
                 >
-                  {' '}
-                  <IconUploadCV />
+                  <CopyButton />
                 </div>
               </div>
             </div>

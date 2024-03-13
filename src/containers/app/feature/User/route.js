@@ -4,7 +4,6 @@ import Settings from './pages/Settings'
 import HeaderOnlyLayout from '@src/components/Layouts/HeaderOnlyLayout'
 import FreeLancer from './pages/FreeLancer'
 import Recruitment from './pages/Recruitment'
-import RecruitmentTab from './pages/RecruitmentTab'
 import Company from './pages/Company'
 import OnlineCourse from './pages/OnlineCourse'
 import InviteFriend from './pages/InviteFriend'
@@ -13,6 +12,7 @@ import VideoOnlineCource from './pages/OnlineCourse/VideoOnlineCource'
 import AddMoreServives from './components/ServicesProfileUser/componets/AddMoreServives'
 import Information from './pages/Information'
 import RecruitmentUser from './pages/RecruimentUser'
+import RecruitmentTab from './components/RecruitmentTab'
 
 export const userRouteList = [
   {
@@ -108,7 +108,7 @@ export const userRouteList = [
     )
   },
   {
-    path: '/recruittab',
+    path: '/recruittab/:recruitId',
     element: (
       <HeaderOnlyLayout>
         <RecruitmentTab />

@@ -150,25 +150,23 @@ export const userApi = createApi({
         }
       }
     }),
-    addMember: build.mutation({
+    addRecruitment: build.mutation({
       query: (body) => ({
-        url: '/addTeamMemberByUsername',
+        url: '/addrecruitment',
         method: 'POST',
         body: body
       })
     }),
-    getTeamMemberbyID: build.mutation({
-      query: (id) => {
+    getRecruitmentbyID: build.mutation({
+      query: (recruitId) => {
         return {
-          url: `/teamMembers/${id}`
+          url: `/recruitment/${recruitId}`
         }
       }
     }),
-    addPredict: build.mutation({
-      query: (body) => ({
-        url: '/predict',
-        method: 'POST',
-        body: body
+    getAllRecruitment: build.query({
+      query: () => ({
+        url: `/getallrecruitment`
       })
     })
   })
@@ -190,11 +188,11 @@ export const {
   useLazyGetstudentQuery,
   useLazyGettutorQuery,
   useGetProfileByIdMutation,
-  useAddMemberMutation,
-  useGetTeamMemberbyIDMutation,
-  useAddPredictMutation,
   useLazyGetInvestorQuery,
   useLazyGetStartUpQuery,
   useLazyGetPercentageQuery,
-  useSendEmailMutation
+  useSendEmailMutation,
+  useAddRecruitmentMutation,
+  useLazyGetAllRecruitmentQuery,
+  useGetRecruitmentbyIDMutation
 } = userApi

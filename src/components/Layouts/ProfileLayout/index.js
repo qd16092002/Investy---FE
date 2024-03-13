@@ -18,7 +18,6 @@ const cx = cn.bind(styles)
 
 function ProfileLayout({ children }) {
   const userInfo = useSelector((state) => state.auth.user)
-  console.log('userInfo:: ', userInfo)
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
   const dispatch = useDispatch()
   const navigate = useNavigate()

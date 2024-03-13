@@ -1,54 +1,25 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
 import styles from './Companyprofile.module.sass'
-import { IconHeart, LocationIcon, MoneyIconrate } from '@src/assets/svgs'
 import { Link } from 'react-router-dom'
 import logoAri from '@src/assets/images/User/Company/avtari.png'
-import logoInvesty from '@src/assets/images/User/Company/avtinvesty.png'
+import { useEffect, useState } from 'react'
 const cx = classNames.bind(styles)
+import { v4 as uuidv4 } from 'uuid'
+import { useLazyGetAllRecruitmentQuery } from '../../userService'
+import moment from 'moment'
 
 function Companyprofile() {
+  const [getRecruitment, { data: recruitmentif }] = useLazyGetAllRecruitmentQuery()
+  console.log('recruitmentif :', recruitmentif)
+  useEffect(() => {
+    getRecruitment({}, false)
+  }, [getRecruitment])
+  const [recruitmentid, setrecruitmentid] = useState()
+  console.log('abc:  ', recruitmentid)
   return (
     <div className={cx('form-wallpaper')}>
-      <div className={cx('title')}>DESIGN</div>
       <div className={cx('content')}>
-        <div className={cx('box_1')}>
-          <div className={cx('image')}>COMPANY PROFILE</div>
-          <div className={cx('content')}>
-            <div className={cx('title')}>
-              <div className={cx('avt')}></div>
-              <div className={cx('name')}>
-                <div className={cx('company_name')}>INVESTY COMPANY</div>
-                <div className={cx('company_name')}>LTD</div>
-                <div className={cx('spotlight_company')}>Spotlight Company</div>
-              </div>
-            </div>
-            <div className={cx('line')}></div>
-            <div className={cx('profile')}>
-              <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
-              <div className={cx('icon')}>
-                <MoneyIconrate />
-                <div className={cx('price')}>10 - 12 million</div>
-              </div>
-              <div className={cx('icon')}>
-                <LocationIcon />
-                <div className={cx('price')}>Hanoi</div>
-              </div>
-            </div>
-            <div className={cx('line')}></div>
-            <div className={cx('profile')}>
-              <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
-              <div className={cx('icon')}>
-                <MoneyIconrate />
-                <div className={cx('price')}>10 - 12 million</div>
-              </div>
-              <div className={cx('icon')}>
-                <LocationIcon />
-                <div className={cx('price')}>Hanoi</div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className={cx('box_2')}>
           <div className={cx('input_search')}>
             <select>
@@ -96,72 +67,34 @@ function Companyprofile() {
             <div className={cx('button_checkbox')}>Emergency</div>
           </div>
           <div className={cx('product')}>
-            <div className={cx('box')}>
-              <img src={logoAri} alt='logoari' className={cx('avt')}></img>
-              <div className={cx('content')}>
-                <div className={cx('title')}>
-                  <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
-                  <div className={cx('price')}>10 - 12 million</div>
-                </div>
-                <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
-                <div className={cx('icon')}>
-                  <div className={cx('location')}>Ha Noi</div>
-                  <div className={cx('date')}>30/2/2024</div>
-                  <div className={cx('location')}>Post 1 hour ago</div>
-                  <Link to='/recruittab' className={cx('apply')}>
-                    Apply
-                  </Link>
-                  <div className={cx('heart')}>
-                    {' '}
-                    <IconHeart />
+            {recruitmentif?.map((item) => {
+              return (
+                <div key={uuidv4(item)} className={cx('box')}>
+                  <img src={logoAri} alt='logoari' className={cx('avt')}></img>
+                  <div className={cx('content')}>
+                    <div className={cx('title')}>
+                      <div className={cx('bio')}>{item.RecruitmentTitle}</div>
+                      <div className={cx('price')}>{item.Salary}</div>
+                    </div>
+                    <div className={cx('content')}> {item.Nameofthecompany}</div>
+                    <div className={cx('icon')}>
+                      <div className={cx('location')}>{item.Location}</div>
+                      <div className={cx('date')}>
+                        Deadline: {moment(item.RecruitmentDeadline).format('DD/MM/yyyy')}
+                      </div>
+                      <div className={cx('location')}>Post 1 hour ago</div>
+                      <Link
+                        onClick={() => setrecruitmentid(item._id)}
+                        to={`/recruittab/${item._id}`}
+                        className={cx('apply')}
+                      >
+                        Apply
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className={cx('box')}>
-              <img src={logoAri} alt='logoari' className={cx('avt')}></img>
-              <div className={cx('content')}>
-                <div className={cx('title')}>
-                  <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
-                  <div className={cx('price')}>10 - 12 million</div>
-                </div>
-                <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
-                <div className={cx('icon')}>
-                  <div className={cx('location')}>Ha Noi</div>
-                  <div className={cx('date')}>30/2/2024</div>
-                  <div className={cx('location')}>Post 1 hour ago</div>
-                  <Link to='/recruittab' className={cx('apply')}>
-                    Apply
-                  </Link>
-                  <div className={cx('heart')}>
-                    {' '}
-                    <IconHeart />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={cx('box')}>
-              <img src={logoInvesty} alt='logoinvesty' className={cx('avt')}></img>
-              <div className={cx('content')}>
-                <div className={cx('title')}>
-                  <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
-                  <div className={cx('price')}>10 - 12 million</div>
-                </div>
-                <div className={cx('content')}> INVESTY COMPANY LIMITED</div>
-                <div className={cx('icon')}>
-                  <div className={cx('location')}>Ha Noi</div>
-                  <div className={cx('date')}>30/2/2024</div>
-                  <div className={cx('location')}>Post 1 hour ago</div>
-                  <Link to='/recruittab' className={cx('apply')}>
-                    Apply
-                  </Link>
-                  <div className={cx('heart')}>
-                    {' '}
-                    <IconHeart />
-                  </div>
-                </div>
-              </div>
-            </div>
+              )
+            })}
           </div>
         </div>
       </div>

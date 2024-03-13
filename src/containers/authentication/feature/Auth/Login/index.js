@@ -17,7 +17,7 @@ const cx = classNames.bind(styles)
 
 function Login() {
   const [formData, setFormData] = useState({
-    username: null,
+    email: null,
     password: null,
     isRememberPassword: false
   })
@@ -37,11 +37,11 @@ function Login() {
   const [getLayoutUser] = useLazyGetLayoutUserQuery()
 
   useEffect(() => {
-    if (isLoggedIn) navigate('/recruiment')
+    if (isLoggedIn) navigate('/')
   }, [isLoggedIn])
 
   const onSubmit = async (data) => {
-    setFormData({ ...formData, username: data.username, password: data.password })
+    setFormData({ ...formData, email: data.email, password: data.password })
     const response = await loginRequest(data).unwrap()
 
     if (response.error) {
@@ -81,21 +81,21 @@ function Login() {
               </div>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={cx('form-field')}>
-                  <label htmlFor='username-login'>Email</label>
+                  <label htmlFor='email-login'>Email</label>
                   <input
                     // onChange={(e) => {
                     //   setFormData({ ...formData, email: e.target.value })
                     // }}
-                    className={cx(errors.username ? 'error' : '')}
-                    {...register('username', {
-                      required: 'Username address is required',
+                    className={cx(errors.email ? 'error' : '')}
+                    {...register('email', {
+                      required: 'Email address is required',
                       onChange: () => setError(false)
                     })}
-                    id='username-login'
+                    id='email-login'
                     type='text'
-                    placeholder='Enter your username'
+                    placeholder='Enter your email'
                   />
-                  {errors.username && (
+                  {errors.email && (
                     <p className={cx('error-text')} role='alert'>
                       {errors.email?.message}
                     </p>
@@ -125,7 +125,7 @@ function Login() {
                 </div>
                 {error && (
                   <div style={{ marginBottom: '8px' }} className={cx('error-text')}>
-                    Sorry, the username or password you provided is incorrect.
+                    Sorry, the email or password you provided is incorrect.
                   </div>
                 )}
                 <div className={cx('password-check')}>

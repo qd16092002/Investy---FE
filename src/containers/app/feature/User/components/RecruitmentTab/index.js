@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
-import styles from './CompanyprofileUser.module.sass'
+import styles from './RecruitmentTab.module.sass'
 import {
   DeadlineIconBig,
   EmployIcon,
-  IconHeart,
   IconUploadCV,
   JobIcon,
   LocationIcon,
@@ -14,13 +13,30 @@ import {
   WebsiteIcon
 } from '@src/assets/svgs'
 import toast, { Toaster } from 'react-hot-toast'
+import { useGetRecruitmentbyIDMutation } from '../../userService'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router'
+import moment from 'moment'
 
 const cx = classNames.bind(styles)
-
-function CompanyprofileUser() {
+const getRecruitId = (path) => {
+  // Split the path and get the last part
+  const pathParts = path.split('/')
+  const recruitId = pathParts[pathParts.length - 1]
+  return recruitId
+}
+function RecruitmentTab() {
   const onSubmit = async () => {
     toast.success('Upload CV successfully!')
   }
+  const { pathname } = useLocation()
+  const recruitId = getRecruitId(pathname)
+  const [getrecruitbyid, { data: recruitbyid }] = useGetRecruitmentbyIDMutation({ recruitId })
+  console.log(recruitbyid)
+  useEffect(() => {
+    getrecruitbyid(recruitId)
+  }, [getrecruitbyid, recruitId])
+
   return (
     <div className={cx('form-wallpaper')}>
       <Toaster position='top-center' />
@@ -31,17 +47,13 @@ function CompanyprofileUser() {
             <div className={cx('title')}>
               <div className={cx('avt')}></div>
               <div className={cx('name')}>
-                <div className={cx('company_name')}>INVESTY COMPANY</div>
-                <div className={cx('company_name')}>LTD</div>
+                <div className={cx('company_name')}>{recruitbyid?.Nameofthecompany}</div>
                 <div className={cx('spotlight_company')}>Spotlight Company</div>
               </div>
             </div>
             <div className={cx('line')}></div>
             <div className={cx('profile')}>
-              <div className={cx('bio')}>
-                Investy Co., Lt d. is a connecting company that was established in 2023 with a vision to incubate
-                Vietnamese talents
-              </div>
+              <div className={cx('bio')}>{recruitbyid?.CompanyIntroduction}</div>
             </div>
             <div className={cx('line')}></div>
             <div className={cx('profile')}>
@@ -68,7 +80,7 @@ function CompanyprofileUser() {
           <div className={cx('box')}>
             <div className={cx('content')}>
               <div className={cx('title')}>
-                <div className={cx('bio')}>Digital Marketing Intern for Vietnam SNS</div>
+                <div className={cx('bio')}>{recruitbyid?.RecruitmentTitle}</div>
               </div>
               <div className={cx('content')}>
                 <div className={cx('items')}>
@@ -77,7 +89,7 @@ function CompanyprofileUser() {
                   </div>
                   <div className={cx('icon_name')}>
                     <div className={cx('title')}>Salary range</div>
-                    <div className={cx('price')}>10 - 12 million VND</div>
+                    <div className={cx('price')}>{recruitbyid?.Salary}</div>
                   </div>
                 </div>
                 <div className={cx('items')}>
@@ -86,7 +98,7 @@ function CompanyprofileUser() {
                   </div>
                   <div className={cx('icon_name')}>
                     <div className={cx('title')}>Location</div>
-                    <div className={cx('price')}>Hanoi</div>
+                    <div className={cx('price')}>{recruitbyid?.Location}</div>
                   </div>
                 </div>
                 <div className={cx('items')}>
@@ -95,19 +107,18 @@ function CompanyprofileUser() {
                   </div>
                   <div className={cx('icon_name')}>
                     <div className={cx('title')}>Experience</div>
-                    <div className={cx('price')}>Under 1 year</div>
+                    <div className={cx('price')}>{recruitbyid?.Workexperience}</div>
                   </div>
                 </div>
               </div>
               <div className={cx('icon')}>
-                <div className={cx('date')}>Deadline: 30/2/2024</div>
+                <div className={cx('date')}>
+                  Deadline: {moment(recruitbyid?.RecruitmentDeadline).format('DD/MM/yyyy')}
+                </div>
                 <button onClick={onSubmit} type='submit' className={cx('apply')}>
                   Apply Now
                 </button>
-                <div className={cx('heart')}>
-                  {' '}
-                  <IconHeart />
-                </div>
+
                 <div
                   style={{
                     marginTop: '-10px'
@@ -174,4 +185,4 @@ function CompanyprofileUser() {
   )
 }
 
-export default CompanyprofileUser
+export default RecruitmentTab

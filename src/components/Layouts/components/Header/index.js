@@ -22,10 +22,10 @@ const menuUser = [
     title: 'Freelancer',
     link: '/freelance'
   },
-  {
-    title: 'CV builder',
-    link: '/cvbuild'
-  },
+  // {
+  //   title: 'CV builder',
+  //   link: '/cvbuild'
+  // },
   {
     title: 'Company',
     link: '/company'
@@ -69,14 +69,13 @@ const menuApply = [
 ]
 function Header() {
   const userInfo = useSelector((state) => state.auth.user)
-  console.log('userInfo:: ', userInfo)
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const handleLogout = () => {
     dispatch(logout())
     cookies.remove('access_token')
-    navigate('/recruiment')
+    navigate('/')
   }
   const location = useLocation()
   return (

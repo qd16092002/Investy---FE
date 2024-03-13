@@ -58,7 +58,7 @@ function Search_FreeLancer() {
             <option value='Weekend work service'>Weekend work service</option>
           </select>
           <div className={cx('slider')}>
-            <div>Budget (.000 đ)</div>
+            <div>Budget (.000 VND)</div>
             <Slider
               range={{
                 draggableTrack: true

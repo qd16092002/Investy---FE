@@ -69,7 +69,6 @@ const menuAdmin = [
 function LayoutUser() {
   const location = useLocation()
   const userInfo = useSelector((state) => state.auth.user)
-  console.log('userInfo:: ', userInfo)
 
   return (
     <div className={cx('LayoutUser-wrapper')}>

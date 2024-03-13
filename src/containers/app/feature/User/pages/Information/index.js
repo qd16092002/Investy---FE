@@ -69,9 +69,8 @@ function Information() {
               <div className={cx('avatar')}>{userInfo?.fullName && userInfo?.fullName[0]?.toUpperCase()}</div>
             </div>
             <div className={cx('div2')}>
-              <div className={cx('label')}>Nickname</div>
+              <div className={cx('label')}>Full Name</div>
               <input type='text' {...register('fullName')} defaultValue={userInfo?.fullName}></input>
-              <div className={cx('note')}>Nicknames can only be changed 30 days after initial setting or change.</div>
               <div className={cx('note')}>You cannot change your nickname if there is an ongoing transaction.</div>
               <div className={cx('note')}>
                 Only Korean/English letters/numbers can be used, and the same string as the email ID cannot be used.

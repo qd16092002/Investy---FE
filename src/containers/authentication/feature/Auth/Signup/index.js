@@ -10,25 +10,60 @@ import { Col, Row } from 'antd'
 import { useForm } from 'react-hook-form'
 import recrui from '@src/assets/images/Auth/recrui.png'
 import apply from '@src/assets/images/Auth/apply.png'
-import toast, { Toaster } from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
+import ReactLoading from 'react-loading'
+import { useSignupMutation } from '../authService'
+import { CheckIcon } from '@heroicons/react/20/solid'
+
 const cx = classNames.bind(styles)
 
 function Signup() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
   const navigate = useNavigate()
   const [eyeShow, setEyeShow] = useState(false)
-
+  const [notAgree, setNotAgree] = useState(false)
   useEffect(() => {
     if (isLoggedIn) navigate('/')
   }, [isLoggedIn])
-
   const {
     register,
-
+    handleSubmit,
+    setError,
     formState: { errors }
   } = useForm({
     mode: 'onChange'
   })
+  const [formData, setFormData] = useState({
+    email: null,
+    password: null,
+    isAgree: false
+  })
+  const [signup, { isLoading }] = useSignupMutation()
+  const onSubmit = async (data) => {
+    if (!formData.isAgree) {
+      setNotAgree(true)
+    } else {
+      try {
+        const response = await signup({
+          username: data.username,
+          email: data.email,
+          role: data.role,
+          password: data.password
+        }).unwrap()
+
+        console.log('response:: ', response)
+        if (!response.error) {
+          //redirect login page
+          navigate('/login')
+        }
+      } catch (error) {
+        if (error.data.detail === 'Username already exists')
+          setError('username', { type: 'manual', message: error.data.detail }, { shouldFocus: true })
+        else setError('email', { type: 'manual', message: error.data.detail }, { shouldFocus: true })
+        console.log('error: ', error)
+      }
+    }
+  }
   const TABS = {
     REC: {
       code: 'REC'
@@ -37,6 +72,7 @@ function Signup() {
       code: 'APP'
     }
   }
+
   const handleButtonClick1 = () => {
     setActiveTab(TABS.REC)
     setSignupShow(!signupShow)
@@ -52,12 +88,10 @@ function Signup() {
     setSignupShow(!signupShow)
   }
 
-  const onSubmit = async () => {
-    toast.success('Register sucessfull!')
-  }
   const [signupShow, setSignupShow] = useState(false)
   const [recShow, setRecShow] = useState(false)
   const [activeTab, setActiveTab] = useState(TABS.REC)
+
   return (
     <div className={cx('login-wrapper')}>
       <Toaster position='top-center' />
@@ -65,7 +99,7 @@ function Signup() {
         <div className={cx('form-wrapper')}>
           <div className={cx('form')}>
             <div className={cx('text-wrapper')}>
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 {signupShow ? (
                   <div>
                     {activeTab.code === TABS.REC.code && (
@@ -97,20 +131,17 @@ function Signup() {
                                 style={{
                                   display: 'flex',
                                   justifyContent: 'space-between',
-                                  width: '92.5%'
+                                  width: '100%',
+                                  gap: '40px'
                                 }}
                               >
                                 <div>
                                   <div className={cx('label')}>Full Name</div>
                                   <input className={cx('input')}></input>
                                 </div>
-                                <div
-                                  style={{
-                                    marginLeft: '100px'
-                                  }}
-                                >
+                                <div>
                                   <div className={cx('label')}>Gender</div>
-                                  <select className={cx('role')}>
+                                  <select className={cx('input')}>
                                     <option className={cx('option')} value='MALE'>
                                       MALE
                                     </option>
@@ -136,7 +167,7 @@ function Signup() {
                                 style={{
                                   display: 'flex',
                                   justifyContent: 'space-between',
-                                  width: '85%'
+                                  gap: '20px'
                                 }}
                               >
                                 <div>
@@ -161,7 +192,34 @@ function Signup() {
                                 </div>
                               </div>
                             </div>
-
+                            <div className={cx('password-check')}>
+                              <div className={cx('password-check')}>
+                                <div className={cx('checkbox')}>
+                                  <label htmlFor='remember-login'>
+                                    <div
+                                      style={
+                                        formData.isAgree
+                                          ? { background: '#2B2C2C', border: 'none' }
+                                          : { background: 'none', border: '1px solid #2B2C2C' }
+                                      }
+                                      className={cx('check-icon')}
+                                    >
+                                      {formData.isAgree && <CheckIcon />}
+                                    </div>
+                                    <div className={cx('text')}>I agree to TutorNow Terms and Privacy policy</div>
+                                  </label>
+                                  <input
+                                    id='remember-login'
+                                    onChange={(e) => {
+                                      setNotAgree(false)
+                                      setFormData({ ...formData, isAgree: e.target.checked })
+                                    }}
+                                    type='checkbox'
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            {notAgree && <div className={cx('error-message-input')}>You must agree to sign up!</div>}
                             <div
                               style={{
                                 display: 'flex',
@@ -172,8 +230,9 @@ function Signup() {
                               <div className={cx('button')} onClick={backrecrui}>
                                 Back
                               </div>
-                              <button className={cx('button')} type='submit' onClick={onSubmit}>
-                                Submit
+
+                              <button className={cx('button')} type='submit' disabled={isLoading}>
+                                {isLoading ? <ReactLoading type='bubbles' height={32} width={32} /> : 'Sign up'}
                               </button>
                             </div>
                           </div>
@@ -310,7 +369,7 @@ function Signup() {
                               }}
                             >
                               <div className={cx('label_appli')}>Full Name</div>
-                              <input className={cx('input_appli')}></input>
+                              <input className={cx('input_appli')} placeholder='Enter your Full Name'></input>
                             </div>
 
                             <div className={cx('form-field')}>

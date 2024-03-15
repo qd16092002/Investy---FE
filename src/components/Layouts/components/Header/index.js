@@ -2,7 +2,7 @@ import classNames from 'classnames/bind'
 import styles from './Header.module.sass'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router'
-import { IconBoxSearch, IconProfile, SignOutIcon } from '@src/assets/svgs'
+import { IconBoxSearch, LogoInvesty, SignOutIcon } from '@src/assets/svgs'
 
 import { logout } from '@src/containers/authentication/feature/Auth/authSlice'
 import Cookies from 'universal-cookie'
@@ -81,11 +81,16 @@ function Header() {
   return (
     <div className={cx('header-wrapper')}>
       <div className={cx('content')}>
-        <div className={cx('boxsearch')}>
-          <input className={cx('input_search')} placeholder='Find'></input>
-          <label htmlFor='search' className={cx('icon')}>
-            <IconBoxSearch />
-          </label>
+        <div className={cx('logoandsearch')}>
+          <Link to='/' className={cx('logo')}>
+            <LogoInvesty />
+          </Link>
+          <div className={cx('boxsearch')}>
+            <input className={cx('input_search')} placeholder='Find'></input>
+            <label htmlFor='search' className={cx('icon')}>
+              <IconBoxSearch />
+            </label>
+          </div>
         </div>
         {isLoggedIn ? (
           <div>
@@ -108,7 +113,6 @@ function Header() {
                               <Menu.Item>
                                 <Link to={item.link}>
                                   <div className={cx('header__icon')} key={uuidv4(index)}>
-                                    <IconProfile />
                                     <div
                                       style={{
                                         marginLeft: '3px'
@@ -137,7 +141,6 @@ function Header() {
                               <Menu.Item>
                                 <Link to={item.link}>
                                   <div className={cx('header__icon')} key={uuidv4(index)}>
-                                    <IconProfile />
                                     <div
                                       style={{
                                         marginLeft: '3px'

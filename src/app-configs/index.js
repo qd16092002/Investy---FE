@@ -635,3 +635,33 @@ export const BusinessArea = [
     value: 'Others'
   }
 ]
+export const LangdingpageJob = [
+  {
+    h1: 'Full-stack',
+    h21: '10 - 12 mil VND',
+    h22: 'remote work',
+    h3: 'What to expect',
+    h4: 'Achieving efficient results with a small number of people'
+  },
+  {
+    h1: 'Marketing',
+    h21: '5 mil VND ',
+    h22: 'remote work',
+    h3: 'What to expect',
+    h4: 'Ability and vision to become self-sufficient without relying on investment'
+  },
+  {
+    h1: 'Design',
+    h21: '7 mil VND ',
+    h22: 'remote work',
+    h3: 'What to expect',
+    h4: 'Devote yourself to projects while creating synergy with talented colleagues seeking growth'
+  },
+  {
+    h1: 'Front-end',
+    h21: '10 - 12 mil VND ',
+    h22: 'remote work',
+    h3: 'What to expect',
+    h4: 'Grow quickly while working with outstanding colleagues and absorbing the strengths of team members'
+  }
+]

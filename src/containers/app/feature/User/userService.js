@@ -168,6 +168,32 @@ export const userApi = createApi({
       query: () => ({
         url: `/getallrecruitment`
       })
+    }),
+    addServices: build.mutation({
+      query: (body) => ({
+        url: '/addservices',
+        method: 'POST',
+        body: body
+      })
+    }),
+    getServicesbyID: build.mutation({
+      query: (servicesId) => {
+        return {
+          url: `/services/${servicesId}`
+        }
+      }
+    }),
+    getServicesbyuser: build.mutation({
+      query: (userId) => {
+        return {
+          url: `/services/${userId}`
+        }
+      }
+    }),
+    getAllServices: build.query({
+      query: () => ({
+        url: `/getallservices`
+      })
     })
   })
 })
@@ -194,5 +220,9 @@ export const {
   useSendEmailMutation,
   useAddRecruitmentMutation,
   useLazyGetAllRecruitmentQuery,
-  useGetRecruitmentbyIDMutation
+  useGetRecruitmentbyIDMutation,
+  useAddServicesMutation,
+  useLazyGetAllServicesQuery,
+  useGetServicesbyIDMutation,
+  useGetServicesbyuserMutation
 } = userApi

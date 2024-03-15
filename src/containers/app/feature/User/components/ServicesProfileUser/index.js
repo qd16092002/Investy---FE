@@ -6,10 +6,21 @@ import { ServicesIconAddMore, StartRate } from '@src/assets/svgs'
 import { Pagination } from 'antd'
 import avtitems from '@src/assets/images/User/Freelance/Items/3.png'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { useGetServicesbyuserMutation } from '../../userService'
+import { useEffect } from 'react'
 
 const cx = classNames.bind(styles)
 
 function ServicesProfileUser() {
+  const userInfo = useSelector((state) => state.auth.user)
+  const userId = userInfo?._id
+  console.log('userId: ', userId)
+  const [getservicesbyuser, { data: servicesbyuser }] = useGetServicesbyuserMutation({ userId })
+  console.log('abc:: ', servicesbyuser)
+  useEffect(() => {
+    getservicesbyuser(userId)
+  }, [getservicesbyuser, userId])
   return (
     <div className={cx('main')}>
       <div className={cx('product')}>

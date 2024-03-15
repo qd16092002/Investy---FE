@@ -69,7 +69,7 @@ function Login() {
         <div className={cx('form-wrapper')}>
           <div className={cx('form')}>
             <div className={cx('text-wrapper')}>
-              <h3>Lets Get Started</h3>
+              <h3>Welcome to Investy - Top HR Recruitment and Freelancing in Vietnam</h3>
               <div
                 style={{
                   display: 'flex',
@@ -134,8 +134,8 @@ function Login() {
                       <div
                         style={
                           formData.isRememberPassword
-                            ? { background: '#2B2C2C', border: 'none' }
-                            : { background: 'none', border: '1px solid #2B2C2C' }
+                            ? { background: '#24D59E', border: 'none' }
+                            : { background: 'none', border: '1px solid #24D59E' }
                         }
                         className={cx('check-icon')}
                       >

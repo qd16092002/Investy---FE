@@ -35,6 +35,13 @@ function Signup() {
   })
   const [formData, setFormData] = useState({
     email: null,
+    role: null,
+    fullName: null,
+    gender: null,
+    phoneNumber: null,
+    companyName: null,
+    location: null,
+    position: null,
     password: null,
     isAgree: false
   })
@@ -137,11 +144,11 @@ function Signup() {
                               >
                                 <div>
                                   <div className={cx('label')}>Full Name</div>
-                                  <input className={cx('input')}></input>
+                                  <input {...register('fullName')} className={cx('input')} id='fullName'></input>
                                 </div>
                                 <div>
                                   <div className={cx('label')}>Gender</div>
-                                  <select className={cx('input')}>
+                                  <select {...register('gender')} className={cx('input')} id='gender'>
                                     <option className={cx('option')} value='MALE'>
                                       MALE
                                     </option>
@@ -160,7 +167,7 @@ function Signup() {
                               >
                                 <div>
                                   <div className={cx('label')}>Phone number</div>
-                                  <input className={cx('input')}></input>
+                                  <input className={cx('input')} {...register('phoneNumber')} id='phoneNumber'></input>
                                 </div>
                               </div>
                               <div
@@ -172,11 +179,11 @@ function Signup() {
                               >
                                 <div>
                                   <div className={cx('label')}>Company</div>
-                                  <input className={cx('input')}></input>
+                                  <input className={cx('input')} {...register('companyName')} id='companyName'></input>
                                 </div>
                                 <div>
                                   <div className={cx('label')}>Position</div>
-                                  <input className={cx('input')}></input>
+                                  <input className={cx('input')} {...register('position')} id='position'></input>
                                 </div>
                               </div>
                               <div
@@ -188,7 +195,7 @@ function Signup() {
                               >
                                 <div>
                                   <div className={cx('label')}>Location</div>
-                                  <input className={cx('input')}></input>
+                                  <input className={cx('input')} {...register('location')} id='location'></input>
                                 </div>
                               </div>
                             </div>
@@ -199,14 +206,14 @@ function Signup() {
                                     <div
                                       style={
                                         formData.isAgree
-                                          ? { background: '#2B2C2C', border: 'none' }
-                                          : { background: 'none', border: '1px solid #2B2C2C' }
+                                          ? { background: '#24D59E', border: 'none' }
+                                          : { background: 'none', border: '1px solid #24D59E' }
                                       }
                                       className={cx('check-icon')}
                                     >
                                       {formData.isAgree && <CheckIcon />}
                                     </div>
-                                    <div className={cx('text')}>I agree to TutorNow Terms and Privacy policy</div>
+                                    <div className={cx('text')}>I agree to Investy Terms and Privacy policy</div>
                                   </label>
                                   <input
                                     id='remember-login'
@@ -462,13 +469,13 @@ function Signup() {
                     <div className={cx('rolechoice')}>
                       <div onClick={handleButtonClick1}>
                         <div>
-                          <img src={recrui} alt='Recruiter'></img>
+                          <img className={cx('imagerole')} src={recrui} alt='Recruiter'></img>
                         </div>
                         <div className={cx('buttonrole')}>Recruiter</div>
                       </div>
                       <div onClick={handleButtonClick2}>
                         <div>
-                          <img src={apply} alt='Applicant'></img>
+                          <img className={cx('imagerole')} src={apply} alt='Applicant'></img>
                         </div>
                         <div className={cx('buttonrole')}>Applicant</div>
                       </div>

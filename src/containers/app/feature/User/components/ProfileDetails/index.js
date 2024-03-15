@@ -8,7 +8,6 @@ const cx = classNames.bind(styles)
 
 function ProfileDetails({ id }) {
   const [getprofilebyid, { data: profilebyid }] = useGetProfileByIdMutation(userApi.endpoints.getProfileById)
-  console.log(profilebyid)
   useEffect(() => {
     getprofilebyid(id)
   }, [getprofilebyid, id])

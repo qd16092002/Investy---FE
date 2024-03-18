@@ -1,4 +1,8 @@
 import { IconYosenUniversity } from '@src/assets/svgs'
+import logo1 from '@src/assets/svgs/Langdingpage/Page3/1.png'
+import logo2 from '@src/assets/svgs/Langdingpage/Page3/2.png'
+import logo3 from '@src/assets/svgs/Langdingpage/Page3/3.png'
+import logo4 from '@src/assets/svgs/Langdingpage/Page3/4.png'
 
 export const MemberInvestor = [
   {
@@ -663,5 +667,32 @@ export const LangdingpageJob = [
     h22: 'remote work',
     h3: 'What to expect',
     h4: 'Grow quickly while working with outstanding colleagues and absorbing the strengths of team members'
+  }
+]
+
+export const Langdingpage3 = [
+  {
+    image: logo1,
+    title: 'Global network',
+    content:
+      'Tap into a vast network of international businesses, opening doors to exciting opportunities beyond your borders.'
+  },
+  {
+    image: logo2,
+    title: 'Global network',
+    content:
+      'Tap into a vast network of international businesses, opening doors to exciting opportunities beyond your borders.'
+  },
+  {
+    image: logo3,
+    title: 'Global network',
+    content:
+      'Tap into a vast network of international businesses, opening doors to exciting opportunities beyond your borders.'
+  },
+  {
+    image: logo4,
+    title: 'Global network',
+    content:
+      'Tap into a vast network of international businesses, opening doors to exciting opportunities beyond your borders.'
   }
 ]

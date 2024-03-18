@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Link } from 'react-router-dom'
 import { LangdingPageCheck } from '@src/assets/svgs/Langdingpage'
 import { LangdingpageJob } from '@src/app-configs'
+import Page3 from '../Componets/Page3'
 const cx = classNames.bind(styles)
 
 function Home() {
@@ -118,20 +119,7 @@ function Home() {
         src={Langdingpageimage2}
         alt='Image2'
       ></img>
-      <div className={cx('page3')}>
-        <div className={cx('left')}>
-          <div className={cx('title_page3_1')}>
-            <div className={cx('title_page3_line')}></div>
-            <div className={cx('title_page3_text')}>RECRUITMENT & FREELANCING COMPANY</div>
-          </div>
-          <div className={cx('title_page3_2')}>WHERE “GLOBAL TALENTS” MEET OPPORTUNITIES</div>
-          <div className={cx('title_page3_3')}>
-            We&apos;re revolutionizing the way you connect with businesses and secure your future.
-          </div>
-          <div className={cx('title_page3_4')}>Tired of the traditional job hunt?</div>
-        </div>
-        <div className={cx('right')}></div>
-      </div>
+      <Page3 />
     </div>
   )
 }

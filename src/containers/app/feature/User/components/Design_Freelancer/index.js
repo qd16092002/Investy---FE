@@ -100,9 +100,6 @@ function Design_Freelancer() {
           <img src={image2} alt='image1' className={cx('items')}></img>
           <img src={image3} alt='image1' className={cx('items')}></img>
         </div>
-        <div className={cx('pagination')}>
-          <Pagination defaultCurrent={3} total={30} />
-        </div>
       </div>
       <div className={cx('business')}>There are more than 700 categories in Investy.</div>
       <div className={cx('box_business')}>

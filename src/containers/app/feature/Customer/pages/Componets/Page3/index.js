@@ -9,8 +9,12 @@ import formi from '@src/assets/svgs/Langdingpage/Page3/Formi.png'
 import Recrui from '@src/assets/svgs/Langdingpage/Page3/Recrui.png'
 import Eliot from '@src/assets/svgs/Langdingpage/Page3/Eliot.png'
 import RoiNam from '@src/assets/svgs/Langdingpage/Page3/RoiNam.png'
+import fb from '@src/assets/svgs/Langdingpage/Page3/fb.png'
+import youtube from '@src/assets/svgs/Langdingpage/Page3/youtube.png'
+import linkedin from '@src/assets/svgs/Langdingpage/Page3/linkedin.png'
 import { LeftButton, RightButton } from '@src/assets/svgs/Langdingpage/Page3'
 import { useState } from 'react'
+import FooterLandingpage from '../FooterLandingpage'
 // import Animation from '../Animation'
 const cx = classNames.bind(styles)
 
@@ -288,7 +292,12 @@ function Page3() {
             )}
           </div>
         </div>
-        <div className={cx('line')}></div>
+        <div
+          style={{
+            marginTop: '40px'
+          }}
+          className={cx('line')}
+        ></div>
         <div
           style={{
             marginTop: '40px'
@@ -303,6 +312,46 @@ function Page3() {
           >
             <div className={cx('title_page3_2')}>RECRUIT OR FREELANCE?</div>
             <div className={cx('title_page3_3')}>Contact us!</div>
+            <div className={cx('contact')}>
+              <Link target='_blank' to='https://www.facebook.com/investy.platform' className={cx('icon')}>
+                <img
+                  style={{
+                    height: '80px'
+                  }}
+                  src={fb}
+                  alt='logo'
+                ></img>
+                <div className={cx('facebook')}>Facebook</div>
+              </Link>
+              <Link target='_blank' to='https://www.youtube.com/@Investyplatform' className={cx('icon')}>
+                <img
+                  style={{
+                    height: '60px',
+                    marginTop: '10px',
+                    marginBottom: '10px'
+                  }}
+                  src={youtube}
+                  alt='logo'
+                ></img>
+                <div className={cx('facebook')}>Investy</div>
+              </Link>
+              <Link
+                target='_blank'
+                to='https://www.linkedin.com/authwall?trk=bf&trkInfo=AQHMiejiZ7yFNgAAAY5Q1KFASu75h1zL7oVHYgERI1ASmAXffmVeeotaC1teOY0YbFrQloyU3lsOgvCGtRkYRTYHZgzg6YhDLtXvVr8KPhLD8Zvp4_qA6zZ7eXSamuuSiREZTkQ=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Finvesty-platform%2F'
+                className={cx('icon')}
+              >
+                <img
+                  style={{
+                    height: '70px',
+                    marginTop: '6px',
+                    marginBottom: '4px'
+                  }}
+                  src={linkedin}
+                  alt='logo'
+                ></img>
+                <div className={cx('facebook')}>Investy</div>
+              </Link>
+            </div>
           </div>
           <div
             className={cx('right')}
@@ -319,6 +368,7 @@ function Page3() {
           className={cx('footerPage3')}
         >
           {/* <Animation /> */}
+          <FooterLandingpage />
         </div>
       </div>
     </div>

@@ -37,10 +37,6 @@ const menuUser = [
 ]
 const menuRecrui = [
   {
-    title: 'Profile',
-    link: '/profile'
-  },
-  {
     title: 'Information',
     link: '/information'
   },

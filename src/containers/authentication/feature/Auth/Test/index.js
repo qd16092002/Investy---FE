@@ -17,7 +17,6 @@ function Test() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
   const navigate = useNavigate()
   const [eyeShow, setEyeShow] = useState(false)
-
   useEffect(() => {
     if (isLoggedIn) navigate('/')
   }, [isLoggedIn])

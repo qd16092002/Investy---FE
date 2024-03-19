@@ -29,7 +29,6 @@ function AppFileInput({
   } = useFormContext()
   const inputId = makeId(10)
   const [filesList, setFilesList] = useState([])
-  console.log('register', register)
   const removeAllFiles = (e) => {
     e.stopPropagation()
     setFilesList([])

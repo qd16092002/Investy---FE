@@ -1,14 +1,21 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
 import styles from './Deluxe.module.sass'
+import { useGetServicesbyIDMutation, userApi } from '../../../userService'
+import { useEffect } from 'react'
 
 const cx = classNames.bind(styles)
 
-function Deluxe() {
+function Deluxe({ iduser }) {
+  const [getservicesid, { data: servicesid }] = useGetServicesbyIDMutation(userApi.endpoints.getServicesbyID)
+  useEffect(() => {
+    getservicesid(iduser)
+  }, [getservicesid, iduser])
+
   return (
     <div className={cx('main')}>
       <div className={cx('price')}>
-        660,000 VND <div className={cx('note')}>(VAT included)</div>
+        {servicesid?.deluxe?.[0]?.VAT2} <div className={cx('note')}>(VAT included)</div>
       </div>
       <div
         style={{
@@ -16,10 +23,11 @@ function Deluxe() {
         }}
         className={cx('listnote')}
       >
-        Detailed page 15,000px design
+        {servicesid?.deluxe?.[0]?.note12}
       </div>
-      <div className={cx('listnote')}>Design based on approximately 6 parts on detailed page</div>
-      <div className={cx('listnote')}>*Consultation required *Shooting and planning required</div>
+      <div className={cx('listnote')}>{servicesid?.deluxe?.[0]?.note22}</div>
+      <div className={cx('listnote')}>{servicesid?.deluxe?.[0]?.note32}</div>
+
       <div
         style={{
           marginTop: '15px'
@@ -27,23 +35,25 @@ function Deluxe() {
         className={cx('yesno')}
       >
         <div className={cx('left')}>Correction work</div>
-        <div className={cx('right')}>Yes</div>
+        <div className={cx('right')}>{servicesid?.deluxe?.[0]?.correctionwork2}</div>
       </div>
       <div className={cx('yesno')}>
         <div className={cx('left')}>Available for commercial use</div>
-        <div className={cx('right')}>Yes</div>
+        <div className={cx('right')}>{servicesid?.deluxe?.[0]?.available2}</div>
       </div>
       <div className={cx('yesno')}>
         <div className={cx('left')}>Number of drafts</div>
-        <div className={cx('right')}>One</div>
+        <div className={cx('right')}>{servicesid?.deluxe?.[0]?.numberofdrafts2}</div>
       </div>
       <div className={cx('yesno')}>
         <div className={cx('left')}>Working day</div>
-        <div className={cx('right')}>5 days</div>
+        <div className={cx('right')}>
+          {servicesid?.deluxe?.[0]?.workingday2} {' days'}
+        </div>
       </div>
       <div className={cx('yesno')}>
         <div className={cx('left')}>Number of modifications</div>
-        <div className={cx('right')}>Episode 2</div>
+        <div className={cx('right')}>{servicesid?.deluxe?.[0]?.numberofmodifications2}</div>
       </div>
       <div
         style={{

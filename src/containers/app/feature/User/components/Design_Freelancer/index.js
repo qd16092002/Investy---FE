@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
 import styles from './Design_Freelancer.module.sass'
-import { MemberMentor } from '@src/app-configs'
 import { StartRate } from '@src/assets/svgs'
 import { Pagination } from 'antd'
 import TopServicesMarket from '../TopServicesMarket'
@@ -10,8 +9,9 @@ import image2 from '@src/assets/images/User/Freelance/2.png'
 import image3 from '@src/assets/images/User/Freelance/3.png'
 import avt from '@src/assets/images/User/Freelance/Items/1.png'
 import AppModal from '@src/components/AppModal'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ItemServices from '../ModalServices/ItemServices'
+import { useLazyGetAllServicesQuery } from '../../userService'
 const cx = classNames.bind(styles)
 
 function Design_Freelancer() {
@@ -19,6 +19,13 @@ function Design_Freelancer() {
     closeRef.current.click()
   }
   const closeRef = useRef()
+  const [getServices, { data: servicesif }] = useLazyGetAllServicesQuery()
+
+  useEffect(() => {
+    getServices({}, false)
+  }, [getServices])
+  const [servicesid, setservicesId] = useState()
+
   return (
     <div className={cx('form-wallpaper')}>
       <div className={cx('title')}>DESIGN</div>
@@ -77,14 +84,18 @@ function Design_Freelancer() {
           </div>
           <div className={cx('product')}>
             <div className={cx('boxmember')}>
-              {MemberMentor.map((member, index) => (
+              {servicesif?.map((index) => (
                 <AppModal
                   key={index}
                   triggerBtn={
-                    <div key={index} className={cx('member')}>
+                    <div key={index} className={cx('member')} onClick={() => setservicesId(index._id)}>
                       <img src={avt} alt='items' className={cx('image')}></img>
-                      <div className={cx('title')}> Golden Prize of “Investy Awards 2023” </div>
-                      <div className={cx('price')}> 500,000 VND~</div>
+                      <div className={cx('title')}>{index?.title}</div>
+                      <div className={cx('price')}>
+                        {' '}
+                        {index?.standard?.[0]?.VAT1}
+                        {'VND~'}
+                      </div>
                       <div className={cx('rate')}>
                         <div
                           style={{
@@ -108,7 +119,7 @@ function Design_Freelancer() {
                   }}
                   ref={closeRef}
                 >
-                  <ItemServices onClose={onClose} />
+                  <ItemServices onClose={onClose} id={servicesid} />
                 </AppModal>
               ))}
             </div>

@@ -8,10 +8,11 @@ import anh3 from '@src/assets/images/Recruitment/ModalServices/3.png'
 import anh4 from '@src/assets/images/Recruitment/ModalServices/4.png'
 import anh5 from '@src/assets/images/Recruitment/ModalServices/5.png'
 import { Rate } from 'antd'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Premium from '../Premium'
 import Standard from '../Standard'
 import Deluxe from '../Deluxe'
+import { useGetServicesbyIDMutation, userApi } from '../../../userService'
 
 const cx = classNames.bind(styles)
 const TABS = {
@@ -42,10 +43,13 @@ const TABMODAL = {
     code: 'REVIEW'
   }
 }
-function ItemServices({ onClose }) {
+function ItemServices({ onClose, id }) {
   const [activeTab, setActiveTab] = useState(TABS.STANDARD)
   const [activeTab2, setActiveTab2] = useState(TABMODAL.SERVICES)
-
+  const [getservicesid, { data: servicesid }] = useGetServicesbyIDMutation(userApi.endpoints.getServicesbyID)
+  useEffect(() => {
+    getservicesid(id)
+  }, [getservicesid, id])
   return (
     <div className={cx('main')}>
       <div className={cx('header')}>
@@ -74,7 +78,7 @@ function ItemServices({ onClose }) {
           </div>
         </div>
         <div className={cx('right')}>
-          <div className={cx('title')}>Detailed page production Overwhelming quality detailed page design</div>
+          <div className={cx('title')}>{servicesid?.title}</div>
           <div className={cx('box')}>
             <div className={cx('tab')}>
               <div
@@ -98,9 +102,9 @@ function ItemServices({ onClose }) {
               </div>
             </div>
             <div className={cx('line')}> </div>
-            {activeTab.code === TABS.STANDARD.code && <Standard />}
-            {activeTab.code === TABS.DELUXE.code && <Deluxe />}
-            {activeTab.code === TABS.PREMIUM.code && <Premium />}
+            {activeTab.code === TABS.STANDARD.code && <Standard iduser={id} />}
+            {activeTab.code === TABS.DELUXE.code && <Deluxe iduser={id} />}
+            {activeTab.code === TABS.PREMIUM.code && <Premium iduser={id} />}
           </div>
         </div>
       </div>

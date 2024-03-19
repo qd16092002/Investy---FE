@@ -9,9 +9,16 @@ import image1 from '@src/assets/images/User/Freelance/1.png'
 import image2 from '@src/assets/images/User/Freelance/2.png'
 import image3 from '@src/assets/images/User/Freelance/3.png'
 import avt from '@src/assets/images/User/Freelance/Items/1.png'
+import AppModal from '@src/components/AppModal'
+import { useRef } from 'react'
+import ItemServices from '../ModalServices/ItemServices'
 const cx = classNames.bind(styles)
 
 function Design_Freelancer() {
+  const onClose = () => {
+    closeRef.current.click()
+  }
+  const closeRef = useRef()
   return (
     <div className={cx('form-wallpaper')}>
       <div className={cx('title')}>DESIGN</div>
@@ -71,21 +78,38 @@ function Design_Freelancer() {
           <div className={cx('product')}>
             <div className={cx('boxmember')}>
               {MemberMentor.map((member, index) => (
-                <div key={index} className={cx('member')}>
-                  <img src={avt} alt='items' className={cx('image')}></img>
-                  <div className={cx('title')}> Golden Prize of “Investy Awards 2023” </div>
-                  <div className={cx('price')}> 500,000 VND~</div>
-                  <div className={cx('rate')}>
-                    <div
-                      style={{
-                        marginRight: '5px'
-                      }}
-                    >
-                      <StartRate />
+                <AppModal
+                  key={index}
+                  triggerBtn={
+                    <div key={index} className={cx('member')}>
+                      <img src={avt} alt='items' className={cx('image')}></img>
+                      <div className={cx('title')}> Golden Prize of “Investy Awards 2023” </div>
+                      <div className={cx('price')}> 500,000 VND~</div>
+                      <div className={cx('rate')}>
+                        <div
+                          style={{
+                            marginRight: '5px'
+                          }}
+                        >
+                          <StartRate />
+                        </div>
+                        4,9 (3,460)
+                      </div>
                     </div>
-                    4,9 (3,460)
-                  </div>
-                </div>
+                  }
+                  contentStyle={{
+                    width: '90vw',
+                    height: '90vh',
+                    backgroundColor: 'white',
+                    boxShadow: '4px 4px 10px 0px #00000040',
+                    borderRadius: '7px',
+                    padding: '20px',
+                    overflowY: 'scroll'
+                  }}
+                  ref={closeRef}
+                >
+                  <ItemServices onClose={onClose} />
+                </AppModal>
               ))}
             </div>
             <div className={cx('pagination')}>

@@ -15,6 +15,10 @@ const cookies = new Cookies()
 const cx = classNames.bind(styles)
 const menuUser = [
   {
+    title: 'About',
+    link: '/'
+  },
+  {
     title: 'Recruitment',
     link: '/recruitment'
   },
@@ -33,6 +37,10 @@ const menuUser = [
   {
     title: 'Online course',
     link: '/online-cource'
+  },
+  {
+    title: 'Blog',
+    link: '/blog'
   }
 ]
 const menuRecrui = [

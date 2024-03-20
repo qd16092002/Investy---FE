@@ -84,53 +84,55 @@
                     height: 670px
                     overflow: scroll
                     display: grid
-                    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr))
+                    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr))
+                    gap: 10px
                     &::-webkit-scrollbar
                         width: 1px
                         height: 0px
-                    .image
-                        margin-right: 10px
-                        margin-left: 10px
-                        margin-top: 30px
-                        height: 180px
-                        width: 180px
-                        background-color: #D9D9D9
-                        border-radius: 15px
-                        overflow: auto
+                    .member
+                        width: 90%
+                        .image
+                            margin-right: 10px
+                            margin-left: 10px
+                            margin-top: 30px
+                            height: 13vw
+                            width: 13vw
+                            background-color: #D9D9D9
+                            border-radius: 15px
+                            overflow: auto
                         &::-webkit-scrollbar
                             width: 1px
-                    .title
-                        width: 180px
-                        font-family: Montserrat
-                        font-size: 11px
-                        font-weight: 400
-                        line-height: 18px
-                        letter-spacing: 0em
-                        text-align: center
-                        padding-left: 10px
-                    .price
-                        width: 180px
-                        font-family: Montserrat
-                        font-size: 18px
-                        font-weight: 800
-                        line-height: 30px
-                        letter-spacing: 0em
-                        text-align: right
-                    .rate
-                        width: 180px
-                        font-family: Montserrat
-                        font-size: 14px
-                        font-weight: 600
-                        line-height: 22px
-                        letter-spacing: 0em
-                        text-align: right
-                        display: flex
-                        justify-content: flex-end
-                .pagination
-                    display: flex
-                    justify-content: flex-end
-                    margin-right: 80px
-                    margin-top: 10px
+                        .title
+                            width: 100%
+                            font-family: Montserrat
+                            font-size: 11px
+                            font-weight: 400
+                            line-height: 18px
+                            letter-spacing: 0em
+                            text-align: center
+                            padding-left: 10px
+                            padding-right: 10px
+                        .price
+                            width: 100%
+                            font-family: Montserrat
+                            font-size: 18px
+                            font-weight: 800
+                            line-height: 30px
+                            letter-spacing: 0em
+                            padding-right: 10px
+                            text-align: right
+                        .rate
+                            width: 100%
+                            font-family: Montserrat
+                            font-size: 14px
+                            font-weight: 600
+                            line-height: 22px
+                            letter-spacing: 0em
+                            text-align: right
+                            padding-right: 10px
+                            display: flex
+                            justify-content: flex-end
+
     .advertisement
         margin-top: 40px
         width: 100%
@@ -165,7 +167,7 @@
         background-color: #c4c4c4c9
         border-radius: 30px
         margin-left: 3%
-        margin-right: 5%
+        margin-right: 3%
         margin-top: 20px
         padding: 20px 40px
         .title
@@ -176,17 +178,47 @@
             letter-spacing: 0em
             text-align: left
         .button_business
-            margin-top: 200px
+            margin-top: 30px
             display: flex
-            justify-content: space-around
+            justify-content: space-between
+            gap: 20px
             .items
-                font-family: Montserrat
-                font-size: 18px
-                font-weight: 400
-                line-height: 24px
-                letter-spacing: 0em
-                text-align: left
-                width: 15%
+                width: 10.5vw
+                display: grid
+                img
+                    width: 70%
+                    height: 7.35vw
+                    margin-left: 15%
+                    margin-bottom: 5px
+
+                div
+                    font-family: Montserrat
+                    font-size: 18px
+                    font-weight: 400
+                    line-height: 24px
+                    letter-spacing: 0em
+                    text-align: center
+        .button_business2
+            margin-top: 30px
+            display: grid
+            grid-template-columns: repeat(auto-fill, minmax(11vw, 1fr))
+            gap: 20px
+            .items2
+                width: 11vw
+                display: grid
+                img
+                    width: 70%
+                    height: 7.35vw
+                    margin-left: 15%
+                    margin-bottom: 5px
+
+                div
+                    font-family: Montserrat
+                    font-size: 18px
+                    font-weight: 400
+                    line-height: 24px
+                    letter-spacing: 0em
+                    text-align: center
     .wh
         margin-left: 40px
         margin-right: 35px
@@ -194,9 +226,11 @@
         padding-bottom: 30px
         display: flex
         justify-content: space-between
+        gap: 40px
+
         .work
             padding: 20px 40px
-            width: 34%
+            width: 40%
             background-color: #c4c4c4c9
             border-radius: 30px
             .title
@@ -207,16 +241,24 @@
                 letter-spacing: 0em
                 text-align: left
             .button_business
-                margin-top: 100px
+                margin-top: 30px
                 display: flex
-                justify-content: space-around
+                justify-content: space-between
                 .items
-                    font-family: Montserrat
-                    font-size: 18px
-                    font-weight: 400
-                    line-height: 24px
-                    letter-spacing: 0em
-                    text-align: left
+                    display: grid
+                    width: 10vw
+                    img
+                        width: 70%
+                        margin-left: 15%
+                        margin-bottom: 5px
+
+                    div
+                        font-family: Montserrat
+                        font-size: 18px
+                        font-weight: 400
+                        line-height: 24px
+                        letter-spacing: 0em
+                        text-align: center
         .job
             padding: 20px 40px
             width: 60%
@@ -230,16 +272,23 @@
                 letter-spacing: 0em
                 text-align: left
             .button_business
-                margin-top: 100px
+                margin-top: 30px
                 display: flex
                 justify-content: space-around
                 .items
-                    font-family: Montserrat
-                    font-size: 18px
-                    font-weight: 400
-                    line-height: 24px
-                    letter-spacing: 0em
-                    text-align: left
+                    display: grid
+                    width: 10.5vw
+                    img
+                        width: 70%
+                        margin-left: 15%
+                        margin-bottom: 5px
+                    div
+                        font-family: Montserrat
+                        font-size: 18px
+                        font-weight: 400
+                        line-height: 24px
+                        letter-spacing: 0em
+                        text-align: center
     .experts
         margin-top: 80px
         display: flex
@@ -268,9 +317,7 @@
                 text-align: left
 
         .image
-            width: 60%
-            background-color: #D9D9D9
-            height: 50vh
+
             border-radius: 20px
     .advantage
         display: flex

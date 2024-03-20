@@ -15,11 +15,11 @@ class CopyButton extends React.Component {
     })
 
     this.clipboard.on('success', () => {
-      alert('Đã sao chép đường dẫn thành công!')
+      alert('Successfully copied the path!')
     })
 
     this.clipboard.on('error', () => {
-      alert('Không thể sao chép đường dẫn.')
+      alert('The path could not be copied.')
     })
   }
 

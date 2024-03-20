@@ -12,6 +12,34 @@ import AppModal from '@src/components/AppModal'
 import { useEffect, useRef, useState } from 'react'
 import ItemServices from '../ModalServices/ItemServices'
 import { useLazyGetAllServicesQuery } from '../../userService'
+import acc from '@src/assets/images/User/Freelance/Business/acc.png'
+import consu from '@src/assets/images/User/Freelance/Business/consu.png'
+import design from '@src/assets/images/User/Freelance/Business/design.png'
+import elastric from '@src/assets/images/User/Freelance/Business/elastric.png'
+import house from '@src/assets/images/User/Freelance/Business/house.png'
+import it from '@src/assets/images/User/Freelance/Business/it.png'
+import legal from '@src/assets/images/User/Freelance/Business/legal.png'
+import market from '@src/assets/images/User/Freelance/Business/market.png'
+import plumb from '@src/assets/images/User/Freelance/Business/plumb.png'
+import repair from '@src/assets/images/User/Freelance/Business/repair.png'
+import startup from '@src/assets/images/User/Freelance/Business/startup.png'
+import tax from '@src/assets/images/User/Freelance/Business/tax.png'
+import video from '@src/assets/images/User/Freelance/Business/video.png'
+import meetmore from '@src/assets/images/User/Freelance/meetmore.png'
+import app from '@src/assets/images/User/Freelance/Education/app.png'
+import care from '@src/assets/images/User/Freelance/Education/care.png'
+import game from '@src/assets/images/User/Freelance/Education/game.png'
+import influencer from '@src/assets/images/User/Freelance/Education/influencer.png'
+import mail from '@src/assets/images/User/Freelance/Education/mail.png'
+import marketresearch from '@src/assets/images/User/Freelance/Education/market.png'
+import content from '@src/assets/images/User/Freelance/Education/marketing.png'
+import review from '@src/assets/images/User/Freelance/Education/review.png'
+import sns from '@src/assets/images/User/Freelance/Education/sns.png'
+import web from '@src/assets/images/User/Freelance/Education/web.png'
+
+import { Education } from '@src/app-configs/Freelancer'
+import { v4 as uuidv4 } from 'uuid'
+
 const cx = classNames.bind(styles)
 
 function Design_Freelancer() {
@@ -139,31 +167,152 @@ function Design_Freelancer() {
       <div className={cx('business')}>There are more than 700 categories in Investy.</div>
       <div className={cx('box_business')}>
         <div className={cx('title')}>Business</div>
-        <div className={cx('button_business')}>
-          <div className={cx('items')}>Accounting/ Bookkeeping</div>
-          <div className={cx('items')}>Tax Consulting</div>
-          <div className={cx('items')}>Legal Document/ Contract</div>
-          <div className={cx('items')}>Legal Consulting</div>
-          <div className={cx('items')}>Start-up business coaching</div>
-          <div className={cx('items')}>Market Research</div>
+        <div className={cx('button_business2')}>
+          <div className={cx('items2')}>
+            <img src={acc} alt='businessimage'></img>
+            <div>Accounting/ Bookkeeping</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={tax} alt='businessimage'></img>
+            <div>Tax Consulting</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={legal} alt='businessimage'></img>
+            <div>Legal Document/ Contract</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={consu} alt='businessimage'></img>
+            <div>Legal Consulting</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={startup} alt='businessimage'></img>
+            <div>Start-up business coaching</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={market} alt='businessimage'></img>
+            <div>Market Research</div>
+          </div>
         </div>
       </div>
       <div className={cx('wh')}>
         <div className={cx('work')}>
           <div className={cx('title')}>Work / Job</div>
           <div className={cx('button_business')}>
-            <div className={cx('items')}>Design</div>
-            <div className={cx('items')}>IT</div>
-            <div className={cx('items')}>Videos, Photos, Sound</div>
+            <div className={cx('items')}>
+              <img src={design} alt='businessimage'></img>
+              <div>Design</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={it} alt='businessimage'></img>
+              <div>IT</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={video} alt='businessimage'></img>
+              <div>Videos, Photos, Sound</div>
+            </div>
           </div>
         </div>
         <div className={cx('job')}>
-          <div className={cx('title')}>Hobby</div>
+          <div className={cx('title')}>Life services</div>
           <div className={cx('button_business')}>
-            <div className={cx('items')}>Tarot</div>
-            <div className={cx('items')}>Psychological consulting</div>
-            <div className={cx('items')}>Learning class</div>
-            <div className={cx('items')}>Living services</div>
+            <div className={cx('items')}>
+              <img src={repair} alt='businessimage'></img>
+              <div>Household repair</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={house} alt='businessimage'></img>
+              <div>House moving</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={elastric} alt='businessimage'></img>
+              <div>Electronics repair</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={plumb} alt='businessimage'></img>
+              <div>Plumber repair</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={cx('box_business')}>
+        <div className={cx('title')}>Education</div>
+        <div className={cx('button_business2')}>
+          {Education?.map((index) => {
+            return (
+              <div key={uuidv4(index)} className={cx('items2')}>
+                <img src={index.image} alt='businessimage'></img>
+                <div>{index.title}</div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+      <div className={cx('box_business')}>
+        <div className={cx('title')}>Marketing</div>
+        <div className={cx('button_business2')}>
+          <div className={cx('items2')}>
+            <img src={care} alt='businessimage'></img>
+            <div>Customer care</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={content} alt='businessimage'></img>
+            <div>Content marketing</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={sns} alt='businessimage'></img>
+            <div>SNS Marketing</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={review} alt='businessimage'></img>
+            <div>Review marketing</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={influencer} alt='businessimage'></img>
+            <div>Influencer marketing</div>
+          </div>
+          <div className={cx('items2')}>
+            <img src={marketresearch} alt='businessimage'></img>
+            <div>Market Research</div>
+          </div>
+        </div>
+      </div>
+      <div className={cx('wh')}>
+        <div className={cx('work')}>
+          <div className={cx('title')}>E-commerce</div>
+          <div className={cx('button_business')}>
+            <div className={cx('items')}>
+              <img src={design} alt='businessimage'></img>
+              <div>Online store management</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={it} alt='businessimage'></img>
+              <div>Product research</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={video} alt='businessimage'></img>
+              <div>Product Upload</div>
+            </div>
+          </div>
+        </div>
+        <div className={cx('job')}>
+          <div className={cx('title')}>Development</div>
+          <div className={cx('button_business')}>
+            <div className={cx('items')}>
+              <img src={web} alt='businessimage'></img>
+              <div>Web development</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={app} alt='businessimage'></img>
+              <div>App development</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={game} alt='businessimage'></img>
+              <div>Game development</div>
+            </div>
+            <div className={cx('items')}>
+              <img src={mail} alt='businessimage'></img>
+              <div>Domain/ Email providing</div>
+            </div>
           </div>
         </div>
       </div>
@@ -173,7 +322,7 @@ function Design_Freelancer() {
           <div className={cx('title_1')}> All of the experts I need!</div>
           <div className={cx('title_2')}> Meet more than 60,000 experts in all fields!</div>
         </div>
-        <div className={cx('image')}></div>
+        <img className={cx('image')} src={meetmore} alt='imagefields'></img>
       </div>
       <div className={cx('advantage')}>
         <div className={cx('items')}>

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
 import styles from './Company.module.sass'
-import Search_Company from '../../components/Search_Company'
+import Search_Company from '../../components/Search/Search_Company'
 import { IconBoxSearch, StartRate } from '@src/assets/svgs'
 import { MemberMentor } from '@src/app-configs'
 import { Pagination } from 'antd'

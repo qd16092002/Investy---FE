@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Play:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+.form-wallpaper
+    width: 100%
+    padding: 60px 80px
+    .page1
+        display: flex
+        justify-content: space-between
+        gap: 40px
+        .categories
+            width: 20%
+            height: 100%
+            text-align: center
+            border: 1px solid #24D59E
+            .title
+                font-family: Montserrat
+                font-size: 18px
+                font-weight: 900
+                line-height: 24.38px
+                text-align: center
+                color: #FFFFFF
+                background-color: #24D59E
+                padding: 20px
+            .detail
+                margin-top: 10px
+                margin-bottom: 10px
+                background-color: #FFFFFF
+                font-family: Montserrat
+                font-size: 18px
+                font-weight: 600
+                line-height: 24.38px
+                text-align: center
+                &:hover
+                    cursor: pointer
+                    text-decoration: underline
+
+        .content
+            width: 80%
+            .boxsearch
+                display: flex
+                justify-content: flex-end
+                .input_search
+                    width: 80%
+                    margin-right: 10%
+                    height: 60px
+                    border-radius: 40px
+                    border: 1px solid #000000
+                    background-color: #FFFFFF
+                    padding: 5px 50px 5px 40px
+                    font-family: Montserrat
+                    font-size: 32px
+                    font-weight: 500
+                    line-height: 39.01px
+                    text-align: left
+                    color: #666666C9
+                    &:focus-visible
+                        outline: none
+                .icon
+                    position: absolute
+                    margin-right: 8%
+                    margin-top: 10px
+            .papper
+                display: grid
+                grid-template-columns: 30% 30% 30%
+                gap: 30px
+                margin-top: 30px
+                margin-left: 10%
+                height: 80vh
+                overflow-y: scroll
+                .items
+                    margin-bottom: 40px
+                    &:hover
+                        cursor: pointer
+                    .image
+                        border: 1px solid #24D59E
+                        height: 15vw
+                        width: 15vw
+                        border-radius: 10px
+                    .title_image
+                        font-family: Montserrat
+                        font-size: 15px
+                        font-weight: 600
+                        line-height: 18.29px
+                        text-align: justify
+                        width: 15vw
+                        margin-top: 10px
+                        color: #000000

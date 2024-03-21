@@ -1,4 +1,3 @@
-import ProfileLayout from '@src/components/Layouts/ProfileLayout'
 import RoleProfile from './pages/RoleProfile'
 import Settings from './pages/Settings'
 import HeaderOnlyLayout from '@src/components/Layouts/HeaderOnlyLayout'
@@ -13,6 +12,7 @@ import AddMoreServives from './components/ServicesProfileUser/componets/AddMoreS
 import Information from './pages/Information'
 import RecruitmentUser from './pages/RecruimentUser'
 import RecruitmentTab from './components/RecruitmentTab'
+import Blog from './pages/Blog'
 
 export const userRouteList = [
   {
@@ -46,10 +46,6 @@ export const userRouteList = [
         <InviteFriend />
       </HeaderOnlyLayout>
     )
-  },
-  {
-    path: '/messeger',
-    element: <ProfileLayout></ProfileLayout>
   },
   {
     path: '/settings',
@@ -130,5 +126,17 @@ export const userRouteList = [
         <VideoOnlineCource />
       </HeaderOnlyLayout>
     )
+  },
+  {
+    path: '/blog',
+    element: (
+      <HeaderOnlyLayout>
+        <Blog />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/blog/items',
+    element: <HeaderOnlyLayout></HeaderOnlyLayout>
   }
 ]

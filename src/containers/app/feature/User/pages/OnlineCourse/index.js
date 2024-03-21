@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
 import styles from './OnlineCourse.module.sass'
-import Search_OnlineCourse from '../../components/Search_OnlineCourse'
+import Search_OnlineCourse from '../../components/Search/Search_OnlineCourse'
 import { Checkbox, Radio } from 'antd'
 import { filter_level, filter_skill, filter_subject } from '@src/app-configs'
 import { v4 as uuidv4 } from 'uuid'

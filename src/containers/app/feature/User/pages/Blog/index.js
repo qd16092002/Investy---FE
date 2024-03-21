@@ -2,13 +2,21 @@
 import classNames from 'classnames/bind'
 import styles from './Blog.module.sass'
 import { IconBoxSearch } from '@src/assets/svgs'
-import { BusinessArea } from '@src/app-configs'
 import { v4 as uuidv4 } from 'uuid'
 import { Link } from 'react-router-dom'
+import { useLazyGetAllBlogQuery } from '../../userService'
+import { useEffect, useState } from 'react'
 
 const cx = classNames.bind(styles)
 
 function Blog() {
+  const [getBlog, { data: datablogid }] = useLazyGetAllBlogQuery()
+  useEffect(() => {
+    getBlog({}, false)
+  }, [getBlog])
+  const [blogid, setblogid] = useState()
+  console.log('abc:  ', blogid)
+
   return (
     <div className={cx('form-wallpaper')}>
       <div className={cx('page1')}>
@@ -28,11 +36,16 @@ function Blog() {
             </label>
           </div>
           <div className={cx('papper')}>
-            {BusinessArea?.map((index) => {
+            {datablogid?.map((index) => {
               return (
-                <Link key={uuidv4(index)} className={cx('items')}>
+                <Link
+                  onClick={() => setblogid(index._id)}
+                  to={`/blog/${index._id}`}
+                  key={uuidv4(index)}
+                  className={cx('items')}
+                >
                   <div className={cx('image')}></div>
-                  <div className={cx('title_image')}>N-job is no longer a choice, it’s a necessity</div>
+                  <div className={cx('title_image')}>{index.title}</div>
                 </Link>
               )
             })}

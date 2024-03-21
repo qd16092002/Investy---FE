@@ -13,6 +13,7 @@ import Information from './pages/Information'
 import RecruitmentUser from './pages/RecruimentUser'
 import RecruitmentTab from './components/RecruitmentTab'
 import Blog from './pages/Blog'
+import BlogDetails from './components/BlogDetails'
 
 export const userRouteList = [
   {
@@ -136,7 +137,11 @@ export const userRouteList = [
     )
   },
   {
-    path: '/blog/items',
-    element: <HeaderOnlyLayout></HeaderOnlyLayout>
+    path: '/blog/:blogId',
+    element: (
+      <HeaderOnlyLayout>
+        <BlogDetails />
+      </HeaderOnlyLayout>
+    )
   }
 ]

@@ -194,6 +194,25 @@ export const userApi = createApi({
       query: () => ({
         url: `/getallservices`
       })
+    }),
+    addBlog: build.mutation({
+      query: (body) => ({
+        url: '/blog',
+        method: 'POST',
+        body: body
+      })
+    }),
+    getBlogbyId: build.mutation({
+      query: (servicesId) => {
+        return {
+          url: `/blog/${servicesId}`
+        }
+      }
+    }),
+    getAllBlog: build.query({
+      query: () => ({
+        url: `/blog`
+      })
     })
   })
 })
@@ -224,5 +243,8 @@ export const {
   useAddServicesMutation,
   useLazyGetAllServicesQuery,
   useGetServicesbyIDMutation,
-  useGetServicesbyuserMutation
+  useGetServicesbyuserMutation,
+  useAddBlogMutation,
+  useLazyGetAllBlogQuery,
+  useGetBlogbyIdMutation
 } = userApi

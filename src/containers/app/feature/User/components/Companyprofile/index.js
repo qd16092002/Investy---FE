@@ -11,7 +11,6 @@ import moment from 'moment'
 
 function Companyprofile() {
   const [getRecruitment, { data: recruitmentif }] = useLazyGetAllRecruitmentQuery()
-  console.log('recruitmentif :', recruitmentif)
   useEffect(() => {
     getRecruitment({}, false)
   }, [getRecruitment])

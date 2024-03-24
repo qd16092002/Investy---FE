@@ -186,7 +186,7 @@ export const userApi = createApi({
     getServicesbyuser: build.mutation({
       query: (userId) => {
         return {
-          url: `/services/${userId}`
+          url: `/getservicesbyuser/${userId}`
         }
       }
     }),

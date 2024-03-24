@@ -6,7 +6,7 @@ import { Checkbox, Radio } from 'antd'
 import { filter_level, filter_skill, filter_subject } from '@src/app-configs'
 import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react'
-import { IconYosenUniversity, StartRate } from '@src/assets/svgs'
+import { StartRate } from '@src/assets/svgs'
 import { Link } from 'react-router-dom'
 import lesson1 from '@src/assets/images/FirstStepKorea/lesson1.png'
 import lesson2 from '@src/assets/images/FirstStepKorea/lesson2.png'
@@ -16,6 +16,7 @@ import lesson5 from '@src/assets/images/FirstStepKorea/lesson5.png'
 import lesson6 from '@src/assets/images/FirstStepKorea/lesson6.png'
 import lesson7 from '@src/assets/images/FirstStepKorea/lesson7.png'
 import lesson8 from '@src/assets/images/FirstStepKorea/lesson8.png'
+import Yonsei from '@src/assets/images/FirstStepKorea/Yosei.png'
 const cx = classNames.bind(styles)
 
 function OnlineCourse() {
@@ -95,7 +96,7 @@ function OnlineCourse() {
                     <img src={lesson1} alt='lesson1'></img>
                     <div className={cx('title')}>First Step Korean</div>
                     <div className={cx('univer')}>
-                      <IconYosenUniversity />
+                      <img src={Yonsei} alt='Yosei'></img>
                       <div>Yonsei University</div>
                     </div>
                     <div className={cx('rate')}>
@@ -117,7 +118,7 @@ function OnlineCourse() {
                     <img src={lesson2} alt='lesson2'></img>
                     <div className={cx('title')}>Learn to speak Korean 1</div>
                     <div className={cx('univer')}>
-                      <IconYosenUniversity />
+                      <img src={Yonsei} alt='Yosei'></img>
                       <div>Yonsei University</div>
                     </div>
                     <div className={cx('rate')}>
@@ -139,7 +140,7 @@ function OnlineCourse() {
                     <img src={lesson3} alt='lesson3'></img>
                     <div className={cx('title')}>A Bridge to the World: Language for Beginners</div>
                     <div className={cx('univer')}>
-                      <IconYosenUniversity />
+                      <img src={Yonsei} alt='Yosei'></img>
                       <div>Yonsei University</div>
                     </div>
                     <div className={cx('rate')}>
@@ -161,7 +162,7 @@ function OnlineCourse() {
                     <img src={lesson4} alt='lesson4'></img>
                     <div className={cx('title')}>The Korean Economics Development</div>
                     <div className={cx('univer')}>
-                      <IconYosenUniversity />
+                      <img src={Yonsei} alt='Yosei'></img>
                       <div>Yonsei University</div>
                     </div>
                     <div className={cx('rate')}>
@@ -183,7 +184,7 @@ function OnlineCourse() {
                     <img src={lesson5} alt='lesson5'></img>
                     <div className={cx('title')}>Understanding Korean Politics</div>
                     <div className={cx('univer')}>
-                      <IconYosenUniversity />
+                      <img src={Yonsei} alt='Yosei'></img>
                       <div>Yonsei University</div>
                     </div>
                     <div className={cx('rate')}>
@@ -205,7 +206,7 @@ function OnlineCourse() {
                     <img src={lesson6} alt='lesson6'></img>
                     <div className={cx('title')}>The Korean alphabet: An Introduction to Hangeul</div>
                     <div className={cx('univer')}>
-                      <IconYosenUniversity />
+                      <img src={Yonsei} alt='Yosei'></img>
                       <div>Yonsei University</div>
                     </div>
                     <div className={cx('rate')}>
@@ -227,7 +228,7 @@ function OnlineCourse() {
                     <img src={lesson7} alt='lesson7'></img>
                     <div className={cx('title')}>Re-imaged God in Korean culture</div>
                     <div className={cx('univer')}>
-                      <IconYosenUniversity />
+                      <img src={Yonsei} alt='Yosei'></img>
                       <div>Yonsei University</div>
                     </div>
                     <div className={cx('rate')}>
@@ -249,7 +250,7 @@ function OnlineCourse() {
                     <img src={lesson8} alt='lesson8'></img>
                     <div className={cx('title')}>Social contexts in Korea</div>
                     <div className={cx('univer')}>
-                      <IconYosenUniversity />
+                      <img src={Yonsei} alt='Yosei'></img>
                       <div>Yonsei University</div>
                     </div>
                     <div className={cx('rate')}>

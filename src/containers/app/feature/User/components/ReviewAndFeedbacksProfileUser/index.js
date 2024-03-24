@@ -15,7 +15,8 @@ function ReviewAndFeedbacksProfileUser() {
             allowHalf
             defaultValue={2.5}
             style={{
-              marginRight: '20px'
+              marginRight: '20px',
+              color: '#24D59E'
             }}
           />
           2.5 (120)

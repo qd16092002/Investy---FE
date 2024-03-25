@@ -9,16 +9,13 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
-const envPath = `.env.${process.env.NODE_ENV}`
-require('dotenv').config({ path: envPath })
-
-console.log('envPath', envPath)
 
 // Cái dòng này giúp Editor gợi ý được các giá trị cho dòng code config ngay phía dưới nó
 // (giống như đang dùng Typescript vậy đó 😉)
 /** @type {(env: any, arg: {mode: string}) => import('webpack').Configuration} **/
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production'
+  const envPath = isProduction ? `.env.production` : `.env.development`
   const isAnalyze = Boolean(env.analyze)
   /** @type {import('webpack').Configuration} **/
   const config = {

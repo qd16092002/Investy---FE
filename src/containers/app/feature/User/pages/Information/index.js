@@ -7,6 +7,8 @@ import { useChangeUserInformationMutation } from '../../userService'
 import { useRef, useState } from 'react'
 import { authApi } from '@src/containers/authentication/feature/Auth/authService'
 import { setUser } from '@src/containers/authentication/feature/Auth/authSlice'
+import AppModal from '@src/components/AppModal'
+import CV from '../../components/InformationUser/CV'
 
 const cx = classNames.bind(styles)
 const TABS = {
@@ -21,6 +23,10 @@ const TABS = {
   }
 }
 function Information() {
+  const onClose = () => {
+    closeRef.current.click()
+  }
+  const closeRef = useRef()
   const [activeTab, setActiveTab] = useState(TABS.MYINFOR)
   const { register, handleSubmit } = useForm()
   const formInput = useRef()
@@ -146,7 +152,21 @@ function Information() {
                 </div>
                 <div className={cx('sentcv_button')}>
                   <div className={cx('button')}>COVER LETTER</div>
-                  <div className={cx('button')}>CV</div>
+
+                  <AppModal
+                    triggerBtn={<div className={cx('button')}>CV</div>}
+                    contentStyle={{
+                      width: '90vw',
+                      height: '90vh',
+                      backgroundColor: 'white',
+                      boxShadow: '4px 4px 10px 0px #00000040',
+                      borderRadius: '30px',
+                      padding: '20px'
+                    }}
+                    ref={closeRef}
+                  >
+                    <CV onClose={onClose} />
+                  </AppModal>
                 </div>
               </div>
               <div className={cx('sentcv_detail')}>

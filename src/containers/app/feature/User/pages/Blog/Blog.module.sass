@@ -63,20 +63,23 @@
                     margin-top: 10px
             .papper
                 display: grid
-                grid-template-columns: 30% 30% 30%
+                grid-template-columns: 25% 25% 25% 25%
                 gap: 30px
                 margin-top: 30px
                 margin-left: 10%
+                padding-right: 40px
                 height: 80vh
                 overflow-y: scroll
+                &::-webkit-scrollbar
+                    height: 0px
                 .items
-                    margin-bottom: 40px
+                    margin-bottom: 20px
                     &:hover
                         cursor: pointer
                     .image
                         border: 1px solid #24D59E
-                        height: 15vw
-                        width: 15vw
+                        height: 10vw
+                        width: 10vw
                         border-radius: 10px
                     .title_image
                         font-family: Montserrat
@@ -84,6 +87,31 @@
                         font-weight: 600
                         line-height: 18.29px
                         text-align: justify
-                        width: 15vw
+                        width: 10vw
                         margin-top: 10px
                         color: #000000
+    .page2
+        margin-top: 40px
+        .title
+            font-family: Montserrat
+            font-size: 25px
+            font-weight: 800
+            line-height: 30.48px
+            text-align: left
+            color: #24D59E
+        .ytb
+            display: flex
+            justify-content: space-between
+            gap: 30px
+            margin-top: 20px
+            .big
+                width: 50%
+                .itemsbig
+                    width: 41vw
+            .small
+                width: 50%
+                display: grid
+                grid-template-columns: 50% 50%
+                grid-template-rows: 50% 50%
+                .items
+                    width: 20vw

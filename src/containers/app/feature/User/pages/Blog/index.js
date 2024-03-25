@@ -7,6 +7,11 @@ import { Link } from 'react-router-dom'
 import { useLazyGetAllBlogQuery } from '../../userService'
 import { useEffect, useState } from 'react'
 import blog1 from '@src/assets/images/User/Blog/blog1.png'
+import big from '@src/assets/images/User/Blog/bestresult.png'
+import small1 from '@src/assets/images/User/Blog/corevalue.png'
+import small2 from '@src/assets/images/User/Blog/investing.png'
+import small3 from '@src/assets/images/User/Blog/hr.png'
+import small4 from '@src/assets/images/User/Blog/recrui.png'
 const cx = classNames.bind(styles)
 
 function Blog() {
@@ -49,6 +54,28 @@ function Blog() {
                 </Link>
               )
             })}
+          </div>
+        </div>
+      </div>
+      <div className={cx('page2')}>
+        <div className={cx('title')}>Investy - Invest in your future</div>
+        <div className={cx('ytb')}>
+          <Link className={cx('big')} to='https://www.youtube.com/watch?v=dj4kjsKGVCM' target='_blank'>
+            <img className={cx('itemsbig')} src={big} alt='Best Results'></img>
+          </Link>
+          <div className={cx('small')}>
+            <Link className={cx('big')} to='https://www.youtube.com/watch?v=RLizduKDq78' target='_blank'>
+              <img className={cx('items')} src={small1} alt='Core Value'></img>
+            </Link>
+            <Link className={cx('big')} to='https://www.youtube.com/watch?v=l6ddZK4AWrs&t=231s' target='_blank'>
+              <img className={cx('items')} src={small2} alt='Core Value'></img>
+            </Link>
+            <Link className={cx('big')} to='https://www.youtube.com/watch?v=l3A9WiwncO4' target='_blank'>
+              <img className={cx('items')} src={small3} alt='Core Value'></img>
+            </Link>
+            <Link className={cx('big')} to='https://www.youtube.com/watch?v=bDwIrjrR8g4' target='_blank'>
+              <img className={cx('items')} src={small4} alt='Core Value'></img>
+            </Link>
           </div>
         </div>
       </div>

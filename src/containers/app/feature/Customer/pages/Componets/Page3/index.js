@@ -88,7 +88,8 @@ function Page3() {
               </div>
               <img
                 style={{
-                  marginLeft: '50px'
+                  marginLeft: '50px',
+                  width: '33vw'
                 }}
                 src={hr}
                 alt='hr'

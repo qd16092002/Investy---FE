@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Link } from 'react-router-dom'
 import { useLazyGetAllBlogQuery } from '../../userService'
 import { useEffect, useState } from 'react'
-
+import blog1 from '@src/assets/images/User/Blog/blog1.png'
 const cx = classNames.bind(styles)
 
 function Blog() {
@@ -44,7 +44,7 @@ function Blog() {
                   key={uuidv4(index)}
                   className={cx('items')}
                 >
-                  <div className={cx('image')}></div>
+                  <img className={cx('image')} src={blog1} alt='Blog1'></img>
                   <div className={cx('title_image')}>{index.title}</div>
                 </Link>
               )

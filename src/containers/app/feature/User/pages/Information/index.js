@@ -15,6 +15,9 @@ const TABS = {
   },
   CHANGEPASSWORD: {
     code: 'CHANGEPASSWORD'
+  },
+  SENDCV: {
+    code: 'SENDCV'
   }
 }
 function Information() {
@@ -57,6 +60,12 @@ function Information() {
             className={cx('header__title', activeTab.code === TABS.CHANGEPASSWORD.code ? 'active' : 'inactive')}
           >
             Change password
+          </button>
+          <button
+            onClick={() => setActiveTab(TABS.SENDCV)}
+            className={cx('header__title', activeTab.code === TABS.SENDCV.code ? 'active' : 'inactive')}
+          >
+            Sent CVs
           </button>
         </div>
       </div>
@@ -120,6 +129,34 @@ function Information() {
               </button>
             </div>
           </form>
+        </div>
+      )}
+      {activeTab.code === TABS.SENDCV.code && (
+        <div className={cx('content')}>
+          <div className={cx('title')}>Sent CVs</div>
+          <div className={cx('box2')}>
+            <div className={cx('sentcv_avt')}>
+              <div className={cx('avt')}></div>
+            </div>
+            <div className={cx('sentcv_content')}>
+              <div className={cx('sentcv_title')}>
+                <div className={cx('sentcv_info')}>
+                  <div className={cx('sentcv_name')}>Alicia Thu Trang</div>
+                  <div className={cx('sentcv_email')}>alicia@investy.io.vn</div>
+                </div>
+                <div className={cx('sentcv_button')}>
+                  <div className={cx('button')}>COVER LETTER</div>
+                  <div className={cx('button')}>CV</div>
+                </div>
+              </div>
+              <div className={cx('sentcv_detail')}>
+                “For more than 2 years, I&apos;ve gone through technology startup companies that nurtured my passion for
+                becoming afuture entrepreneur. With the ability to adapt quickly, work independently as well as analyze
+                & solve problems. I&apos;minterested in empowering startups and innovators and seeking opportunities to
+                explore my abilities in those fields.”
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

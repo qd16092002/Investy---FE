@@ -96,7 +96,7 @@ module.exports = (env, argv) => {
     },
     devServer: {
       hot: true, // enable Hot Module Replacement, kiểu như reload nhanh
-      port: 3003, // Chạy port 3003 khi dev
+      port: 6868, // Chạy port 3003 khi dev
       historyApiFallback: true, // Phải set true nếu không khi bạn dùng lazyload module React thì sẽ gặp lỗi không load được file.
       // Cấu hình phục vụ file html trong public
       static: {

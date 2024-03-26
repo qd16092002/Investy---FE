@@ -8,7 +8,9 @@ import ServicesProfileUser from '../../components/ServicesProfileUser'
 import PortfolioProfileUser from '../../components/PortfolioProfileUser'
 import { useSelector } from 'react-redux'
 import ReviewAndFeedbacksProfileUser from '../../components/ReviewAndFeedbacksProfileUser'
-
+import { IconTymProfile, IconUploadCVProfile } from '@src/assets/svgs'
+import { Link } from 'react-router-dom'
+import zalo from '@src/assets/images/Profile/Zalo.png'
 const cx = classNames.bind(styles)
 const TABS = {
   INTRODUCTION: {
@@ -46,6 +48,24 @@ function ProfileUser() {
             />
             2.5 (120)
           </div>
+          <div className={cx('connect')}>
+            <div>
+              <IconTymProfile />
+            </div>
+            <div>
+              <IconUploadCVProfile />
+            </div>
+            <Link className={cx('mycv')}>My CV</Link>
+            <Link target='_blank' to={`https://chat.zalo.me/?phone=${userInfo?.phoneNumber}`}>
+              <img
+                style={{
+                  height: '40px'
+                }}
+                src={zalo}
+                alt='Zalo'
+              ></img>
+            </Link>
+          </div>
         </div>
       </div>
       <div className={cx('content')}>
@@ -56,20 +76,22 @@ function ProfileUser() {
           >
             Introduction
           </div>
-          <div
-            className={cx('header__title', activeTab.code === TABS.SERVICES.code ? 'active' : 'inactive')}
-            onClick={() => setActiveTab(TABS.SERVICES)}
-          >
-            Services
-          </div>
-
-          <div
-            className={cx('header__title', activeTab.code === TABS.PORTFOLIO.code ? 'active' : 'inactive')}
-            onClick={() => setActiveTab(TABS.PORTFOLIO)}
-          >
-            Portfolio
-          </div>
-
+          {userInfo?.role === 'APPLICANT' && (
+            <div
+              className={cx('header__title', activeTab.code === TABS.SERVICES.code ? 'active' : 'inactive')}
+              onClick={() => setActiveTab(TABS.SERVICES)}
+            >
+              Services
+            </div>
+          )}
+          {userInfo?.role === 'APPLICANT' && (
+            <div
+              className={cx('header__title', activeTab.code === TABS.PORTFOLIO.code ? 'active' : 'inactive')}
+              onClick={() => setActiveTab(TABS.PORTFOLIO)}
+            >
+              Portfolio
+            </div>
+          )}
           <div
             className={cx('header__title', activeTab.code === TABS.REVIEWANDFEEDBACKS.code ? 'active' : 'inactive')}
             onClick={() => setActiveTab(TABS.REVIEWANDFEEDBACKS)}

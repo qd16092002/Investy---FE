@@ -36,12 +36,24 @@ function BlogDetails() {
         <div className={cx('content')}>
           <div className={cx('header')}>{datablogid?.title}</div>
           <div className={cx('written')}>Written by: {datablogid?.author}</div>
-          <img src={eliot} alt='papper'></img>
+          <img
+            style={{
+              width: '60vw'
+            }}
+            src={eliot}
+            alt='papper'
+          ></img>
           <div className={cx('detail')}>{datablogid?.content1}</div>
           <div className={cx('detail')}>{datablogid?.content2}</div>
           <div className={cx('detail')}>{datablogid?.content3}</div>
 
-          <img src={investy} alt='Investy'></img>
+          <img
+            style={{
+              width: '60vw'
+            }}
+            src={investy}
+            alt='Investy'
+          ></img>
           <div className={cx('detail')}>{datablogid?.content4}</div>
           <div className={cx('detail')}>{datablogid?.content5}</div>
           <div className={cx('detail')}>{datablogid?.content6}</div>

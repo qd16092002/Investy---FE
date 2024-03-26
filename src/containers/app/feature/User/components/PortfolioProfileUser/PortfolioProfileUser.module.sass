@@ -5,35 +5,123 @@
 .main
     overflow-y: scroll
     margin-bottom: 30px
-    .title
-        font-family: Montserrat
-        font-size: 25px
-        font-weight: 600
-        line-height: 30px
-        letter-spacing: 0em
-        text-align: left
-    .content
-        margin-top: 10px
-        .title_2
-            font-family: Montserrat
-            font-size: 20px
-            font-weight: 500
-            line-height: 24px
-            letter-spacing: 0em
-            text-align: left
-        .dess
-            width: 90%
-            display: grid
-            grid-template-columns: repeat(auto-fill, minmax(25%, 1fr))
-            .items
-                margin-top: 20px
+    width: 90%
+    display: flex
+    justify-content: space-between
+    &::-webkit-scrollbar
+        width: 0px
+    .product
+        max-height: 1000px
+        width: 89%
+        .active
+            .boxmember
                 &:hover
                     cursor: pointer
-                .img
-                .detail
+                .image
+                    margin-right: 40px
+                    margin-left: 10px
+                    margin-top: 30px
+                    height: 180px
+                    width: 180px
+                    background-color: #D9D9D9
+                    border-radius: 15px
+                    overflow: auto
+
+                .title
+                    width: 180px
+                    font-family: Montserrat
+                    font-size: 11px
+                    font-weight: 400
+                    line-height: 18px
+                    letter-spacing: 0em
+                    text-align: center
+                    padding-left: 10px
+                .price
+                    width: 180px
                     font-family: Montserrat
                     font-size: 18px
+                    font-weight: 800
+                    line-height: 30px
+                    letter-spacing: 0em
+                    text-align: right
+                .rate
+                    width: 180px
+                    font-family: Montserrat
+                    font-size: 14px
+                    font-weight: 600
+                    line-height: 22px
+                    letter-spacing: 0em
+                    text-align: right
+                    display: flex
+                    justify-content: flex-end
+            .title
+                font-family: Montserrat
+                font-size: 25px
+                font-weight: 600
+                line-height: 30px
+                letter-spacing: 0em
+                text-align: left
+            .content
+                margin-top: 10px
+                .title_2
+                    font-family: Montserrat
+                    font-size: 20px
                     font-weight: 500
                     line-height: 24px
                     letter-spacing: 0em
                     text-align: left
+                .dess
+                    width: 90%
+                    display: grid
+                    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr))
+                    .items
+                        margin-top: 20px
+                        &:hover
+                            cursor: pointer
+                        .img
+                        .detail
+                            font-family: Montserrat
+                            font-size: 18px
+                            font-weight: 500
+                            line-height: 24px
+                            letter-spacing: 0em
+                            text-align: left
+        .detail
+            .title
+                display: flex
+                .design
+                    font-family: Montserrat
+                    font-size: 20px
+                    font-weight: 500
+                    line-height: 24.38px
+                    text-align: left
+                    margin-right: 10px
+                    &:hover
+                        cursor: pointer
+                div
+                    font-family: Montserrat
+                    font-size: 20px
+                    font-weight: 500
+                    line-height: 24.38px
+                    text-align: left
+                    margin-right: 10px
+    .add_services
+        width: 20%
+        .button
+            margin-top: 30px
+            display: flex
+            justify-content: space-between
+            font-family: Montserrat
+            font-size: 20px
+            font-weight: 600
+            line-height: 20px
+            letter-spacing: 0em
+            text-align: center
+            border-radius: 10px
+            padding: 5px 5px
+            background-color: #24D59E
+            border: none
+            &:hover
+                cursor: pointer
+            div
+                margin-top: 5px

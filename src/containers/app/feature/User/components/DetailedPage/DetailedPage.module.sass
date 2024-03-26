@@ -4,44 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=MonteCarlo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 
 .main
-    padding: 10px 20px
+    padding: 10px 0px
     overflow-y: scroll
     height: 100%
     .header
         display: flex
-        justify-content: space-between
-        .title
-            margin-top: 10px
-            display: flex
-            .avatar
-                height: 70px
-                width: 70px
-                border-radius: 100px
-                background: rgb(153,153,153)
-                color: #ffffff
-                display: flex
-                justify-content: center
-                align-items: center
-                font-size: 40px
-                border: 2px solid #8D8D8D
-                font-weight: 600
-            .infor
-                margin-left: 20px
-                .name
-                    font-family: Montserrat
-                    font-size: 19px
-                    font-weight: 600
-                    line-height: 30px
-                    letter-spacing: 0em
-                    text-align: left
-                .rate
-                    margin-top: 5px
-                    font-family: Montserrat
-                    font-size: 19px
-                    font-weight: 600
-                    line-height: 30px
-                    letter-spacing: 0em
-                    text-align: left
+        justify-content: flex-end
 
         .button_close
             border: 0px
@@ -52,52 +20,67 @@
     .content
         display: flex
         justify-content: space-between
-        margin-top: 20px
+        gap: 50px
         .text
-            width: 48%
+            width: 38%
 
             .title
+                font-family: Montserrat
+                font-size: 20px
+                font-weight: 700
+                line-height: 24.38px
+                text-align: left
+                margin-bottom: 10px
+            .content
+                margin-bottom: 10px
+                font-family: Montserrat
+                font-size: 16px
+                font-weight: 400
+                line-height: 19.5px
+                text-align: left
+            .style
                 display: flex
-                justify-content: space-between
-                width: 80%
-                div
-                    font-family: Montserrat
-                    font-size: 21px
-                    font-weight: 600
-                    line-height: 30px
-                    letter-spacing: 0em
-                    text-align: left
-                    margin-top: -5px
+                gap: 20px
             .button
-                margin-top: 20px
                 display: flex
-                justify-content: space-between
+                gap: 30px
                 button
-                    width: 45%
-                    padding: 5px 15px
+                    padding: 10px 15px
                     border: 1px solid #000000
                     background-color: white
-                    border-radius: 10px
+                    border-radius: 5px
                     display: flex
-                    justify-content: space-around
+                    gap: 12px
                     &:hover
                         cursor: pointer
+                        box-shadow: 0px 4px 4px 0px #00000040
+
                     div
                         font-family: Montserrat
-                        font-size: 25px
-                        font-weight: 800
-                        line-height: 30px
-                        letter-spacing: 0em
+                        font-size: 20px
+                        font-weight: 500
+                        line-height: 24.38px
                         text-align: center
-                        margin-top: 5px
             .hastag
                 margin-top: 20px
-                display: grid
-                grid-template-columns: repeat(auto-fill, minmax(50%, 1fr))
+                display: flex
+                flex-wrap: wrap
                 .items
                     border-radius: 40px
                     border: 1px solid #000000
-                    padding: 5px
-                    width: 200px
+                    padding: 10px
+                    margin-bottom: 5px
+                    margin-right: 10px
+                    font-family: Montserrat
+                    font-size: 13px
+                    font-weight: 500
+                    line-height: 15.85px
+                    text-align: center
+
+            .line
+                margin-top: 50px
+                margin-bottom: 30px
+                border: 1px solid #666666C9
+                width: 100%
         .img
-            width: 48%
+            width: 62%

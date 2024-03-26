@@ -45,13 +45,17 @@ const menuUser = [
 ]
 const menuRecrui = [
   {
+    title: 'Profile',
+    link: '/profile'
+  },
+  {
     title: 'Information',
     link: '/information'
   },
-  {
-    title: 'Invite friends',
-    link: '/infomation'
-  },
+  // {
+  //   title: 'Invite friends',
+  //   link: '/infomation'
+  // },
   {
     title: 'Recruitment',
     link: '/recruitmentuser'
@@ -65,11 +69,11 @@ const menuApply = [
   {
     title: 'Information',
     link: '/information'
-  },
-  {
-    title: 'Invite friends',
-    link: '/infomation'
   }
+  // {
+  //   title: 'Invite friends',
+  //   link: '/infomation'
+  // }
 ]
 function Header() {
   const userInfo = useSelector((state) => state.auth.user)

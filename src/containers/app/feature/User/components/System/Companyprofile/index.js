@@ -77,11 +77,13 @@ function Companyprofile() {
                     </div>
                     <div className={cx('content')}> {item.Nameofthecompany}</div>
                     <div className={cx('icon')}>
-                      <div className={cx('location')}>{item.Location}</div>
-                      <div className={cx('date')}>
-                        Deadline: {moment(item.RecruitmentDeadline).format('DD/MM/yyyy')}
+                      <div className={cx('thongtin')}>
+                        <div className={cx('location')}>{item.Location}</div>
+                        <div className={cx('date')}>
+                          Deadline: {moment(item.RecruitmentDeadline).format('DD/MM/yyyy')}
+                        </div>
+                        <div className={cx('location')}>Post 1 hour ago</div>
                       </div>
-                      <div className={cx('location')}>Post 1 hour ago</div>
                       <Link
                         onClick={() => setrecruitmentid(item._id)}
                         to={`/recruittab/${item._id}`}

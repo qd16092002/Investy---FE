@@ -55,7 +55,7 @@ function PortfolioProfileUser() {
       <div className={cx('add_services')}>
         <Link to='/profile/addmoreservices'>
           <button className={cx('button')}>
-            ADD MORE SERVICES{' '}
+            ADD MORE PORTFOLIOS
             <div>
               <ServicesIconAddMore />
             </div>

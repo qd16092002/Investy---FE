@@ -4,7 +4,7 @@ import styles from './BlogDetails.module.sass'
 import eliot from '@src/assets/images/User/Blog/Eliot.png'
 import investy from '@src/assets/images/User/Blog/investy.png'
 import { useLocation } from 'react-router'
-import { useGetBlogbyIdMutation } from '../../userService'
+import { useGetBlogbyIdMutation } from '../../../userService'
 import { useEffect } from 'react'
 const cx = classNames.bind(styles)
 

@@ -6,7 +6,7 @@ import logoAri from '@src/assets/images/User/Company/avtari.png'
 import { useEffect, useState } from 'react'
 const cx = classNames.bind(styles)
 import { v4 as uuidv4 } from 'uuid'
-import { useLazyGetAllRecruitmentQuery } from '../../userService'
+import { useLazyGetAllRecruitmentQuery } from '../../../userService'
 import moment from 'moment'
 
 function Companyprofile() {

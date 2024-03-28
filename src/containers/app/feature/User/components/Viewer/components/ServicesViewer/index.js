@@ -1,28 +1,36 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
-import styles from './ServicesProfileUser.module.sass'
-import { ServicesIconAddMore, StartRate } from '@src/assets/svgs'
+import styles from './ServicesViewer.module.sass'
+import { StartRate } from '@src/assets/svgs'
 import avtitems from '@src/assets/images/User/Freelance/Items/3.png'
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { useGetServicesbyuserMutation, userApi } from '../../userService'
 import { useEffect, useRef, useState } from 'react'
 import AppModal from '@src/components/AppModal'
-import ItemServices from '../ModalServices/ItemServices'
+import { useGetServicesbyuserMutation, useGetUserbyIdMutation } from '../../../../userService'
+import ItemServices from '../../../ModalServices/ItemServices'
+import { useLocation } from 'react-router'
 
 const cx = classNames.bind(styles)
 
-function ServicesProfileUser() {
+const getUserId = (path) => {
+  // Split the path and get the last part
+  const pathParts = path.split('/')
+  const userId = pathParts[pathParts.length - 1]
+  return userId
+}
+function ServicesViewer() {
+  const { pathname } = useLocation()
+  const userId = getUserId(pathname)
+  const [getuserid, { data: userbyid }] = useGetUserbyIdMutation({ userId })
+  console.log(userbyid)
+  useEffect(() => {
+    getuserid(userId)
+  }, [getuserid, userId])
   const onClose = () => {
     closeRef.current.click()
   }
   const closeRef = useRef()
-  const userInfo = useSelector((state) => state.auth.user)
-  const userId = userInfo?._id
   console.log('userId: ', userId)
-  const [getservicesbyuser, { data: servicesbyuser }] = useGetServicesbyuserMutation(
-    userApi.endpoints.getServicesbyuser
-  )
+  const [getservicesbyuser, { data: servicesbyuser }] = useGetServicesbyuserMutation(userId)
   console.log('abc:: ', servicesbyuser)
   useEffect(() => {
     getservicesbyuser(userId)
@@ -68,22 +76,13 @@ function ServicesProfileUser() {
               ref={closeRef}
             >
               <ItemServices onClose={onClose} id={servicesid} />
+              ServicesViewer
             </AppModal>
           ))}
         </div>
-      </div>
-      <div className={cx('add_services')}>
-        <Link to='/profile/addmoreservices'>
-          <button className={cx('button')}>
-            ADD MORE SERVICES{' '}
-            <div>
-              <ServicesIconAddMore />
-            </div>
-          </button>
-        </Link>
       </div>
     </div>
   )
 }
 
-export default ServicesProfileUser
+export default ServicesViewer

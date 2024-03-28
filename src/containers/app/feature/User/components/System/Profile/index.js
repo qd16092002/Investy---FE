@@ -3,7 +3,7 @@ import classNames from 'classnames/bind'
 import styles from './Profile.module.sass'
 import { useSelector } from 'react-redux'
 import AppModal from '@src/components/AppModal/AppModal'
-import ChangePassword from '../../ChangePassword'
+import ChangePassword from '../ChangePassword'
 
 const cx = classNames.bind(styles)
 

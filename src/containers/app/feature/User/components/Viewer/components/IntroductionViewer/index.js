@@ -4,7 +4,6 @@ import styles from './IntroductionViewer.module.sass'
 import { useLocation } from 'react-router'
 import { useEffect } from 'react'
 import { useGetUserbyIdMutation } from '../../../../userService'
-import moment from 'moment'
 import { Rate } from 'antd'
 import { Link } from 'react-router-dom'
 
@@ -21,7 +20,6 @@ function IntroductionViewer() {
   const { pathname } = useLocation()
   const userId = getUserId(pathname)
   const [getuserid, { data: userbyid }] = useGetUserbyIdMutation({ userId })
-  console.log(userbyid)
   useEffect(() => {
     getuserid(userId)
   }, [getuserid, userId])
@@ -44,11 +42,12 @@ function IntroductionViewer() {
           <div className={cx('content')}>{userbyid?.workingexperience?.[0]?.position}</div>
           <div className={cx('date')}>
             <div className={cx('content2')}>
-              {moment(userbyid?.workingexperience?.[0]?.startingtime).format('DD/MM/yyyy')}
+              {userbyid?.workingexperience?.[0]?.startingtimemonth} {userbyid?.workingexperience?.[0]?.startingtimeyear}
             </div>
             <div className={cx('content2')}>-</div>
             <div className={cx('content2')}>
-              {moment(userbyid?.workingexperience?.[0]?.finishingtime).format('DD/MM/yyyy')}
+              {userbyid?.workingexperience?.[0]?.finishingtimemonth}{' '}
+              {userbyid?.workingexperience?.[0]?.finishingtimeyear}
             </div>
           </div>
           <div className={cx('content')}>{userbyid?.workingexperience?.[0]?.description}</div>
@@ -58,9 +57,13 @@ function IntroductionViewer() {
           <div className={cx('titlebold')}>{userbyid?.education?.[0]?.major}</div>
           <div className={cx('content')}>{userbyid?.education?.[0]?.university}</div>
           <div className={cx('date')}>
-            <div className={cx('content2')}>{moment(userbyid?.education?.[0]?.startingtime).format('DD/MM/yyyy')}</div>
+            <div className={cx('content2')}>
+              {userbyid?.education?.[0]?.startingtimemonth} {userbyid?.education?.[0]?.startingtimeyear}
+            </div>
             <div className={cx('content2')}>-</div>
-            <div className={cx('content2')}>{moment(userbyid?.education?.[0]?.finishingtime).format('DD/MM/yyyy')}</div>
+            <div className={cx('content2')}>
+              {userbyid?.education?.[0]?.finishingtimemonth} {userbyid?.education?.[0]?.finishingtimeyear}
+            </div>
           </div>
           <div className={cx('content')}>{userbyid?.education?.[0]?.description}</div>
         </div>
@@ -86,14 +89,14 @@ function IntroductionViewer() {
           <div className={cx('content')}>{userbyid?.certificate?.[0]?.organization}</div>
           <div className={cx('date')}>
             <div className={cx('content2')}>
-              {moment(userbyid?.certificate?.[0]?.startingtime).format('DD/MM/yyyy')}
+              {userbyid?.certificate?.[0]?.startingtimemonth} {userbyid?.certificate?.[0]?.startingtimeyear}
             </div>
             <div className={cx('content2')}>-</div>
             <div className={cx('content2')}>
-              {moment(userbyid?.certificate?.[0]?.finishingtime).format('DD/MM/yyyy')}
+              {userbyid?.certificate?.[0]?.finishingtimemonth} {userbyid?.certificate?.[0]?.finishingtimeyear}
             </div>
           </div>
-          <Link to={userbyid?.certificate?.[0]?.file}>
+          <Link target='_blank' to={userbyid?.certificate?.[0]?.file}>
             <div className={cx('content3')}>Link Certificate</div>
           </Link>
         </div>
@@ -103,11 +106,11 @@ function IntroductionViewer() {
           <div className={cx('content')}>{userbyid?.extracurricular?.[0]?.position}</div>
           <div className={cx('date')}>
             <div className={cx('content2')}>
-              {moment(userbyid?.extracurricular?.[0]?.startingtime).format('DD/MM/yyyy')}
+              {userbyid?.extracurricular?.[0]?.startingtimemonth} {userbyid?.extracurricular?.[0]?.startingtimeyear}
             </div>
             <div className={cx('content2')}>-</div>
             <div className={cx('content2')}>
-              {moment(userbyid?.extracurricular?.[0]?.finishingtime).format('DD/MM/yyyy')}
+              {userbyid?.extracurricular?.[0]?.finishingtimemonth} {userbyid?.extracurricular?.[0]?.finishingtimeyear}
             </div>
           </div>
           <div className={cx('content')}>{userbyid?.extracurricular?.[0]?.description}</div>

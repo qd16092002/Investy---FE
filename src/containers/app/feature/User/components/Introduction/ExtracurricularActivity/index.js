@@ -3,19 +3,39 @@ import classNames from 'classnames/bind'
 import styles from './ExtracurricularActivity.module.sass'
 import { CloseIcon } from '@src/assets/svgs'
 import toast, { Toaster } from 'react-hot-toast'
+import { setUser } from '@src/containers/authentication/feature/Auth/authSlice'
+import { useChangeUserInformationMutation } from '../../../userService'
+import { useDispatch, useSelector } from 'react-redux'
+import { authApi } from '@src/containers/authentication/feature/Auth/authService'
+import { useRef } from 'react'
+import { useForm } from 'react-hook-form'
 
 const cx = classNames.bind(styles)
 
 function ExtracurricularActivity({ onClose }) {
-  const onSubmit = async () => {
-    toast.success('Update successfully!')
-  }
-  const handleClick = () => {
-    onSubmit()
-    onClose()
+  const userInfo = useSelector((state) => state.auth.user)
+  const { register, handleSubmit } = useForm()
+  const formInput = useRef()
+  const [updateUser, { isLoading: isUpdating }] = useChangeUserInformationMutation()
+  const dispatch = useDispatch()
+  const [getProfile] = authApi.endpoints.getLayoutUser.useLazyQuery()
+
+  const onSubmit = async (data, e) => {
+    const updateResponse = await updateUser(data)
+    e.preventDefault()
+    if (!updateResponse?.error) {
+      toast.success('Update information successfully!')
+      const response = await getProfile({}, false)
+      if (!response?.error) {
+        console.log('response::  ', response)
+        dispatch(setUser(response.data[0]))
+      }
+    } else {
+      toast.error('Something went wrong, please try again')
+    }
   }
   return (
-    <div className={cx('main')}>
+    <form onSubmit={handleSubmit(onSubmit)} className={cx('main')}>
       <Toaster position='top-center' />
 
       <div className={cx('header')}>
@@ -25,63 +45,108 @@ function ExtracurricularActivity({ onClose }) {
         </div>
       </div>
       <div className={cx('title')}>Organization</div>
-      <input className={cx('input')} placeholder='Name of the organization'></input>
+      <input
+        className={cx('input')}
+        placeholder='Name of the organization'
+        {...register(`extracurricular.[0].organization`)}
+        defaultValue={userInfo?.extracurricular?.[0]?.organization}
+      ></input>
       <div className={cx('title')}>Position</div>
-      <input className={cx('input')} placeholder='Title'></input>
+      <input
+        className={cx('input')}
+        placeholder='Title'
+        {...register(`extracurricular.[0].position`)}
+        defaultValue={userInfo?.extracurricular?.[0]?.position}
+      ></input>
       <div className={cx('title')}>Time</div>
       <div className={cx('checkbox')}></div>
       <div className={cx('checktime')}>
         <div className={cx('time')}>
           <div className={cx('title_2')}>Starting time</div>
           <div className={cx('daymonth')}>
-            <select className={cx('select')}>
+            <select
+              className={cx('select')}
+              {...register(`extracurricular.[0].startingtimemonth`)}
+              defaultValue={userInfo?.extracurricular?.[0]?.startingtimemonth}
+            >
               <option value='' disabled selected hidden>
                 Month
               </option>
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-              <option value='11'>11</option>
-              <option value='12'>12</option>
+              <option value='January'>January</option>
+              <option value='February'>February</option>
+              <option value='March'>March</option>
+              <option value='April'>April</option>
+              <option value='May'>May</option>
+              <option value='June'>June</option>
+              <option value='July'>July</option>
+              <option value='August'>August</option>
+              <option value='September'>September</option>
+              <option value='October'>October</option>
+              <option value='November'>November</option>
+              <option value='December'>December</option>
             </select>
-            <input className={cx('select')} placeholder='Year'></input>
+            <input
+              className={cx('select')}
+              placeholder='Year'
+              min='1980'
+              max='2028'
+              {...register(`extracurricular.[0].startingtimeyear`)}
+              defaultValue={userInfo?.extracurricular?.[0]?.startingtimeyear}
+            ></input>
           </div>
         </div>
         <div className={cx('time')}>
           <div className={cx('title_2')}>Finishing time</div>
           <div className={cx('daymonth')}>
-            <select className={cx('select')}>
+            <select
+              className={cx('select')}
+              {...register(`extracurricular.[0].finishingtimemonth`)}
+              defaultValue={userInfo?.extracurricular?.[0]?.finishingtimemonth}
+            >
               <option value='' disabled selected hidden>
                 Month
               </option>
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-              <option value='9'>9</option>
-              <option value='10'>10</option>
-              <option value='11'>11</option>
-              <option value='12'>12</option>
+              <option value='January'>January</option>
+              <option value='February'>February</option>
+              <option value='March'>March</option>
+              <option value='April'>April</option>
+              <option value='May'>May</option>
+              <option value='June'>June</option>
+              <option value='July'>July</option>
+              <option value='August'>August</option>
+              <option value='September'>September</option>
+              <option value='October'>October</option>
+              <option value='November'>November</option>
+              <option value='December'>December</option>
             </select>
-            <input className={cx('select')} placeholder='Year'></input>
+            <input
+              className={cx('select')}
+              placeholder='Year'
+              min='1980'
+              max='2028'
+              {...register(`extracurricular.[0].finishingtimeyear`)}
+              defaultValue={userInfo?.extracurricular?.[0]?.finishingtimeyear}
+            ></input>
           </div>
         </div>
       </div>
       <div className={cx('title')}>Description</div>
-      <textarea className={cx('textarea')} placeholder='Write your detailed description of your education'></textarea>
-      <button onClick={handleClick}>Save</button>
-    </div>
+      <textarea
+        className={cx('textarea')}
+        placeholder='Write your detailed description of your education'
+        {...register(`extracurricular.[0].description`)}
+        defaultValue={userInfo?.extracurricular?.[0]?.description}
+      ></textarea>
+      <button
+        onClick={() => {
+          formInput.current.click()
+        }}
+        type='submit'
+        disabled={isUpdating}
+      >
+        Save
+      </button>
+    </form>
   )
 }
 

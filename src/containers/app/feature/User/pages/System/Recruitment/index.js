@@ -2,7 +2,7 @@
 import classNames from 'classnames/bind'
 import styles from './Recruitment.module.sass'
 import Search_Recruitment from '../../../components/Search/Search_Recruitment'
-import Companyprofile from '../../../components/Companyprofile'
+import Companyprofile from '../../../components/System/Companyprofile'
 
 const cx = classNames.bind(styles)
 

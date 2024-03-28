@@ -3,14 +3,14 @@ import classNames from 'classnames/bind'
 import styles from './ProfileUser.module.sass'
 import { Rate } from 'antd'
 import { useState } from 'react'
-import IntroductionProfileUser from '../../../components/IntroductionProfileUser'
+import IntroductionProfileUser from '../../../components/System/IntroductionProfileUser'
 import ServicesProfileUser from '../../../components/ServicesProfileUser'
-import PortfolioProfileUser from '../../../components/PortfolioProfileUser'
+import PortfolioProfileUser from '../../../components/System/PortfolioProfileUser'
 import { useSelector } from 'react-redux'
-import ReviewAndFeedbacksProfileUser from '../../../components/ReviewAndFeedbacksProfileUser'
 import { IconTymProfile, IconUploadCVProfile } from '@src/assets/svgs'
 import { Link } from 'react-router-dom'
 import zalo from '@src/assets/images/Profile/Zalo.png'
+import ReviewAndFeedbacksProfileUser from '../../../components/System/ReviewAndFeedbacksProfileUser'
 const cx = classNames.bind(styles)
 const TABS = {
   INTRODUCTION: {

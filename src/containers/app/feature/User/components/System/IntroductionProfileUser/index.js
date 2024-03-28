@@ -2,14 +2,15 @@
 import classNames from 'classnames/bind'
 import styles from './IntroductionProfileUser.module.sass'
 import AppModal from '@src/components/AppModal'
-import Introduction from '../Introduction/Introduction'
+import Introduction from '../../Introduction/Introduction'
 import { useRef } from 'react'
-import Education from '../Introduction/Education'
-import WorkingExperience from '../Introduction/WorkingExperience'
-import Certificate from '../Introduction/Certificate'
-import Skills from '../Introduction/Skills'
-import ExtracurricularActivity from '../Introduction/ExtracurricularActivity'
+import Education from '../../Introduction/Education'
+import WorkingExperience from '../../Introduction/WorkingExperience'
+import Certificate from '../../Introduction/Certificate'
+import Skills from '../../Introduction/Skills'
+import ExtracurricularActivity from '../../Introduction/ExtracurricularActivity'
 import { useSelector } from 'react-redux'
+import Language from '../../Introduction/Language'
 
 const cx = classNames.bind(styles)
 
@@ -30,7 +31,7 @@ function IntroductionProfileUser() {
       >
         <div className={cx('title')}>Introduction</div>
         <div className={cx('content')}>
-          Please update your education here, so that your recruiters can understand about you!
+          Please update your introduction here, so that your recruiters can understand about you!
         </div>
         <AppModal
           triggerBtn={<button>ADD MORE +</button>}
@@ -70,7 +71,7 @@ function IntroductionProfileUser() {
           <div className={cx('box')}>
             <div className={cx('title')}>Working Experience</div>
             <div className={cx('content')}>
-              Please update your education here, so that your recruiters can understand about you!
+              Please update your working experience here, so that your recruiters can understand about you!
             </div>
             <AppModal
               triggerBtn={<button>ADD MORE +</button>}
@@ -89,7 +90,7 @@ function IntroductionProfileUser() {
           <div className={cx('box')}>
             <div className={cx('title')}>Skills</div>
             <div className={cx('content')}>
-              Please update your education here, so that your recruiters can understand about you!
+              Please update your skills here, so that your recruiters can understand about you!
             </div>
             <AppModal
               triggerBtn={<button>ADD MORE +</button>}
@@ -108,7 +109,7 @@ function IntroductionProfileUser() {
           <div className={cx('box')}>
             <div className={cx('title')}>Certificate</div>
             <div className={cx('content')}>
-              Please update your education here, so that your recruiters can understand about you!
+              Please update your certificate here, so that your recruiters can understand about you!
             </div>
             <AppModal
               triggerBtn={<button>ADD MORE +</button>}
@@ -127,7 +128,7 @@ function IntroductionProfileUser() {
           <div className={cx('box')}>
             <div className={cx('title')}>Extracullar Activities</div>
             <div className={cx('content')}>
-              Please update your education here, so that your recruiters can understand about you!
+              Please update your extracullar activitie here, so that your recruiters can understand about you!
             </div>
             <AppModal
               triggerBtn={<button>ADD MORE +</button>}
@@ -141,6 +142,25 @@ function IntroductionProfileUser() {
               ref={closeRef}
             >
               <ExtracurricularActivity onClose={onClose} />
+            </AppModal>
+          </div>
+          <div className={cx('box')}>
+            <div className={cx('title')}>Language</div>
+            <div className={cx('content')}>
+              Please update your language ability here, so that your recruiters can understand about you!
+            </div>
+            <AppModal
+              triggerBtn={<button>ADD MORE +</button>}
+              contentStyle={{
+                width: '60vw',
+                backgroundColor: 'white',
+                boxShadow: '4px 4px 10px 0px #00000040',
+                borderRadius: '7px',
+                padding: '20px'
+              }}
+              ref={closeRef}
+            >
+              <Language onClose={onClose} />
             </AppModal>
           </div>
         </div>

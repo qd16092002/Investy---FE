@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { Col, Row } from 'antd'
 import { useState } from 'react'
 import Profile from '../../../components/System/Profile'
-import EditProfile from '../../../components/EditProfile'
+import EditProfile from '../../../components/System/EditProfile'
 import ProfileStudent from '../../../components/System/ProfileStudent'
 import ProfileTutor from '../../../components/System/ProfileTutor'
 

@@ -44,7 +44,7 @@
     .checktime
         margin-top: 5px
         display: flex
-        justify-content: space-between
+        gap: 50px
         width: 100%
         .time
             width: 50%
@@ -61,8 +61,7 @@
             .daymonth
                 margin-top: 10px
                 display: flex
-                justify-content: space-between
-                width: 70%
+                gap: 20px
                 .select
                     border: 1px solid #24D59E
                     font-family: Montserrat
@@ -81,8 +80,9 @@
     .footer
         display: flex
         margin-top: 20px
-        .upload
+        .upload2
             border: 1px solid #24D59E
+            border-left: none
             font-family: Montserrat
             font-size: 18px
             font-weight: 700
@@ -91,15 +91,35 @@
             padding-bottom: 0px
             text-align: left
             color: #595959
-            border-radius: 10px
-            padding: 5px 15px
+            border-top-right-radius: 10px
+            border-bottom-right-radius: 10px
+            padding: 5px 15px 5px 5px
             display: flex
-            text-align: center
+            text-align: left
             align-items: center
             height: 70px
-            margin-right: 50px
-            div
-                margin-left: 10px
+            &:focus-visible
+                outline: none
+        .upload1
+            border-top: 1px solid #24D59E
+            border-bottom: 1px solid #24D59E
+            border-left: 1px solid #24D59E
+            border-right: none
+            font-family: Montserrat
+            font-size: 18px
+            font-weight: 700
+            line-height: 22px
+            letter-spacing: 0em
+            padding-bottom: 0px
+            text-align: left
+            color: #595959
+            padding: 5px 5px 5px 15px
+            display: flex
+            text-align: left
+            align-items: center
+            height: 70px
+            border-top-left-radius: 10px
+            border-bottom-left-radius: 10px
     .save
         margin-top: 20px
         text-align: center

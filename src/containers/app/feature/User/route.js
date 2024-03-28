@@ -11,9 +11,9 @@ import VideoOnlineCource from './pages/OnlineCourse/VideoOnlineCource'
 import AddMoreServives from './components/ServicesProfileUser/componets/AddMoreServives'
 import Information from './pages/User/Information'
 import RecruitmentUser from './pages/User/RecruimentUser'
-import RecruitmentTab from './components/RecruitmentTab'
+import RecruitmentTab from './components/System/RecruitmentTab'
 import Blog from './pages/System/Blog'
-import BlogDetails from './components/BlogDetails'
+import BlogDetails from './components/System/BlogDetails'
 import ProfileViewer from './pages/User/ProfileViewer'
 
 export const userRouteList = [

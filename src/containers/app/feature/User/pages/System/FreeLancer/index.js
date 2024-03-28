@@ -2,7 +2,7 @@
 import classNames from 'classnames/bind'
 import styles from './FreeLancer.module.sass'
 import Search_FreeLancer from '../../../components/Search/Search_FreeLancer'
-import Design_Freelancer from '../../../components/Design_Freelancer'
+import Design_Freelancer from '../../../components/System/Design_Freelancer'
 
 const cx = classNames.bind(styles)
 

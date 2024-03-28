@@ -12,7 +12,7 @@ import {
   WebsiteIcon
 } from '@src/assets/svgs'
 import toast, { Toaster } from 'react-hot-toast'
-import { useGetRecruitmentbyIDMutation } from '../../userService'
+import { useGetRecruitmentbyIDMutation } from '../../../userService'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import moment from 'moment'

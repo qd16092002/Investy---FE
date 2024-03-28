@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { useRef } from 'react'
 import { Toaster, toast } from 'react-hot-toast'
-import { useChangeUserInformationMutation } from '../../userService'
+import { useChangeUserInformationMutation } from '../../../userService'
 import { setUser } from '@src/containers/authentication/feature/Auth/authSlice'
 import { authApi } from '@src/containers/authentication/feature/Auth/authService'
 

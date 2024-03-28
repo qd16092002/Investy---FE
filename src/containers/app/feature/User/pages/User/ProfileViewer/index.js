@@ -3,14 +3,14 @@ import classNames from 'classnames/bind'
 import styles from './ProfileViewer.module.sass'
 import { Rate } from 'antd'
 import { useEffect, useState } from 'react'
-import ServicesProfileUser from '../../../components/ServicesProfileUser'
-import PortfolioProfileUser from '../../../components/PortfolioProfileUser'
-import ReviewAndFeedbacksProfileUser from '../../../components/ReviewAndFeedbacksProfileUser'
 import { IconTymProfile } from '@src/assets/svgs'
 import { Link, useLocation } from 'react-router-dom'
 import zalo from '@src/assets/images/Profile/Zalo.png'
 import IntroductionViewer from '../../../components/Viewer/components/IntroductionViewer'
 import { useGetUserbyIdMutation } from '../../../userService'
+import ServicesViewer from '../../../components/Viewer/components/ServicesViewer'
+import ReviewAndFeedbacksProfileUser from '../../../components/System/ReviewAndFeedbacksProfileUser'
+import PortfolioViewer from '../../../components/Viewer/components/PortfolioViewer'
 const cx = classNames.bind(styles)
 const TABS = {
   INTRODUCTION: {
@@ -108,9 +108,9 @@ function ProfileViewer() {
         </div>
 
         <div className={cx('line')}></div>
-        {activeTab.code === TABS.SERVICES.code && <ServicesProfileUser />}
+        {activeTab.code === TABS.SERVICES.code && <ServicesViewer />}
         {activeTab.code === TABS.INTRODUCTION.code && <IntroductionViewer />}
-        {activeTab.code === TABS.PORTFOLIO.code && <PortfolioProfileUser />}
+        {activeTab.code === TABS.PORTFOLIO.code && <PortfolioViewer />}
         {activeTab.code === TABS.REVIEWANDFEEDBACKS.code && <ReviewAndFeedbacksProfileUser />}
       </div>
     </div>

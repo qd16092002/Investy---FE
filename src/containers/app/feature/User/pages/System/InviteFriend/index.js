@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import classNames from 'classnames/bind'
 import styles from './InviteFriend.module.sass'
-import ChangePassword from '../../../components/ChangePassword'
+import ChangePassword from '../../../components/System/ChangePassword'
 import { IconMember, IconInformation } from '@src/assets/svgs'
 import AppModal from '@src/components/AppModal'
 import { useSelector } from 'react-redux'

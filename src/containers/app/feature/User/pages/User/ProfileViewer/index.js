@@ -11,6 +11,7 @@ import { useGetUserbyIdMutation } from '../../../userService'
 import ServicesViewer from '../../../components/Viewer/components/ServicesViewer'
 import ReviewAndFeedbacksProfileUser from '../../../components/System/ReviewAndFeedbacksProfileUser'
 import PortfolioViewer from '../../../components/Viewer/components/PortfolioViewer'
+import CopyButton from '@src/components/CoppyButton'
 const cx = classNames.bind(styles)
 const TABS = {
   INTRODUCTION: {
@@ -74,6 +75,9 @@ function ProfileViewer() {
                 alt='Zalo'
               ></img>
             </Link>
+            <div className={cx('coppybutton')}>
+              <CopyButton />
+            </div>
           </div>
         </div>
       </div>

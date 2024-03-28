@@ -1,19 +1,20 @@
-import RoleProfile from './pages/RoleProfile'
-import Settings from './pages/Settings'
+import RoleProfile from './pages/System/RoleProfile'
+import Settings from './pages/System/Settings'
 import HeaderOnlyLayout from '@src/components/Layouts/HeaderOnlyLayout'
-import FreeLancer from './pages/FreeLancer'
-import Recruitment from './pages/Recruitment'
-import Company from './pages/Company'
+import FreeLancer from './pages/System/FreeLancer'
+import Recruitment from './pages/System/Recruitment'
+import Company from './pages/System/Company'
 import OnlineCourse from './pages/OnlineCourse'
-import InviteFriend from './pages/InviteFriend'
+import InviteFriend from './pages/System/InviteFriend'
 import ItemsOnlineCource from './pages/OnlineCourse/ItemsOnlineCource'
 import VideoOnlineCource from './pages/OnlineCourse/VideoOnlineCource'
 import AddMoreServives from './components/ServicesProfileUser/componets/AddMoreServives'
-import Information from './pages/Information'
-import RecruitmentUser from './pages/RecruimentUser'
+import Information from './pages/User/Information'
+import RecruitmentUser from './pages/User/RecruimentUser'
 import RecruitmentTab from './components/RecruitmentTab'
-import Blog from './pages/Blog'
+import Blog from './pages/System/Blog'
 import BlogDetails from './components/BlogDetails'
+import ProfileViewer from './pages/User/ProfileViewer'
 
 export const userRouteList = [
   {
@@ -29,6 +30,14 @@ export const userRouteList = [
     element: (
       <HeaderOnlyLayout>
         <RoleProfile />
+      </HeaderOnlyLayout>
+    )
+  },
+  {
+    path: '/profileviewer/:userId',
+    element: (
+      <HeaderOnlyLayout>
+        <ProfileViewer />
       </HeaderOnlyLayout>
     )
   },

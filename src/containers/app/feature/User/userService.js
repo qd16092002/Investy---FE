@@ -112,6 +112,13 @@ export const userApi = createApi({
         url: `/getalluser`
       })
     }),
+    getUserbyId: build.mutation({
+      query: (userId) => {
+        return {
+          url: `/users/${userId}`
+        }
+      }
+    }),
     getAllUserPerformance: build.query({
       query: ({ path, params }) => ({
         url: `/competition/${path.competitionId}/performance/all`,
@@ -246,5 +253,6 @@ export const {
   useGetServicesbyuserMutation,
   useAddBlogMutation,
   useLazyGetAllBlogQuery,
-  useGetBlogbyIdMutation
+  useGetBlogbyIdMutation,
+  useGetUserbyIdMutation
 } = userApi

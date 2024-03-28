@@ -39,6 +39,7 @@ import web from '@src/assets/images/User/Freelance/Education/web.png'
 
 import { Education } from '@src/app-configs/Freelancer'
 import { v4 as uuidv4 } from 'uuid'
+import { Link } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
 
@@ -113,42 +114,47 @@ function Design_Freelancer() {
           <div className={cx('product')}>
             <div className={cx('boxmember')}>
               {servicesif?.map((index) => (
-                <AppModal
-                  key={index}
-                  triggerBtn={
-                    <div key={index} className={cx('member')} onClick={() => setservicesId(index._id)}>
-                      <img src={avt} alt='items' className={cx('image')}></img>
-                      <div className={cx('title')}>{index?.title}</div>
-                      <div className={cx('price')}>
-                        {' '}
-                        {index?.standard?.[0]?.VAT1}
-                        {'VND~'}
+                <div className={cx('modal')} key={index}>
+                  <AppModal
+                    triggerBtn={
+                      <div key={index} className={cx('member')} onClick={() => setservicesId(index._id)}>
+                        <img src={avt} alt='items' className={cx('image')}></img>
                       </div>
-                      <div className={cx('rate')}>
-                        <div
-                          style={{
-                            marginRight: '5px'
-                          }}
-                        >
-                          <StartRate />
-                        </div>
-                        4,9 (3,460)
-                      </div>
+                    }
+                    contentStyle={{
+                      width: '90vw',
+                      height: '90vh',
+                      backgroundColor: 'white',
+                      boxShadow: '4px 4px 10px 0px #00000040',
+                      borderRadius: '7px',
+                      padding: '20px',
+                      overflowY: 'scroll'
+                    }}
+                    ref={closeRef}
+                  >
+                    <ItemServices onClose={onClose} id={servicesid} />
+                  </AppModal>
+                  <div className={cx('title')}>{index?.title}</div>
+                  <Link to={`/profileviewer/${index.user}`} className={cx('linktouser')}>
+                    <div className={cx('name')}>{index?.fullName}</div>
+                    <div className={cx('avt')}> {index?.fullName && index?.fullName[0]?.toUpperCase()}</div>
+                  </Link>
+                  <div className={cx('price')}>
+                    {' '}
+                    {index?.standard?.[0]?.VAT1}
+                    {'VND~'}
+                  </div>
+                  <div className={cx('rate')}>
+                    <div
+                      style={{
+                        marginRight: '5px'
+                      }}
+                    >
+                      <StartRate />
                     </div>
-                  }
-                  contentStyle={{
-                    width: '90vw',
-                    height: '90vh',
-                    backgroundColor: 'white',
-                    boxShadow: '4px 4px 10px 0px #00000040',
-                    borderRadius: '7px',
-                    padding: '20px',
-                    overflowY: 'scroll'
-                  }}
-                  ref={closeRef}
-                >
-                  <ItemServices onClose={onClose} id={servicesid} />
-                </AppModal>
+                    4,9 (3,460)
+                  </div>
+                </div>
               ))}
             </div>
             <div className={cx('pagination')}>
